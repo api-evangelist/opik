@@ -1,0 +1,54 @@
+{
+  "id": "e5f6a7b8-c9d0-1234-efab-345678901234",
+  "project_name": "my-rag-chatbot",
+  "project_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+  "trace_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "parent_span_id": null,
+  "name": "openai_chat_completion",
+  "type": "llm",
+  "start_time": "2026-06-13T10:00:01.100Z",
+  "end_time": "2026-06-13T10:00:02.450Z",
+  "input": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a helpful assistant specializing in LLM observability tools."
+      },
+      {
+        "role": "user",
+        "content": "What are the main features of Opik?"
+      }
+    ]
+  },
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": "Opik is an open-source LLM evaluation and tracing platform..."
+    },
+    "finish_reason": "stop"
+  },
+  "metadata": {
+    "temperature": 0.7,
+    "max_tokens": 500
+  },
+  "model": "gpt-4o",
+  "provider": "openai",
+  "tags": ["llm-call", "openai"],
+  "usage": {
+    "prompt_tokens": 245,
+    "completion_tokens": 87,
+    "total_tokens": 332
+  },
+  "created_at": "2026-06-13T10:00:02.500Z",
+  "last_updated_at": "2026-06-13T10:00:02.500Z",
+  "created_by": "sdk",
+  "feedback_scores": [
+    {
+      "name": "hallucination",
+      "value": 0.05,
+      "reason": "Response is grounded in retrieved context.",
+      "source": "online_scoring"
+    }
+  ],
+  "total_estimated_cost": 0.000664
+}

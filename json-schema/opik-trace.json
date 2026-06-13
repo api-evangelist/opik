@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/opik/main/json-schema/opik-trace.json",
+  "title": "Trace",
+  "description": "A complete record of a single LLM application execution in Opik, capturing the full lifecycle from input to output including spans, feedback scores, and usage metrics.",
+  "type": "object",
+  "required": ["start_time"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the trace."
+    },
+    "project_name": {
+      "type": "string",
+      "description": "Name of the project this trace belongs to. If null, the default project is used.",
+      "pattern": "(?s)^\\s*(\\S.*\\S|\\S)\\s*$"
+    },
+    "project_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the project this trace belongs to.",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for the trace."
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the trace started."
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the trace ended."
+    },
+    "input": {
+      "description": "The input passed to the LLM application for this trace."
+    },
+    "output": {
+      "description": "The output produced by the LLM application for this trace."
+    },
+    "metadata": {
+      "description": "Additional metadata associated with the trace."
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Labels for categorizing the trace.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "error_info": {
+      "type": "object",
+      "description": "Error information if the trace encountered a failure.",
+      "properties": {
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "traceback": { "type": "string" }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "description": "Token usage statistics for the trace (e.g., prompt_tokens, completion_tokens, total_tokens).",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the trace record was created.",
+      "readOnly": true
+    },
+    "last_updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the trace record was last updated."
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Username or identifier of the user who created the trace.",
+      "readOnly": true
+    },
+    "last_updated_by": {
+      "type": "string",
+      "description": "Username or identifier of the user who last updated the trace.",
+      "readOnly": true
+    },
+    "feedback_scores": {
+      "type": "array",
+      "description": "Evaluation scores attached directly to this trace.",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/FeedbackScore"
+      }
+    },
+    "span_feedback_scores": {
+      "type": "array",
+      "description": "Aggregated feedback scores averaged across all spans in this trace.",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/FeedbackScore"
+      }
+    },
+    "comments": {
+      "type": "array",
+      "description": "User comments attached to this trace.",
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/Comment"
+      }
+    },
+    "total_estimated_cost": {
+      "type": "number",
+      "description": "Estimated total cost of LLM API calls made during this trace.",
+      "readOnly": true
+    },
+    "duration": {
+      "type": "number",
+      "description": "Duration of the trace in milliseconds.",
+      "readOnly": true
+    }
+  },
+  "definitions": {
+    "FeedbackScore": {
+      "type": "object",
+      "description": "A scored evaluation result attached to a Trace or Span.",
+      "properties": {
+        "id": { "type": "string", "format": "uuid" },
+        "name": { "type": "string", "description": "Name of the feedback metric." },
+        "category_name": { "type": "string", "description": "Category label for categorical scores." },
+        "value": { "type": "number", "description": "Numeric score value." },
+        "reason": { "type": "string", "description": "Explanation for the score." },
+        "source": {
+          "type": "string",
+          "enum": ["ui", "sdk", "online_scoring"],
+          "description": "Origin of the feedback score."
+        }
+      }
+    },
+    "Comment": {
+      "type": "object",
+      "description": "A user comment on a Trace or Span.",
+      "properties": {
+        "id": { "type": "string", "format": "uuid" },
+        "text": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "created_by": { "type": "string" }
+      }
+    }
+  }
+}

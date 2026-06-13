@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/opik/main/json-schema/opik-span.json",
+  "title": "Span",
+  "description": "A single operation or step within a Trace representing an individual component of an LLM call chain such as LLM inference, tool calls, retrieval steps, or guardrail checks.",
+  "type": "object",
+  "required": ["start_time"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the span."
+    },
+    "project_name": {
+      "type": "string",
+      "description": "Name of the project this span belongs to. If null, the default project is used.",
+      "pattern": "(?s)^\\s*(\\S.*\\S|\\S)\\s*$"
+    },
+    "project_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the project this span belongs to.",
+      "readOnly": true
+    },
+    "trace_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the parent Trace this span belongs to."
+    },
+    "parent_span_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the parent Span for nested span hierarchies."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for the span (e.g., the function or model name)."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["general", "tool", "llm", "guardrail"],
+      "description": "Type of operation this span represents."
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the span started."
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the span ended."
+    },
+    "input": {
+      "description": "Input data passed to this span operation."
+    },
+    "output": {
+      "description": "Output data produced by this span operation."
+    },
+    "metadata": {
+      "description": "Additional metadata associated with the span."
+    },
+    "model": {
+      "type": "string",
+      "description": "LLM model identifier used in this span (e.g., gpt-4o, claude-3-5-sonnet)."
+    },
+    "provider": {
+      "type": "string",
+      "description": "LLM provider for this span (e.g., openai, anthropic, google)."
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Labels for categorizing the span.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "usage": {
+      "type": "object",
+      "description": "Token usage statistics for this span (e.g., prompt_tokens, completion_tokens).",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "error_info": {
+      "type": "object",
+      "description": "Error information if the span encountered a failure.",
+      "properties": {
+        "message": { "type": "string" },
+        "type": { "type": "string" },
+        "traceback": { "type": "string" }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the span record was created.",
+      "readOnly": true
+    },
+    "last_updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the span record was last updated."
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Username or identifier of the user who created the span.",
+      "readOnly": true
+    },
+    "last_updated_by": {
+      "type": "string",
+      "description": "Username or identifier of the user who last updated the span.",
+      "readOnly": true
+    },
+    "feedback_scores": {
+      "type": "array",
+      "description": "Evaluation scores attached to this span.",
+      "readOnly": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "format": "uuid" },
+          "name": { "type": "string" },
+          "category_name": { "type": "string" },
+          "value": { "type": "number" },
+          "reason": { "type": "string" },
+          "source": { "type": "string", "enum": ["ui", "sdk", "online_scoring"] }
+        }
+      }
+    },
+    "comments": {
+      "type": "array",
+      "description": "User comments attached to this span.",
+      "readOnly": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "format": "uuid" },
+          "text": { "type": "string" },
+          "created_at": { "type": "string", "format": "date-time" },
+          "created_by": { "type": "string" }
+        }
+      }
+    },
+    "total_estimated_cost": {
+      "type": "number",
+      "description": "Estimated cost of LLM API calls made during this span.",
+      "readOnly": true
+    }
+  }
+}

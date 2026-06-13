@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/opik/main/json-schema/opik-experiment.json",
+  "title": "Experiment",
+  "description": "An evaluation run that executes an LLM application against a Dataset and collects feedback scores for each DatasetItem. Experiments support multiple types and evaluation methods.",
+  "type": "object",
+  "required": ["dataset_name"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the experiment."
+    },
+    "dataset_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the Dataset this experiment runs against."
+    },
+    "dataset_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the Dataset this experiment runs against.",
+      "readOnly": true
+    },
+    "project_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Project ID. Takes precedence over project_name when both are provided."
+    },
+    "project_name": {
+      "type": "string",
+      "pattern": "(?s)^\\s*(\\S.*\\S|\\S)\\s*$",
+      "description": "Project name. Creates project if it does not exist. Ignored when project_id is provided."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for the experiment."
+    },
+    "metadata": {
+      "description": "Additional metadata associated with the experiment."
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 0,
+      "maxItems": 50,
+      "description": "Labels for categorizing the experiment.",
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 100
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": ["regular", "trial", "mini-batch", "mutation"],
+      "description": "Type of experiment run."
+    },
+    "evaluation_method": {
+      "type": "string",
+      "enum": ["dataset", "evaluation_suite"],
+      "description": "Method used to drive the evaluation (standard dataset or evaluation suite)."
+    },
+    "optimization_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the Optimization workflow this experiment belongs to, if any."
+    },
+    "feedback_scores": {
+      "type": "array",
+      "description": "Aggregated average feedback scores across all experiment items.",
+      "readOnly": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "value": { "type": "number" },
+          "count": { "type": "integer" }
+        }
+      }
+    },
+    "comments": {
+      "type": "array",
+      "description": "User comments on this experiment.",
+      "readOnly": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "format": "uuid" },
+          "text": { "type": "string" },
+          "created_at": { "type": "string", "format": "date-time" },
+          "created_by": { "type": "string" }
+        }
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the experiment was created.",
+      "readOnly": true
+    },
+    "last_updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the experiment was last updated.",
+      "readOnly": true
+    },
+    "created_by": {
+      "type": "string",
+      "description": "Username or identifier of the user who created the experiment.",
+      "readOnly": true
+    },
+    "last_updated_by": {
+      "type": "string",
+      "description": "Username or identifier of the user who last updated the experiment.",
+      "readOnly": true
+    },
+    "trace_count": {
+      "type": "integer",
+      "description": "Number of traces (experiment items) in this experiment.",
+      "readOnly": true
+    },
+    "duration": {
+      "type": "number",
+      "description": "Duration of the experiment run in milliseconds.",
+      "readOnly": true
+    },
+    "total_estimated_cost": {
+      "type": "number",
+      "description": "Estimated total cost of LLM API calls made during this experiment.",
+      "readOnly": true
+    }
+  }
+}

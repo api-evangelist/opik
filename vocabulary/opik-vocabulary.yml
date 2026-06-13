@@ -1,0 +1,305 @@
+vocabulary:
+  name: Opik API Vocabulary
+  description: >
+    Core domain terms and concepts used across the Opik REST API for LLM evaluation,
+    tracing, and observability. Opik is an open-source platform by Comet ML for
+    debugging, evaluating, and monitoring LLM applications, RAG systems, and
+    agentic workflows.
+  version: "1.0.0"
+  source: https://raw.githubusercontent.com/comet-ml/opik/main/apps/opik-documentation/documentation/fern/openapi/opik.yaml
+
+terms:
+
+  - term: Trace
+    definition: >
+      A complete record of a single LLM application execution, capturing the full
+      lifecycle from input to output. A trace contains spans, feedback scores,
+      usage metrics, tags, and metadata. Traces are the top-level unit of
+      observability in Opik.
+    properties:
+      - id (uuid)
+      - project_name
+      - project_id (uuid)
+      - name
+      - start_time (date-time)
+      - end_time (date-time)
+      - input
+      - output
+      - metadata
+      - tags
+      - error_info
+      - usage
+      - feedback_scores
+      - span_feedback_scores
+      - comments
+      - total_estimated_cost
+
+  - term: Span
+    definition: >
+      A single operation or step within a Trace. Spans represent individual
+      components of an LLM call chain such as LLM inference, tool calls, retrieval
+      steps, or guardrail checks. Spans are typed (general, tool, llm, guardrail)
+      and can be nested via parent_span_id.
+    properties:
+      - id (uuid)
+      - trace_id (uuid)
+      - parent_span_id (uuid)
+      - name
+      - type (general | tool | llm | guardrail)
+      - start_time (date-time)
+      - end_time (date-time)
+      - input
+      - output
+      - metadata
+      - model
+      - provider
+      - tags
+      - usage
+      - error_info
+      - feedback_scores
+
+  - term: Dataset
+    definition: >
+      A collection of DatasetItems used for running experiments and evaluations.
+      Datasets can be scoped to a project or workspace and support two types:
+      standard dataset and evaluation_suite. Visibility can be private or public.
+    properties:
+      - id (uuid)
+      - name
+      - project_id (uuid)
+      - project_name
+      - type (dataset | evaluation_suite)
+      - visibility (private | public)
+      - tags
+      - description
+      - experiment_count
+
+  - term: DatasetItem
+    definition: >
+      A single row or entry within a Dataset. Contains the input data, expected
+      output, metadata, and source information used to drive evaluations and
+      experiments.
+    properties:
+      - id (uuid)
+      - dataset_id (uuid)
+      - input
+      - expected_output
+      - metadata
+      - source
+      - trace_id (uuid)
+      - span_id (uuid)
+
+  - term: Experiment
+    definition: >
+      An evaluation run that executes an LLM application against a Dataset and
+      collects feedback scores for each DatasetItem. Experiments support multiple
+      types (regular, trial, mini-batch, mutation) and evaluation methods
+      (dataset, evaluation_suite).
+    properties:
+      - id (uuid)
+      - dataset_name
+      - dataset_id (uuid)
+      - project_id (uuid)
+      - project_name
+      - name
+      - metadata
+      - tags
+      - type (regular | trial | mini-batch | mutation)
+      - evaluation_method (dataset | evaluation_suite)
+      - feedback_scores
+
+  - term: FeedbackScore
+    definition: >
+      A scored evaluation result attached to a Trace, Span, or ExperimentItem.
+      Feedback scores can be numeric or categorical and are produced by LLM-as-a-judge
+      evaluators, human annotators, or automated evaluation rules.
+    properties:
+      - id (uuid)
+      - entity_id (uuid)
+      - entity_type
+      - name
+      - category_name
+      - value (number)
+      - reason
+      - source (ui | sdk | online_scoring)
+
+  - term: Project
+    definition: >
+      A workspace-level organizational unit that groups related Traces, Spans,
+      Datasets, and Experiments. Projects provide namespacing and access control
+      for LLM application development teams.
+    properties:
+      - id (uuid)
+      - name
+      - description
+      - created_at (date-time)
+      - created_by
+      - last_updated_at (date-time)
+      - workspace_id
+
+  - term: Prompt
+    definition: >
+      A versioned prompt template stored in the Opik prompt library. Prompts
+      support variable interpolation and version history for tracking prompt
+      engineering iterations.
+    properties:
+      - id (uuid)
+      - name
+      - description
+      - created_at (date-time)
+      - created_by
+      - last_updated_at (date-time)
+      - version_count
+
+  - term: PromptVersion
+    definition: >
+      A specific version of a Prompt with its template text, commit message,
+      and metadata. Prompt versions are immutable once created and support
+      environment linking.
+    properties:
+      - id (uuid)
+      - prompt_id (uuid)
+      - template
+      - commit
+      - created_at (date-time)
+      - created_by
+      - metadata
+
+  - term: AutomationRuleEvaluator
+    definition: >
+      An automated evaluation rule that scores Traces or Spans in real-time
+      using LLM-as-a-judge metrics or user-defined Python metrics. Evaluators
+      can be configured to run on a sampling rate of incoming production traffic.
+    properties:
+      - id (uuid)
+      - project_id (uuid)
+      - name
+      - type (llm_as_judge | user_defined_metric_python)
+      - sampling_rate
+      - enabled
+      - created_at (date-time)
+      - code
+
+  - term: AnnotationQueue
+    definition: >
+      A queue of Traces or Spans awaiting human review and annotation. Annotation
+      queues support multi-reviewer workflows with locking mechanisms to prevent
+      duplicate reviews.
+    properties:
+      - id (uuid)
+      - name
+      - description
+      - created_at (date-time)
+      - created_by
+      - size
+
+  - term: TraceThread
+    definition: >
+      A logical grouping of related Traces representing a multi-turn conversation
+      or agent session. Thread-level feedback scores aggregate evaluations across
+      all traces in the thread.
+    properties:
+      - id (uuid)
+      - project_id (uuid)
+      - name
+      - created_at (date-time)
+      - feedback_scores
+
+  - term: Alert
+    definition: >
+      A monitoring rule that triggers webhook notifications when metric thresholds
+      are exceeded. Alerts are configured with trigger conditions and connected
+      to webhook endpoints.
+    properties:
+      - id (uuid)
+      - name
+      - metric
+      - threshold
+      - enabled
+      - webhook_id (uuid)
+      - created_at (date-time)
+
+  - term: Webhook
+    definition: >
+      An HTTP callback endpoint registered to receive alert notifications from
+      Opik. Webhooks support test payloads and example event generation.
+    properties:
+      - id (uuid)
+      - name
+      - url
+      - created_at (date-time)
+
+  - term: ProviderApiKey
+    definition: >
+      A stored API key for an external LLM provider (e.g., OpenAI, Anthropic,
+      Google) used by LLM-as-a-judge evaluators and the Opik AI proxy to make
+      LLM calls on behalf of the workspace.
+    properties:
+      - id (uuid)
+      - provider
+      - created_at (date-time)
+
+  - term: Attachment
+    definition: >
+      A file or binary artifact attached to a Trace or Span. Attachments support
+      multipart upload and are referenced by their entity (trace or span) and
+      entity ID.
+    properties:
+      - id (uuid)
+      - entity_type
+      - entity_id (uuid)
+      - file_name
+      - mime_type
+      - file_size
+
+  - term: Optimization
+    definition: >
+      A prompt optimization workflow that iterates over prompt variants to
+      find the best-performing version according to evaluation metrics.
+    properties:
+      - id (uuid)
+      - name
+      - dataset_id (uuid)
+      - objective_name
+      - status (running | completed | cancelled | failed)
+      - created_at (date-time)
+
+  - term: GuardrailsValidation
+    definition: >
+      A record of a guardrail check performed on a Trace or Span output. Captures
+      whether the output passed or failed configured safety and quality guardrails.
+    properties:
+      - id (uuid)
+      - name
+      - result (passed | failed)
+      - details
+
+  - term: ExperimentItem
+    definition: >
+      A single row result from an Experiment run, linking a DatasetItem to the
+      trace that was produced for that input and the collected feedback scores.
+    properties:
+      - id (uuid)
+      - experiment_id (uuid)
+      - dataset_item_id (uuid)
+      - trace_id (uuid)
+      - feedback_scores
+
+  - term: LlmAsJudgeCode
+    definition: >
+      The configuration and prompt template used by an LLM-as-a-judge evaluator.
+      Defines the model, variables, messages, and scoring schema for automated
+      evaluation using an LLM to assess trace or span quality.
+    properties:
+      - model
+      - messages
+      - variables
+      - schema
+
+  - term: WorkspaceVersion
+    definition: >
+      Version information for an Opik workspace deployment, including the server
+      version and feature flags.
+    properties:
+      - version
+      - build_time

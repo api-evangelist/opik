@@ -49,7 +49,7 @@ apis:
       - type: Documentation
         url: https://www.comet.com/docs/opik/reference/rest-api/overview
       - type: OpenAPI
-        url: https://www.comet.com/docs/opik/reference/rest-api/overview
+        url: openapi/opik-rest-api-openapi.yml
 common:
   - type: Website
     url: https://www.comet.com/site/products/opik/
@@ -81,6 +81,16 @@ common:
     url: rate-limits/opik-rate-limits.yml
   - type: FinOps
     url: finops/opik-finops.yml
+  - type: Vocabulary
+    url: vocabulary/opik-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/opik-context.jsonld
+  - type: JSONSchema
+    url: json-schema/opik-trace.json
+  - type: JSONSchema
+    url: json-schema/opik-span.json
+  - type: JSONSchema
+    url: json-schema/opik-experiment.json
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

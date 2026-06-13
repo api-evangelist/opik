@@ -1,0 +1,249 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "opik": "https://www.comet.com/docs/opik/reference/rest-api/#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+
+    "Trace": {
+      "@id": "opik:Trace",
+      "@type": "@id",
+      "comment": "A complete record of a single LLM application execution, capturing the full lifecycle from input to output."
+    },
+    "Span": {
+      "@id": "opik:Span",
+      "@type": "@id",
+      "comment": "A single operation or step within a Trace representing individual components of an LLM call chain."
+    },
+    "Dataset": {
+      "@id": "opik:Dataset",
+      "@type": "@id",
+      "comment": "A collection of DatasetItems used for running experiments and evaluations."
+    },
+    "DatasetItem": {
+      "@id": "opik:DatasetItem",
+      "@type": "@id",
+      "comment": "A single row or entry within a Dataset containing input data and expected outputs."
+    },
+    "Experiment": {
+      "@id": "opik:Experiment",
+      "@type": "@id",
+      "comment": "An evaluation run that executes an LLM application against a Dataset and collects feedback scores."
+    },
+    "ExperimentItem": {
+      "@id": "opik:ExperimentItem",
+      "@type": "@id",
+      "comment": "A single result row from an Experiment run linking a DatasetItem to a Trace."
+    },
+    "FeedbackScore": {
+      "@id": "opik:FeedbackScore",
+      "@type": "@id",
+      "comment": "A scored evaluation result attached to a Trace, Span, or ExperimentItem."
+    },
+    "Project": {
+      "@id": "opik:Project",
+      "@type": "@id",
+      "comment": "A workspace-level organizational unit grouping related Traces, Datasets, and Experiments."
+    },
+    "Prompt": {
+      "@id": "opik:Prompt",
+      "@type": "@id",
+      "comment": "A versioned prompt template stored in the Opik prompt library."
+    },
+    "PromptVersion": {
+      "@id": "opik:PromptVersion",
+      "@type": "@id",
+      "comment": "A specific immutable version of a Prompt with its template text and commit metadata."
+    },
+    "AutomationRuleEvaluator": {
+      "@id": "opik:AutomationRuleEvaluator",
+      "@type": "@id",
+      "comment": "An automated evaluation rule that scores Traces or Spans in real-time."
+    },
+    "AnnotationQueue": {
+      "@id": "opik:AnnotationQueue",
+      "@type": "@id",
+      "comment": "A queue of Traces or Spans awaiting human review and annotation."
+    },
+    "TraceThread": {
+      "@id": "opik:TraceThread",
+      "@type": "@id",
+      "comment": "A logical grouping of related Traces representing a multi-turn conversation or agent session."
+    },
+    "Alert": {
+      "@id": "opik:Alert",
+      "@type": "@id",
+      "comment": "A monitoring rule that triggers webhook notifications when metric thresholds are exceeded."
+    },
+    "Webhook": {
+      "@id": "opik:Webhook",
+      "@type": "@id",
+      "comment": "An HTTP callback endpoint registered to receive alert notifications."
+    },
+    "ProviderApiKey": {
+      "@id": "opik:ProviderApiKey",
+      "@type": "@id",
+      "comment": "A stored API key for an external LLM provider used by evaluators."
+    },
+    "Attachment": {
+      "@id": "opik:Attachment",
+      "@type": "@id",
+      "comment": "A file or binary artifact attached to a Trace or Span."
+    },
+    "Optimization": {
+      "@id": "opik:Optimization",
+      "@type": "@id",
+      "comment": "A prompt optimization workflow that iterates over prompt variants."
+    },
+    "GuardrailsValidation": {
+      "@id": "opik:GuardrailsValidation",
+      "@type": "@id",
+      "comment": "A record of a guardrail check performed on a Trace or Span output."
+    },
+
+    "id": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "last_updated_at": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "created_by": {
+      "@id": "schema:creator",
+      "@type": "xsd:string"
+    },
+    "start_time": {
+      "@id": "schema:startDate",
+      "@type": "xsd:dateTime"
+    },
+    "end_time": {
+      "@id": "schema:endDate",
+      "@type": "xsd:dateTime"
+    },
+    "input": {
+      "@id": "opik:input"
+    },
+    "output": {
+      "@id": "opik:output"
+    },
+    "metadata": {
+      "@id": "opik:metadata"
+    },
+    "tags": {
+      "@id": "schema:keywords",
+      "@container": "@set"
+    },
+    "project_id": {
+      "@id": "opik:projectId",
+      "@type": "xsd:string"
+    },
+    "project_name": {
+      "@id": "opik:projectName",
+      "@type": "xsd:string"
+    },
+    "trace_id": {
+      "@id": "opik:traceId",
+      "@type": "xsd:string"
+    },
+    "span_id": {
+      "@id": "opik:spanId",
+      "@type": "xsd:string"
+    },
+    "parent_span_id": {
+      "@id": "opik:parentSpanId",
+      "@type": "xsd:string"
+    },
+    "dataset_id": {
+      "@id": "opik:datasetId",
+      "@type": "xsd:string"
+    },
+    "dataset_name": {
+      "@id": "opik:datasetName",
+      "@type": "xsd:string"
+    },
+    "experiment_id": {
+      "@id": "opik:experimentId",
+      "@type": "xsd:string"
+    },
+    "feedback_scores": {
+      "@id": "opik:feedbackScores",
+      "@container": "@set"
+    },
+    "value": {
+      "@id": "schema:value",
+      "@type": "xsd:decimal"
+    },
+    "source": {
+      "@id": "opik:source",
+      "@type": "xsd:string"
+    },
+    "model": {
+      "@id": "opik:model",
+      "@type": "xsd:string"
+    },
+    "provider": {
+      "@id": "opik:provider",
+      "@type": "xsd:string"
+    },
+    "usage": {
+      "@id": "opik:usage"
+    },
+    "template": {
+      "@id": "opik:template",
+      "@type": "xsd:string"
+    },
+    "sampling_rate": {
+      "@id": "opik:samplingRate",
+      "@type": "xsd:decimal"
+    },
+    "enabled": {
+      "@id": "opik:enabled",
+      "@type": "xsd:boolean"
+    },
+    "status": {
+      "@id": "opik:status",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "opik:type",
+      "@type": "xsd:string"
+    },
+    "visibility": {
+      "@id": "opik:visibility",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "xsd:anyURI"
+    },
+    "version": {
+      "@id": "schema:version",
+      "@type": "xsd:string"
+    },
+    "error_info": {
+      "@id": "opik:errorInfo"
+    },
+    "comments": {
+      "@id": "opik:comments",
+      "@container": "@set"
+    },
+    "workspace_id": {
+      "@id": "opik:workspaceId",
+      "@type": "xsd:string"
+    }
+  }
+}
