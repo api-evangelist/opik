@@ -1,0 +1,55 @@
+specificationVersion: "0.1"
+name: Opik Rate Limits
+description: Rate limits for the Opik Cloud REST API managed by Comet ML
+url: https://www.comet.com/docs/opik/faq
+limits:
+  - name: Global API Rate Limit
+    description: >
+      Maximum number of requests per minute per user across all REST API endpoints.
+      Includes an extra burst allowance of 100 additional requests above the
+      base limit before throttling begins.
+    dimension: requests
+    rate: 2000
+    burstRate: 100
+    period: minute
+    scope: per user
+    statusCode: 429
+    notes: >
+      Applies to all Opik Cloud REST API endpoints. The self-hosted open-source
+      deployment does not enforce cloud-side rate limits; limits depend on
+      self-managed infrastructure capacity.
+
+  - name: Data Ingestion Global Limit
+    description: >
+      Maximum number of ingestion events per minute per user. An event is any
+      single trace, span, feedback score, dataset item, or experiment item logged
+      to the platform.
+    dimension: events
+    rate: 10000
+    period: minute
+    scope: per user
+    statusCode: 429
+    notes: >
+      Events include traces, spans, feedback scores, dataset items, and
+      experiment items. This limit governs high-volume data ingestion pipelines.
+
+  - name: Data Ingestion Workspace Limit
+    description: >
+      Secondary data ingestion cap applied both per workspace and per user,
+      ensuring fair resource allocation across multi-user workspaces.
+    dimension: events
+    rate: 5000
+    period: minute
+    scope: per workspace and per user
+    statusCode: 429
+
+  - name: Get Span by ID Endpoint Limit
+    description: >
+      Specific rate limit for the Get span by id endpoint, which is more
+      resource-intensive and therefore subject to a lower individual cap.
+    dimension: requests
+    rate: 250
+    period: minute
+    scope: per user
+    endpoint: GET /api/v1/private/spans/{spanId}
+    statusCode: 429

@@ -1,0 +1,86 @@
+aid: opik
+name: Opik
+description: >
+  Opik is an open-source LLM evaluation, testing, and tracing platform developed
+  by Comet ML that enables developers to debug, evaluate, and monitor LLM
+  applications, RAG systems, and agentic workflows. The platform provides a REST
+  API for logging traces and spans, running automated evaluations with LLM-as-a-judge
+  metrics, managing datasets and experiments, and tracking production performance.
+  Opik supports over 40 framework integrations including LangChain, LlamaIndex,
+  and OpenAI, and is available as a self-hosted open-source deployment or as a
+  managed cloud service on Comet's platform.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/opik/refs/heads/main/apis.yml
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+tags:
+  - LLM
+  - Evaluation
+  - Observability
+  - Tracing
+  - Open Source
+  - LLMOps
+  - RAG
+  - AI
+  - Machine Learning
+  - Monitoring
+apis:
+  - aid: opik:opik-rest-api
+    name: Opik REST API
+    description: >
+      The Opik REST API provides programmatic access to all platform capabilities
+      including logging traces and spans from LLM applications, managing datasets
+      and experiment items, running evaluations, storing feedback scores, and
+      accessing project data. The API is available for both the open-source
+      self-hosted deployment and the managed Opik Cloud service, with authentication
+      handled via API keys and workspace headers for cloud users.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+    baseURL: https://www.comet.com/opik/api/v1
+    tags:
+      - LLM
+      - Tracing
+      - Evaluation
+      - Datasets
+      - Experiments
+    properties:
+      - type: Documentation
+        url: https://www.comet.com/docs/opik/reference/rest-api/overview
+      - type: OpenAPI
+        url: https://www.comet.com/docs/opik/reference/rest-api/overview
+common:
+  - type: Website
+    url: https://www.comet.com/site/products/opik/
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/
+  - type: GitHubOrg
+    url: https://github.com/comet-ml
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/comet-ml
+  - type: Blog
+    url: https://www.comet.com/site/blog/
+  - type: Pricing
+    url: https://www.comet.com/site/pricing/
+  - type: StatusPage
+    url: https://status.comet.com/
+  - type: X
+    url: https://x.com/cometml
+  - type: Changelog
+    url: https://www.comet.com/docs/opik/changelog
+  - type: SDKDocumentation
+    url: https://www.comet.com/docs/opik/python-sdk-reference/
+  - type: GitHubRepository
+    url: https://github.com/comet-ml/opik
+  - type: Slack
+    url: https://chat.comet.com
+  - type: Plans
+    url: plans/opik-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/opik-rate-limits.yml
+  - type: FinOps
+    url: finops/opik-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

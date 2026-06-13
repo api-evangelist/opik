@@ -1,0 +1,104 @@
+specificationVersion: "1.0"
+name: Opik FinOps
+description: >
+  FinOps Framework FOCUS-aligned cost and usage metadata for the Opik LLM
+  evaluation and observability platform by Comet ML.
+url: https://www.comet.com/site/pricing/
+provider: Comet ML
+product: Opik
+framework: FinOps FOCUS 1.0
+
+billingDimensions:
+  - name: Spans
+    description: >
+      The primary billable unit in Opik Cloud. A span represents a single
+      recorded operation within an LLM application trace, such as an LLM call,
+      retrieval step, or tool invocation. Monthly span consumption determines
+      which plan tier applies or triggers add-on charges.
+    unit: spans
+    granularity: monthly
+    plans:
+      - plan: Free Cloud
+        includedUnits: 25000
+        overageAvailable: false
+      - plan: Pro Cloud
+        includedUnits: 100000
+        overageAvailable: true
+        overageNotes: Customizable span limits available on Pro tier
+
+  - name: Team Members / Seats
+    description: >
+      Number of users with access to the Opik workspace. Seat counts are capped
+      per plan tier for cloud deployments.
+    unit: seats
+    granularity: monthly
+    plans:
+      - plan: Free Cloud
+        includedUnits: 10
+      - plan: Pro Cloud
+        includedUnits: 50
+      - plan: Enterprise
+        includedUnits: Unlimited
+
+  - name: Data Retention
+    description: >
+      Duration that trace, span, evaluation, and experiment data is retained
+      and queryable in the platform. Extended retention beyond defaults may
+      incur additional costs at higher tiers.
+    unit: days
+    plans:
+      - plan: Free Cloud
+        includedUnits: 60
+      - plan: Pro Cloud
+        includedUnits: 60
+        overageAvailable: true
+        overageNotes: Customizable retention periods available
+      - plan: Enterprise
+        includedUnits: Custom
+
+costOptimizationGuidance:
+  - category: Span Volume Management
+    description: >
+      Monitor monthly span consumption relative to plan limits. High-volume
+      agentic workloads with many tool calls or retrieval steps can rapidly
+      exhaust span quotas. Use sampling strategies and filter low-value spans
+      in production to stay within plan limits.
+  - category: Tier Selection
+    description: >
+      Free Cloud (25k spans/month) suits development and testing. Pro Cloud
+      (100k spans/month) fits moderate production workloads. Self-hosted
+      open-source deployment eliminates per-span billing for very high-volume
+      use cases at the cost of infrastructure management overhead.
+  - category: Self-Hosted vs. Cloud Trade-offs
+    description: >
+      The open-source Opik deployment (Apache 2.0) has no per-span or per-seat
+      fees but requires Kubernetes or Docker infrastructure and operational
+      maintenance. Organizations with high trace volumes should evaluate
+      infrastructure costs against cloud subscription pricing.
+  - category: Cost Intelligence
+    description: >
+      Opik includes built-in Cost Intelligence features (launched June 2026) to
+      provide visibility into LLM API spend from coding agents such as Claude
+      Code and Codex, enabling engineering leaders to track and optimize
+      AI-related costs directly within the observability platform.
+  - category: Add-on Stacking Awareness
+    description: >
+      For workspaces with high message volumes (10-50M+ messages/month), note
+      that trace-volume add-ons, extended retention charges, additional seats,
+      and higher-tier span limits can compound. Model full cost at scale before
+      committing to cloud tiers at production volumes.
+
+pricingModel:
+  type: Tiered subscription with usage-based span limits
+  currency: USD
+  freetier: true
+  openSourceOption: true
+  enterprisePricing: Custom
+
+tags:
+  - LLM
+  - Observability
+  - Tracing
+  - FinOps
+  - Cost Management
+  - SaaS

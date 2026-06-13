@@ -1,0 +1,123 @@
+specificationVersion: "0.1"
+name: Opik Plans and Pricing
+description: Pricing tiers for the Opik LLM evaluation and observability platform by Comet ML
+url: https://www.comet.com/site/pricing/
+plans:
+  - name: Open Source
+    description: >
+      Fully open-source self-hosted deployment of Opik. The same codebase as
+      the hosted cloud product, available for free under the Apache 2.0 license.
+      Users manage their own infrastructure via Docker Compose or Kubernetes/Helm.
+    price: 0
+    currency: USD
+    billingPeriod: N/A
+    features:
+      - Full AI observability and LLM tracing
+      - Automated LLM-as-a-judge evaluations
+      - Dataset and experiment management
+      - Agent testing and playground
+      - Production monitoring dashboards
+      - 40+ framework integrations
+      - Self-hosted deployment (Docker, Kubernetes)
+      - No API key required
+    limits:
+      - dimension: Team members
+        value: Unlimited
+      - dimension: Spans
+        value: Unlimited (self-managed)
+      - dimension: Data retention
+        value: Unlimited (self-managed)
+    deployment: Self-hosted
+
+  - name: Free Cloud
+    description: >
+      Managed cloud-hosted Opik with no cost. Suitable for individuals and small
+      teams evaluating the platform. Includes a limited number of spans per month
+      and 60-day data retention.
+    price: 0
+    currency: USD
+    billingPeriod: monthly
+    features:
+      - Agent tracing
+      - Test suites
+      - Agent Playground
+      - Ollie trial access
+      - Cloud-hosted managed infrastructure
+    limits:
+      - dimension: Team members
+        value: 10
+      - dimension: Spans per month
+        value: 25000
+      - dimension: Data retention
+        value: 60 days
+    deployment: Cloud
+
+  - name: Pro Cloud
+    description: >
+      Enhanced cloud-hosted plan for growing teams needing higher span volumes
+      and more team members. Includes customizable span limits and data retention
+      periods beyond the Free tier defaults.
+    price: 19
+    currency: USD
+    billingPeriod: monthly
+    features:
+      - Everything in Free Cloud
+      - Customizable span limits
+      - Customizable data retention periods
+      - Larger team collaboration
+    limits:
+      - dimension: Team members
+        value: 50
+      - dimension: Spans per month
+        value: 100000
+      - dimension: Data retention
+        value: 60 days (customizable)
+    deployment: Cloud
+
+  - name: Enterprise
+    description: >
+      Custom enterprise plan for organizations needing unlimited team members,
+      flexible deployment options (cloud, on-premise, hybrid), SSO, service
+      accounts, compliance certifications, and dedicated support with SLAs.
+    price: Custom
+    currency: USD
+    billingPeriod: custom
+    features:
+      - Everything in Pro Cloud
+      - Unlimited team members
+      - Custom usage plans
+      - Flexible deployments (cloud, on-premise, hybrid)
+      - Service accounts
+      - SSO (Single Sign-On)
+      - Dedicated support and SLAs
+      - SOC 2 compliance
+      - ISO 27001 certification
+      - ISO 9001 certification
+      - HIPAA compliance
+      - GDPR compliance
+    limits:
+      - dimension: Team members
+        value: Unlimited
+      - dimension: Spans per month
+        value: Custom
+      - dimension: Data retention
+        value: Custom
+    deployment: Flexible
+
+  - name: Academic
+    description: >
+      Free Pro plan access for verified academics including researchers, students,
+      and educators. Provides full Pro-tier features at no cost with proof of
+      academic affiliation.
+    price: 0
+    currency: USD
+    billingPeriod: monthly
+    features:
+      - Full Pro Cloud features
+      - Academic verification required
+    limits:
+      - dimension: Team members
+        value: 50
+      - dimension: Spans per month
+        value: 100000
+    deployment: Cloud
