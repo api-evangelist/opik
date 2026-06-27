@@ -67,7 +67,7 @@ common:
     url: https://status.comet.com/
   - type: X
     url: https://x.com/cometml
-  - type: Changelog
+  - type: ChangeLog
     url: https://www.comet.com/docs/opik/changelog
   - type: SDKDocumentation
     url: https://www.comet.com/docs/opik/python-sdk-reference/
