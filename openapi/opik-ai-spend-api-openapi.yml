@@ -1,0 +1,419 @@
+openapi: 3.1.0
+info:
+  title: Opik REST AI Spend API
+  description: "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n"
+  contact:
+    name: Github Repository
+    url: https://github.com/comet-ml/opik
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: http://localhost:5173/api
+  description: Local server
+- url: https://www.comet.com/opik/api
+  description: Opik Cloud
+tags:
+- name: AI Spend
+  description: Coding-agent spend analytics
+paths:
+  /v1/private/ai-spend/composition:
+    post:
+      tags:
+      - AI Spend
+      summary: Get spend composition
+      description: Get coding-agent token-flow composition (Sankey)
+      operationId: getSpendComposition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpendMetricRequest'
+      responses:
+        '200':
+          description: Spend composition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpendCompositionResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/private/ai-spend/composition/{laneKey}/breakdown:
+    post:
+      tags:
+      - AI Spend
+      summary: Get spend lane breakdown
+      description: Get the per-item breakdown for a composition lane
+      operationId: getSpendLaneBreakdown
+      parameters:
+      - name: laneKey
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpendMetricRequest'
+      responses:
+        '200':
+          description: Lane breakdown
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpendBreakdownResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/private/ai-spend/recommendations:
+    post:
+      tags:
+      - AI Spend
+      summary: Get spend recommendations
+      description: Get coding-agent cost-saving recommendations
+      operationId: getSpendRecommendations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpendMetricRequest'
+      responses:
+        '200':
+          description: Recommendations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpendRecommendationsResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/private/ai-spend/summary:
+    post:
+      tags:
+      - AI Spend
+      summary: Get spend summary
+      description: Get coding-agent spend KPI summary
+      operationId: getSpendSummary
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpendMetricRequest'
+      responses:
+        '200':
+          description: Spend summary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceMetricsSummaryResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/private/ai-spend/users:
+    post:
+      tags:
+      - AI Spend
+      summary: Get spend user leaderboard
+      description: Get coding-agent spend per user
+      operationId: getSpendUsers
+      parameters:
+      - name: page
+        in: query
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+          default: 1
+      - name: size
+        in: query
+        schema:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          format: int32
+          default: 25
+      - name: sorting
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+          description: Filter users by name or email (partial match, case insensitive)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpendMetricRequest'
+      responses:
+        '200':
+          description: User leaderboard
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpendUserPage'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+components:
+  schemas:
+    SpendMetricRequest:
+      required:
+      - interval_end
+      - interval_start
+      type: object
+      properties:
+        project_id:
+          type: string
+          format: uuid
+        project_name:
+          type: string
+        interval_start:
+          type: string
+          format: date-time
+        interval_end:
+          type: string
+          format: date-time
+        user_id:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+        start_before_end:
+          type: boolean
+        project_provided:
+          type: boolean
+    WorkspaceMetricsSummaryResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Result'
+    SpendCompositionResponse:
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/Side'
+        harness:
+          type: array
+          items:
+            $ref: '#/components/schemas/HarnessEntry'
+        output:
+          $ref: '#/components/schemas/Side'
+        models:
+          type: array
+          items:
+            type: string
+    Lane:
+      type: object
+      properties:
+        key:
+          type: string
+        label:
+          type: string
+        total_tokens:
+          type: integer
+          format: int64
+        input_tokens:
+          type: integer
+          format: int64
+        cache_read_tokens:
+          type: integer
+          format: int64
+        cache_creation_tokens:
+          type: integer
+          format: int64
+        output_tokens:
+          type: integer
+          format: int64
+        has_breakdown:
+          type: boolean
+    Side:
+      type: object
+      properties:
+        total_tokens:
+          type: integer
+          format: int64
+        lanes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lane'
+    Result:
+      type: object
+      properties:
+        name:
+          type: string
+        current:
+          type: number
+          format: double
+        previous:
+          type: number
+          format: double
+    SpendUserRow:
+      type: object
+      properties:
+        user_uuid:
+          type: string
+        user_email:
+          type: string
+        user_display_name:
+          type: string
+        model:
+          type: string
+        input_tokens:
+          type: integer
+          format: int64
+        cache_read_tokens:
+          type: integer
+          format: int64
+        cache_creation_tokens:
+          type: integer
+          format: int64
+        output_tokens:
+          type: integer
+          format: int64
+        total_tokens:
+          type: integer
+          format: int64
+        requests:
+          type: integer
+          format: int64
+        skills:
+          type: integer
+          format: int64
+        mcps:
+          type: integer
+          format: int64
+        mcp_calls:
+          type: integer
+          format: int64
+        repositories:
+          type: array
+          items:
+            type: string
+        flags:
+          type: array
+          items:
+            type: string
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        impact:
+          type: string
+          enum:
+          - high
+          - medium
+          - low
+        estimated_savings_tokens:
+          type: integer
+          format: int64
+        docs_url:
+          type: string
+        related_lane_key:
+          type: string
+    HarnessEntry:
+      type: object
+      properties:
+        key:
+          type: string
+        label:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    SpendUserPage:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpendUserRow'
+        sortable_by:
+          type: array
+          items:
+            type: string
+    SpendRecommendationsResponse:
+      type: object
+      properties:
+        total_savings_tokens:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+    SpendBreakdownResponse:
+      type: object
+      properties:
+        lane_key:
+          type: string
+        title:
+          type: string
+        subtitle:
+          type: string
+        total_tokens:
+          type: integer
+          format: int64
+        input_tokens:
+          type: integer
+          format: int64
+        cache_read_tokens:
+          type: integer
+          format: int64
+        cache_creation_tokens:
+          type: integer
+          format: int64
+        output_tokens:
+          type: integer
+          format: int64
+        model:
+          type: string
+        item_count:
+          type: integer
+          format: int32
+        item_unit:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
