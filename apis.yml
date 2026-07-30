@@ -10,7 +10,19 @@ description: >
   and OpenAI, and is available as a self-hosted open-source deployment or as a
   managed cloud service on Comet's platform.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/opik.png
 url: https://raw.githubusercontent.com/api-evangelist/opik/refs/heads/main/apis.yml
 created: "2026-06-13"
 modified: "2026-06-13"
@@ -27,29 +39,474 @@ tags:
   - Machine Learning
   - Monitoring
 apis:
-  - aid: opik:opik-rest-api
-    name: Opik REST API
-    description: >
-      The Opik REST API provides programmatic access to all platform capabilities
-      including logging traces and spans from LLM applications, managing datasets
-      and experiment items, running evaluations, storing feedback scores, and
-      accessing project data. The API is available for both the open-source
-      self-hosted deployment and the managed Opik Cloud service, with authentication
-      handled via API keys and workspace headers for cloud users.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
-    baseURL: https://www.comet.com/opik/api/v1
-    tags:
-      - LLM
-      - Tracing
-      - Evaluation
-      - Datasets
-      - Experiments
-    properties:
-      - type: Documentation
-        url: https://www.comet.com/docs/opik/reference/rest-api/overview
-      - type: OpenAPI
-        url: openapi/opik-rest-api-openapi.yml
+- aid: opik:opik-agent-configs-api
+  name: Opik Agent Configs API
+  description: Agent configuration management
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Agent Configs
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-agent-configs-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-ai-spend-api
+  name: Opik AI Spend API
+  description: Coding-agent spend analytics
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - AI Spend
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-ai-spend-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-alerts-api
+  name: Opik Alerts API
+  description: Alert resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-annotation-queues-api
+  name: Opik Annotation Queues API
+  description: Private annotation queue operations
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Annotation Queues
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-annotation-queues-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-assertion-results-api
+  name: Opik Assertion Results API
+  description: Assertion result related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Assertion Results
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-assertion-results-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-attachments-api
+  name: Opik Attachments API
+  description: Attachments related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Attachments
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-attachments-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-automation-rule-evaluators-api
+  name: Opik Automation rule evaluators API
+  description: Automation rule evaluators resource
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Automation rule evaluators
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-automation-rule-evaluators-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-chat-completions-api
+  name: Opik Chat Completions API
+  description: Chat Completions related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-chat-completions-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-check-api
+  name: Opik Check API
+  description: Access check resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Check
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-check-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-dashboards-api
+  name: Opik Dashboards API
+  description: Workspace Dashboard resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-dashboards-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-datasets-api
+  name: Opik Datasets API
+  description: Dataset resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-environments-api
+  name: Opik Environments API
+  description: Environment related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Environments
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-environments-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-experiments-api
+  name: Opik Experiments API
+  description: Experiment resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Experiments
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-experiments-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-feedback-definitions-api
+  name: Opik Feedback-definitions API
+  description: Feedback definitions related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Feedback-definitions
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-feedback-definitions-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-guardrails-api
+  name: Opik Guardrails API
+  description: Guardrails related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Guardrails
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-guardrails-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-insights-views-api
+  name: Opik Insights Views API
+  description: Insights View resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Insights Views
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-insights-views-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-is-alive-api
+  name: Opik Is Alive API
+  description: The Is Alive API from Opik — 2 operation(s) for is alive.
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Is Alive
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-is-alive-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-llm-models-api
+  name: Opik LLM Models API
+  description: LLM model registry resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - LLM Models
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-llm-models-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-llmproviderkey-api
+  name: Opik LlmProviderKey API
+  description: LLM Provider Key
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - LlmProviderKey
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-llmproviderkey-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-manual-evaluation-api
+  name: Opik Manual Evaluation API
+  description: Manual evaluation resources for traces, threads, and spans
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Manual Evaluation
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-manual-evaluation-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-mcp-oauth-api
+  name: Opik MCP OAuth API
+  description: MCP OAuth 2.1 Authorization Server resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - MCP OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-mcp-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-ollama-api
+  name: Opik Ollama API
+  description: Ollama provider configuration endpoints with OpenAI-compatible API support.
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Ollama
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-ollama-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-ollie-state-api
+  name: Opik Ollie State API
+  description: Ollie pod state persistence
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Ollie State
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-ollie-state-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-opentelemetry-ingestion-api
+  name: Opik OpenTelemetry Ingestion API
+  description: Resource to ingest Traces and Spans via OpenTelemetry
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - OpenTelemetry Ingestion
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-opentelemetry-ingestion-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-optimizations-api
+  name: Opik Optimizations API
+  description: Optimization resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Optimizations
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-optimizations-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-pairing-api
+  name: Opik Pairing API
+  description: Pairing sessions for the `opik connect` and `opik endpoint` CLI commands
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Pairing
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-pairing-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-projects-api
+  name: Opik Projects API
+  description: Project related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-projects-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-prompts-api
+  name: Opik Prompts API
+  description: Prompt resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Prompts
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-prompts-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-redirect-api
+  name: Opik Redirect API
+  description: Redirects for SDK generated links
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Redirect
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-redirect-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-reports-api
+  name: Opik Reports API
+  description: Ollie daily report management
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-reports-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-retention-rules-api
+  name: Opik Retention Rules API
+  description: Data retention rule management
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Retention Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-retention-rules-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-runners-api
+  name: Opik Runners API
+  description: Local runner management endpoints
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Runners
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-runners-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-service-toggles-api
+  name: Opik Service Toggles API
+  description: Service Toggles resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Service Toggles
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-service-toggles-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-spans-api
+  name: Opik Spans API
+  description: Span related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Spans
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-spans-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-system-usage-api
+  name: Opik System usage API
+  description: System usage related resource
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - System usage
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-system-usage-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-traces-api
+  name: Opik Traces API
+  description: Trace related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Traces
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-traces-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-welcome-wizard-api
+  name: Opik Welcome Wizard API
+  description: Welcome wizard tracking resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Welcome Wizard
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-welcome-wizard-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-workspace-permissions-api
+  name: Opik Workspace permissions API
+  description: Workspace permissions related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Workspace permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-workspace-permissions-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
+- aid: opik:opik-workspaces-api
+  name: Opik Workspaces API
+  description: Workspace related resources
+  humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
+  baseURL: https://www.comet.com/opik/api/v1
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/opik-workspaces-api-openapi.yml
+  - type: Documentation
+    url: https://www.comet.com/docs/opik/reference/rest-api/overview
 common:
   - type: TrustCenter
     url: security/opik-trust-center.yml
