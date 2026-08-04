@@ -1,0 +1,58 @@
+{
+  "provider": "opik",
+  "sources": [
+    "opik-rest-api-openapi.yml"
+  ],
+  "outputs": [
+    "opik-ai-spend-api-openapi.yml",
+    "opik-agent-configs-api-openapi.yml",
+    "opik-alerts-api-openapi.yml",
+    "opik-annotation-queues-api-openapi.yml",
+    "opik-assertion-results-api-openapi.yml",
+    "opik-attachments-api-openapi.yml",
+    "opik-automation-rule-evaluators-api-openapi.yml",
+    "opik-chat-completions-api-openapi.yml",
+    "opik-check-api-openapi.yml",
+    "opik-dashboards-api-openapi.yml",
+    "opik-datasets-api-openapi.yml",
+    "opik-environments-api-openapi.yml",
+    "opik-experiments-api-openapi.yml",
+    "opik-feedback-definitions-api-openapi.yml",
+    "opik-guardrails-api-openapi.yml",
+    "opik-insights-views-api-openapi.yml",
+    "opik-is-alive-api-openapi.yml",
+    "opik-llm-models-api-openapi.yml",
+    "opik-llmproviderkey-api-openapi.yml",
+    "opik-mcp-oauth-api-openapi.yml",
+    "opik-manual-evaluation-api-openapi.yml",
+    "opik-ollama-api-openapi.yml",
+    "opik-ollie-state-api-openapi.yml",
+    "opik-opentelemetry-ingestion-api-openapi.yml",
+    "opik-optimizations-api-openapi.yml",
+    "opik-pairing-api-openapi.yml",
+    "opik-projects-api-openapi.yml",
+    "opik-prompts-api-openapi.yml",
+    "opik-redirect-api-openapi.yml",
+    "opik-reports-api-openapi.yml",
+    "opik-retention-rules-api-openapi.yml",
+    "opik-runners-api-openapi.yml",
+    "opik-service-toggles-api-openapi.yml",
+    "opik-spans-api-openapi.yml",
+    "opik-system-usage-api-openapi.yml",
+    "opik-traces-api-openapi.yml",
+    "opik-welcome-wizard-api-openapi.yml",
+    "opik-workspace-permissions-api-openapi.yml",
+    "opik-workspaces-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/opik-rest-api-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "opik-rest-api-openapi.yml: tagged GET /is-alive/ping -> Is Alive",
+    "opik-rest-api-openapi.yml: tagged GET /is-alive/ver -> Is Alive",
+    "opik-rest-api-openapi.yml: declared missing tag: Is Alive"
+  ],
+  "skipped": []
+}
