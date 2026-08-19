@@ -1,0 +1,771 @@
+{
+  "item": [
+    {
+      "id": "d4f52034-a7a7-4635-8e5f-917bd3a88d59",
+      "name": "Dashboards",
+      "description": {
+        "content": "Workspace Dashboard resources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ed3719e3-d525-4903-b9b2-344cd861b83f",
+          "name": "Find dashboards",
+          "request": {
+            "name": "Find dashboards",
+            "description": {
+              "content": "Find dashboards in a workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78a878a7-52d0-4ca9-9371-9b66a84f41e3",
+              "name": "Dashboard page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"config\": {},\n      \"name\": \"string\",\n      \"id\": \"0686c56a-26f1-9278-ee5c-1aff2c987790\",\n      \"workspace_id\": \"string\",\n      \"project_id\": \"adbbf511-73f9-d0f5-9aea-34659e7bb096\",\n      \"slug\": \"string\",\n      \"type\": \"multi_project\",\n      \"scope\": \"insights\",\n      \"description\": \"string\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"created_at\": \"1950-03-24T21:21:59.885Z\",\n      \"last_updated_at\": \"1957-12-24T23:45:22.357Z\"\n    },\n    {\n      \"config\": {},\n      \"name\": \"string\",\n      \"id\": \"cd99b41e-621a-26d7-0760-3b1d205fd782\",\n      \"workspace_id\": \"string\",\n      \"project_id\": \"9004dd74-7e3d-81b3-ef91-4af4d6f597e4\",\n      \"slug\": \"string\",\n      \"type\": \"experiments\",\n      \"scope\": \"workspace\",\n      \"description\": \"string\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"created_at\": \"2018-12-04T05:14:07.481Z\",\n      \"last_updated_at\": \"1948-09-12T11:05:54.029Z\"\n    }\n  ],\n  \"page\": 7510,\n  \"size\": 6306,\n  \"total\": 4083,\n  \"sortable_by\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ff1f98a-28bc-4cd8-b5dc-8a007a73a772",
+          "name": "Create dashboard",
+          "request": {
+            "name": "Create dashboard",
+            "description": {
+              "content": "Create a new dashboard in a workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"config\": \"<object>\",\n  \"name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a0ecaee-0d72-44c4-baf8-4f6b2b0ce87b",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"config\": {},\n  \"name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/dashboards/{dashboardId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"config\": {},\n  \"name\": \"s\",\n  \"id\": \"3c1b6651-cb7c-0983-e726-d937a2a44ce3\",\n  \"workspace_id\": \"string\",\n  \"project_id\": \"70b3b5aa-65f5-c06a-ca7b-61dfccf4e701\",\n  \"slug\": \"string\",\n  \"type\": \"experiments\",\n  \"scope\": \"workspace\",\n  \"description\": \"string\",\n  \"created_by\": \"string\",\n  \"last_updated_by\": \"string\",\n  \"created_at\": \"1982-12-14T08:58:48.100Z\",\n  \"last_updated_at\": \"1984-02-09T09:38:00.734Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9419924e-4d21-4242-816a-dc0d894c0bf4",
+          "name": "Get dashboard by id",
+          "request": {
+            "name": "Get dashboard by id",
+            "description": {
+              "content": "Get dashboard by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "dashboards",
+                ":dashboardId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "dashboardId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "84e7b0d0-7af4-426d-9004-49e69290e949",
+              "name": "Dashboard resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "dashboardId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"config\": {},\n  \"name\": \"s\",\n  \"id\": \"3c1b6651-cb7c-0983-e726-d937a2a44ce3\",\n  \"workspace_id\": \"string\",\n  \"project_id\": \"70b3b5aa-65f5-c06a-ca7b-61dfccf4e701\",\n  \"slug\": \"string\",\n  \"type\": \"experiments\",\n  \"scope\": \"workspace\",\n  \"description\": \"string\",\n  \"created_by\": \"string\",\n  \"last_updated_by\": \"string\",\n  \"created_at\": \"1982-12-14T08:58:48.100Z\",\n  \"last_updated_at\": \"1984-02-09T09:38:00.734Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3f7712c-20ed-4eaa-8ee6-1a59673fefeb",
+              "name": "Dashboard not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "dashboardId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e0a7d57-8ffb-422a-986d-c3325fb64ef3",
+          "name": "Delete dashboard",
+          "request": {
+            "name": "Delete dashboard",
+            "description": {
+              "content": "Delete dashboard by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "dashboards",
+                ":dashboardId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "dashboardId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9f92a3d-10fd-413a-a244-2600451777d8",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "dashboardId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf7bf92b-a5a9-4891-9c85-35c3f0105544",
+          "name": "Update dashboard",
+          "request": {
+            "name": "Update dashboard",
+            "description": {
+              "content": "Update dashboard by id. Partial updates are supported - only provided fields will be updated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "dashboards",
+                ":dashboardId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "dashboardId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"config\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "066bd0eb-04ec-4b57-bebb-62e2b0b7b680",
+              "name": "Updated dashboard",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "dashboardId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"config\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"config\": {},\n  \"name\": \"s\",\n  \"id\": \"3c1b6651-cb7c-0983-e726-d937a2a44ce3\",\n  \"workspace_id\": \"string\",\n  \"project_id\": \"70b3b5aa-65f5-c06a-ca7b-61dfccf4e701\",\n  \"slug\": \"string\",\n  \"type\": \"experiments\",\n  \"scope\": \"workspace\",\n  \"description\": \"string\",\n  \"created_by\": \"string\",\n  \"last_updated_by\": \"string\",\n  \"created_at\": \"1982-12-14T08:58:48.100Z\",\n  \"last_updated_at\": \"1984-02-09T09:38:00.734Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4105ddbd-151f-4411-a74d-500b0b7102c0",
+              "name": "Dashboard not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "dashboardId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"config\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bfdec063-a845-4678-938f-670253519586",
+              "name": "Conflict - dashboard with this name already exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    ":dashboardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "dashboardId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"config\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fcbc3512-3b45-4d5b-ba44-898c9f824e00",
+          "name": "Delete dashboards",
+          "request": {
+            "name": "Delete dashboards",
+            "description": {
+              "content": "Delete dashboards batch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "dashboards",
+                "delete-batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "63eb8cbb-fd81-4376-95eb-135f00927410",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "dashboards",
+                    "delete-batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6d3e30d4-0dd1-49f0-acd0-e980a0dbacb3",
+    "name": "Opik REST Dashboards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

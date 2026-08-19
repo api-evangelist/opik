@@ -1,0 +1,832 @@
+{
+  "item": [
+    {
+      "id": "0fb46e7f-12f8-40ae-97ee-f971cfb30727",
+      "name": "AI Spend",
+      "description": {
+        "content": "Coding-agent spend analytics",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "efc845c2-64f0-4d84-bad4-dfcab7503db0",
+          "name": "Get spend composition",
+          "request": {
+            "name": "Get spend composition",
+            "description": {
+              "content": "Get coding-agent token-flow composition (Sankey)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "ai-spend",
+                "composition"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7141b962-67db-473f-a17b-329fca830507",
+              "name": "Spend composition",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "composition"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"input\": {\n    \"total_tokens\": 9230,\n    \"lanes\": [\n      {\n        \"key\": \"string\",\n        \"label\": \"string\",\n        \"total_tokens\": 9880,\n        \"input_tokens\": 1458,\n        \"cache_read_tokens\": 4359,\n        \"cache_creation_tokens\": 1230,\n        \"output_tokens\": 6670,\n        \"has_breakdown\": true\n      },\n      {\n        \"key\": \"string\",\n        \"label\": \"string\",\n        \"total_tokens\": 302,\n        \"input_tokens\": 1959,\n        \"cache_read_tokens\": 7532,\n        \"cache_creation_tokens\": 1711,\n        \"output_tokens\": 1779,\n        \"has_breakdown\": true\n      }\n    ]\n  },\n  \"harness\": [\n    {\n      \"key\": \"string\",\n      \"label\": \"string\"\n    },\n    {\n      \"key\": \"string\",\n      \"label\": \"string\"\n    }\n  ],\n  \"output\": {\n    \"total_tokens\": 4572,\n    \"lanes\": [\n      {\n        \"key\": \"string\",\n        \"label\": \"string\",\n        \"total_tokens\": 8076,\n        \"input_tokens\": 4289,\n        \"cache_read_tokens\": 477,\n        \"cache_creation_tokens\": 2308,\n        \"output_tokens\": 621,\n        \"has_breakdown\": true\n      },\n      {\n        \"key\": \"string\",\n        \"label\": \"string\",\n        \"total_tokens\": 4295,\n        \"input_tokens\": 6147,\n        \"cache_read_tokens\": 39,\n        \"cache_creation_tokens\": 5402,\n        \"output_tokens\": 2144,\n        \"has_breakdown\": false\n      }\n    ]\n  },\n  \"models\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09222c88-a5cc-48b0-8410-8cf72ead5f19",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "composition"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2690,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5dabc419-1367-47e8-9e2c-e2a27087e5fe",
+          "name": "Get spend lane breakdown",
+          "request": {
+            "name": "Get spend lane breakdown",
+            "description": {
+              "content": "Get the per-item breakdown for a composition lane",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "ai-spend",
+                "composition",
+                ":laneKey",
+                "breakdown"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "laneKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cbaf20e5-3f82-49b6-9370-afa65d17c026",
+              "name": "Lane breakdown",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "composition",
+                    ":laneKey",
+                    "breakdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "laneKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lane_key\": \"string\",\n  \"title\": \"string\",\n  \"subtitle\": \"string\",\n  \"total_tokens\": 2499,\n  \"input_tokens\": 5699,\n  \"cache_read_tokens\": 9433,\n  \"cache_creation_tokens\": 7409,\n  \"output_tokens\": 8941,\n  \"model\": \"string\",\n  \"item_count\": 5532,\n  \"item_unit\": \"string\",\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"impact\": \"medium\",\n      \"estimated_savings_tokens\": 9741,\n      \"docs_url\": \"string\",\n      \"related_lane_key\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"impact\": \"medium\",\n      \"estimated_savings_tokens\": 5382,\n      \"docs_url\": \"string\",\n      \"related_lane_key\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1576753f-8f61-447c-a028-0c13f888595f",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "composition",
+                    ":laneKey",
+                    "breakdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "laneKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2690,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b833635-c5a7-4cf0-8ba9-da7d2e547f20",
+          "name": "Get spend recommendations",
+          "request": {
+            "name": "Get spend recommendations",
+            "description": {
+              "content": "Get coding-agent cost-saving recommendations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "ai-spend",
+                "recommendations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "79f81d4b-3797-4181-999d-a1ba7cc8c833",
+              "name": "Recommendations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "recommendations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_savings_tokens\": 5171,\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"impact\": \"medium\",\n      \"estimated_savings_tokens\": 2053,\n      \"docs_url\": \"string\",\n      \"related_lane_key\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"body\": \"string\",\n      \"impact\": \"medium\",\n      \"estimated_savings_tokens\": 5673,\n      \"docs_url\": \"string\",\n      \"related_lane_key\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2da2d5b4-9422-47ae-b7d7-c1aac364d812",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "recommendations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2690,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49104a30-61df-4fec-ba83-89aee8a42c2a",
+          "name": "Get spend summary",
+          "request": {
+            "name": "Get spend summary",
+            "description": {
+              "content": "Get coding-agent spend KPI summary",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "ai-spend",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f046012f-1be0-4b50-a189-8b08b52cacd1",
+              "name": "Spend summary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"current\": 3979.2265040538623,\n      \"previous\": 32.11148154434129\n    },\n    {\n      \"name\": \"string\",\n      \"current\": 1163.655476489156,\n      \"previous\": 1335.2790553797167\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffd822a3-9738-4116-8ef9-1036009c0a4d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2690,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb8980d1-bd4f-4a53-87f4-b45799892e58",
+          "name": "Get spend user leaderboard",
+          "request": {
+            "name": "Get spend user leaderboard",
+            "description": {
+              "content": "Get coding-agent spend per user",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "ai-spend",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c4e36fe-7ede-414c-9086-ea1ee166d70d",
+              "name": "User leaderboard",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 3602,\n  \"size\": 6331,\n  \"total\": 4510,\n  \"content\": [\n    {\n      \"user_uuid\": \"string\",\n      \"user_email\": \"string\",\n      \"user_display_name\": \"string\",\n      \"model\": \"string\",\n      \"input_tokens\": 7288,\n      \"cache_read_tokens\": 6793,\n      \"cache_creation_tokens\": 2263,\n      \"output_tokens\": 8030,\n      \"total_tokens\": 1947,\n      \"requests\": 4086,\n      \"skills\": 2792,\n      \"mcps\": 5096,\n      \"mcp_calls\": 8198,\n      \"repositories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"flags\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"user_uuid\": \"string\",\n      \"user_email\": \"string\",\n      \"user_display_name\": \"string\",\n      \"model\": \"string\",\n      \"input_tokens\": 5898,\n      \"cache_read_tokens\": 2741,\n      \"cache_creation_tokens\": 6261,\n      \"output_tokens\": 6331,\n      \"total_tokens\": 4307,\n      \"requests\": 4915,\n      \"skills\": 2355,\n      \"mcps\": 919,\n      \"mcp_calls\": 9193,\n      \"repositories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"flags\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"sortable_by\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "443d1e38-98e4-4004-8e87-99e3d995c8d2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "ai-spend",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"interval_end\": \"<dateTime>\",\n  \"interval_start\": \"<dateTime>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"start_before_end\": \"<boolean>\",\n  \"project_provided\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2690,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3fd0d5e7-7c3d-4834-ae12-e4e20568c798",
+    "name": "Opik REST AI Spend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

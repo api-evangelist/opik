@@ -1,0 +1,1543 @@
+{
+  "item": [
+    {
+      "id": "4bdee6ce-0889-43ba-b4af-f7a339d120f4",
+      "name": "Annotation Queues",
+      "description": {
+        "content": "Private annotation queue operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae345860-0c54-4463-be0d-2d1fe8eb9dbd",
+          "name": "Add items to annotation queue",
+          "request": {
+            "name": "Add items to annotation queue",
+            "description": {
+              "content": "Add traces or threads to annotation queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                ":id",
+                "items",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e93db8a7-fc54-4934-b963-7fa65714a91a",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id",
+                    "items",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81662eb3-818e-481a-8284-c497dc248b65",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id",
+                    "items",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bf4e627-6c5f-481f-b716-4f13c5524eed",
+          "name": "Find annotation queues",
+          "request": {
+            "name": "Find annotation queues",
+            "description": {
+              "content": "Find annotation queues with filtering and sorting",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e0b0b73-fc8b-4045-a676-6dc110f583e5",
+              "name": "Annotation queues page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 5850,\n  \"size\": 4370,\n  \"total\": 4595,\n  \"content\": [\n    {\n      \"name\": \"string\",\n      \"project_id\": \"d4d2eb6f-96df-a54e-e562-911413a57dea\",\n      \"scope\": \"thread\",\n      \"id\": \"c3cdf1e1-3fc9-3a8e-7587-de5fede127b9\",\n      \"project_name\": \"string\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"comments_enabled\": false,\n      \"feedback_definition_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"annotators_per_item\": 598,\n      \"lock_timeout_seconds\": 933,\n      \"reviewers\": [\n        {\n          \"username\": \"string\",\n          \"status\": 5748\n        },\n        {\n          \"username\": \"string\",\n          \"status\": 8196\n        }\n      ],\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 6475.707249821169\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 3488.0924152714265\n        }\n      ],\n      \"items_count\": 8813,\n      \"created_at\": \"1968-06-01T19:52:00.659Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"1999-12-18T20:17:24.398Z\",\n      \"last_updated_by\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"project_id\": \"be13cc11-747b-e75e-b863-ff878db4ce85\",\n      \"scope\": \"thread\",\n      \"id\": \"87c592fb-608f-d956-b6f5-83f451815564\",\n      \"project_name\": \"string\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"comments_enabled\": false,\n      \"feedback_definition_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"annotators_per_item\": 237,\n      \"lock_timeout_seconds\": 2485,\n      \"reviewers\": [\n        {\n          \"username\": \"string\",\n          \"status\": 3255\n        },\n        {\n          \"username\": \"string\",\n          \"status\": 7151\n        }\n      ],\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 1644.414261724354\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 485.89974450591654\n        }\n      ],\n      \"items_count\": 7909,\n      \"created_at\": \"1968-05-12T08:40:50.608Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"2002-04-26T20:52:49.081Z\",\n      \"last_updated_by\": \"string\"\n    }\n  ],\n  \"sortableBy\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbfbea91-f687-400d-850c-fb37fb92c914",
+          "name": "Create annotation queue",
+          "request": {
+            "name": "Create annotation queue",
+            "description": {
+              "content": "Create annotation queue for human annotation workflows",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30470617-c3e6-46aa-86a3-e77de5399c22",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/traces/{annotationId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b3851d0a-ddda-4516-8b38-6c6cf7f8c09a",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2bc73a69-3e71-416b-810a-e1d61163267d",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4236d3e-ef04-45df-99f9-8faf4e0c046f",
+          "name": "Create annotation queue batch",
+          "request": {
+            "name": "Create annotation queue batch",
+            "description": {
+              "content": "Create multiple annotation queues for human annotation workflows",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotation_queues\": [\n    {\n      \"name\": \"<string>\",\n      \"project_id\": \"<uuid>\",\n      \"scope\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"description\": \"<string>\",\n      \"instructions\": \"<string>\",\n      \"comments_enabled\": \"<boolean>\",\n      \"feedback_definition_names\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"annotators_per_item\": \"<integer>\",\n      \"lock_timeout_seconds\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "474ec9f8-17e4-420f-a432-8b45f6fac05f",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotation_queues\": [\n    {\n      \"name\": \"string\",\n      \"project_id\": \"05eccd60-16ed-19a3-3573-4a4c44a66f0b\",\n      \"scope\": \"thread\",\n      \"id\": \"fbc1a806-93c5-837a-be2b-778452ecf899\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"comments_enabled\": true,\n      \"feedback_definition_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"annotators_per_item\": 667,\n      \"lock_timeout_seconds\": 1809\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d9cb0fd8-795f-4fb4-8e87-9e4f13686c91",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotation_queues\": [\n    {\n      \"name\": \"string\",\n      \"project_id\": \"05eccd60-16ed-19a3-3573-4a4c44a66f0b\",\n      \"scope\": \"thread\",\n      \"id\": \"fbc1a806-93c5-837a-be2b-778452ecf899\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"comments_enabled\": true,\n      \"feedback_definition_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"annotators_per_item\": 667,\n      \"lock_timeout_seconds\": 1809\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b059ba2-3b15-4cfa-9512-72e6682f0f2f",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotation_queues\": [\n    {\n      \"name\": \"string\",\n      \"project_id\": \"05eccd60-16ed-19a3-3573-4a4c44a66f0b\",\n      \"scope\": \"thread\",\n      \"id\": \"fbc1a806-93c5-837a-be2b-778452ecf899\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"comments_enabled\": true,\n      \"feedback_definition_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"annotators_per_item\": 667,\n      \"lock_timeout_seconds\": 1809\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59865e11-071d-438e-9ffc-da86e38b822d",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotation_queues\": [\n    {\n      \"name\": \"string\",\n      \"project_id\": \"05eccd60-16ed-19a3-3573-4a4c44a66f0b\",\n      \"scope\": \"thread\",\n      \"id\": \"fbc1a806-93c5-837a-be2b-778452ecf899\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"comments_enabled\": true,\n      \"feedback_definition_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"annotators_per_item\": 667,\n      \"lock_timeout_seconds\": 1809\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e81c45e-b31c-4c88-b854-7e739514358d",
+          "name": "Delete annotation queue batch",
+          "request": {
+            "name": "Delete annotation queue batch",
+            "description": {
+              "content": "Delete multiple annotation queues by their IDs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b1ddc836-6c0d-412a-94cf-26141da501c7",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cbe0e53e-724f-4882-abb2-ac45cc9749ec",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33688203-de4e-4ff1-ba36-783f77c54fe7",
+          "name": "Get annotation queue by id",
+          "request": {
+            "name": "Get annotation queue by id",
+            "description": {
+              "content": "Get annotation queue by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1ced4f4-4600-469d-8255-5d8d4832b3da",
+              "name": "Annotation queue resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"s\",\n  \"project_id\": \"61fb5dcf-ce41-d775-7b4e-3d0471fa0fb3\",\n  \"scope\": \"thread\",\n  \"id\": \"8a3558bb-deb1-c4af-f743-e948caf11c9c\",\n  \"project_name\": \"string\",\n  \"description\": \"string\",\n  \"instructions\": \"string\",\n  \"comments_enabled\": false,\n  \"feedback_definition_names\": [\n    \"string\",\n    \"string\"\n  ],\n  \"annotators_per_item\": 15,\n  \"lock_timeout_seconds\": 2914,\n  \"reviewers\": [\n    {\n      \"username\": \"string\",\n      \"status\": 5807\n    },\n    {\n      \"username\": \"string\",\n      \"status\": 1283\n    }\n  ],\n  \"feedback_scores\": [\n    {\n      \"name\": \"string\",\n      \"value\": 7216.008665867931\n    },\n    {\n      \"name\": \"string\",\n      \"value\": 6760.859212174827\n    }\n  ],\n  \"items_count\": 5592,\n  \"created_at\": \"1983-12-22T02:16:51.777Z\",\n  \"created_by\": \"string\",\n  \"last_updated_at\": \"2017-01-07T11:26:13.301Z\",\n  \"last_updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5d8bf2e-d7e3-4c5e-8b42-4f7aa7867154",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc9291a6-ad17-4bd3-a7c8-4b74b3ff7cfb",
+          "name": "Update annotation queue",
+          "request": {
+            "name": "Update annotation queue",
+            "description": {
+              "content": "Update annotation queue by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2fa7baf6-574c-4e87-a372-0fbe8b5fde00",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "13a2db17-f447-4b1a-b0b4-da24d59992e2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"comments_enabled\": \"<boolean>\",\n  \"feedback_definition_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"annotators_per_item\": \"<integer>\",\n  \"lock_timeout_seconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ce2ea82-6a72-4a70-9bf2-19fd4454ad38",
+          "name": "Get all active locks for an annotation queue",
+          "request": {
+            "name": "Get all active locks for an annotation queue",
+            "description": {
+              "content": "Returns lock status for all actively locked items in the queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                ":queueId",
+                "locks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "queueId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8ab841c-c1c6-4df9-b3b2-5573e0d40530",
+              "name": "Queue locks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":queueId",
+                    "locks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "queueId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"locks\": {\n    \"key_0\": {\n      \"active_locks\": 5404,\n      \"locked_by\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30dd6e18-5684-498d-b252-91aff426a0a5",
+          "name": "Create or extend annotation queue item lock",
+          "request": {
+            "name": "Create or extend annotation queue item lock",
+            "description": {
+              "content": "Claim an annotation queue item for the current user, or extend an existing lock",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                ":queueId",
+                "items",
+                ":itemId",
+                "lock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "queueId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "itemId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "851b57e1-f180-4688-b8c7-df56cd04a5d8",
+              "name": "Lock result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":queueId",
+                    "items",
+                    ":itemId",
+                    "lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "queueId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "itemId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"acquired\": true,\n  \"item_id\": \"3d8ca369-0c3a-01eb-0568-72f4c3e96d29\",\n  \"locked_by\": \"string\",\n  \"expires_at\": \"1954-02-02T10:54:05.246Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac7938da-f54b-40bd-8642-4130534c2342",
+          "name": "Remove items from annotation queue",
+          "request": {
+            "name": "Remove items from annotation queue",
+            "description": {
+              "content": "Remove items from annotation queue",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "annotation-queues",
+                ":id",
+                "items",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4724eced-ea4b-4e42-a53a-20583a8cdf22",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id",
+                    "items",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f41f02ca-0d20-4b97-b944-516d2fb4f511",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "annotation-queues",
+                    ":id",
+                    "items",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7619,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f58ed8b1-a8f6-4f14-8a5a-daacc7ef48ca",
+    "name": "Opik REST Annotation Queues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

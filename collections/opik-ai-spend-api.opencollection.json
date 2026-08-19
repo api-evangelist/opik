@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Opik REST AI Spend API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AI Spend",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get spend composition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5173/api/v1/private/ai-spend/composition",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get coding-agent token-flow composition (Sankey)"
+        },
+        {
+          "info": {
+            "name": "Get spend lane breakdown",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5173/api/v1/private/ai-spend/composition/:laneKey/breakdown",
+            "params": [
+              {
+                "name": "laneKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get the per-item breakdown for a composition lane"
+        },
+        {
+          "info": {
+            "name": "Get spend recommendations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5173/api/v1/private/ai-spend/recommendations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get coding-agent cost-saving recommendations"
+        },
+        {
+          "info": {
+            "name": "Get spend summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5173/api/v1/private/ai-spend/summary",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get coding-agent spend KPI summary"
+        },
+        {
+          "info": {
+            "name": "Get spend user leaderboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:5173/api/v1/private/ai-spend/users",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sorting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get coding-agent spend per user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

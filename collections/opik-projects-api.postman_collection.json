@@ -1,0 +1,3178 @@
+{
+  "item": [
+    {
+      "id": "3fe66f4d-8e8e-42ab-b80c-d77c8160c9ec",
+      "name": "Projects",
+      "description": {
+        "content": "Project related resources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e062772-d252-441e-b3c1-76285424c45c",
+          "name": "Find alerts by project",
+          "request": {
+            "name": "Find alerts by project",
+            "description": {
+              "content": "Find alerts scoped to a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46ee4f7e-600f-49bd-864a-fdc73d4adf9b",
+              "name": "Alerts page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 7935,\n  \"size\": 9066,\n  \"total\": 5009,\n  \"content\": [\n    {\n      \"webhook\": {\n        \"url\": \"string\",\n        \"id\": \"c586981a-8ebc-b7dc-69ef-c4092015bbb5\",\n        \"name\": \"string\",\n        \"secret_token\": \"string\",\n        \"headers\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"created_at\": \"1967-10-17T23:18:04.322Z\",\n        \"created_by\": \"string\",\n        \"last_updated_at\": \"1962-04-15T14:06:27.575Z\",\n        \"last_updated_by\": \"string\"\n      },\n      \"id\": \"0ab606ae-7b92-a6c3-d17d-664ab2aa31d7\",\n      \"name\": \"string\",\n      \"enabled\": false,\n      \"alert_type\": \"pagerduty\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"triggers\": [\n        {\n          \"event_type\": \"experiment:finished\",\n          \"id\": \"d6b7d482-5a14-81c0-9bc1-30711f3afbdd\",\n          \"alert_id\": \"31d9fa31-36f3-7ba1-1525-2112d642f79c\",\n          \"trigger_configs\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"created_at\": \"2023-01-20T10:36:36.635Z\",\n          \"created_by\": \"string\"\n        },\n        {\n          \"event_type\": \"trace:errors\",\n          \"id\": \"8c88236b-a08d-3af1-a7db-41e3de6748e3\",\n          \"alert_id\": \"15c3f16b-615a-a546-cb24-1a668754c9de\",\n          \"trigger_configs\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"created_at\": \"1962-08-24T12:47:42.103Z\",\n          \"created_by\": \"string\"\n        }\n      ],\n      \"created_at\": \"1957-03-16T13:53:58.544Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"1958-11-26T23:09:51.208Z\",\n      \"last_updated_by\": \"string\",\n      \"project_id\": \"a62c5bb8-38ac-3541-3d2f-c66c74ba4646\"\n    },\n    {\n      \"webhook\": {\n        \"url\": \"string\",\n        \"id\": \"2c8cb725-0f92-b492-7f1b-7fcbc3844b71\",\n        \"name\": \"string\",\n        \"secret_token\": \"string\",\n        \"headers\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"created_at\": \"2007-06-15T20:19:53.420Z\",\n        \"created_by\": \"string\",\n        \"last_updated_at\": \"2024-12-06T00:28:07.061Z\",\n        \"last_updated_by\": \"string\"\n      },\n      \"id\": \"0b67955a-ff3f-28e7-6d46-39c749748576\",\n      \"name\": \"string\",\n      \"enabled\": true,\n      \"alert_type\": \"general\",\n      \"metadata\": {\n        \"key_0\": \"string\"\n      },\n      \"triggers\": [\n        {\n          \"event_type\": \"trace:errors\",\n          \"id\": \"07adfc6a-9fc3-973b-7e2b-771080ec49cc\",\n          \"alert_id\": \"4fffe5fc-d435-cfca-fbac-6808ac90f9d9\",\n          \"trigger_configs\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"created_at\": \"1978-04-13T17:38:54.121Z\",\n          \"created_by\": \"string\"\n        },\n        {\n          \"event_type\": \"trace_thread:feedback_score\",\n          \"id\": \"3bf61b87-100b-73bb-9837-78f6e6dd711c\",\n          \"alert_id\": \"a34118d9-a089-5537-6155-56d91c228741\",\n          \"trigger_configs\": [\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"alert_trigger_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"config_value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"group_index\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"created_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_by\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"created_at\": \"1965-01-04T23:26:25.176Z\",\n          \"created_by\": \"string\"\n        }\n      ],\n      \"created_at\": \"2015-10-29T10:08:26.782Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"2002-10-13T14:11:51.695Z\",\n      \"last_updated_by\": \"string\",\n      \"project_id\": \"4c99d8e8-37d6-c17b-82ea-889a2471d832\"\n    }\n  ],\n  \"sortable_by\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e76f742-ab74-4d72-9f9a-a226e1afb72b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9bd42b85-4de9-4891-b509-5b0931d6e521",
+          "name": "Find dashboards by project",
+          "request": {
+            "name": "Find dashboards by project",
+            "description": {
+              "content": "Find dashboards scoped to a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "dashboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "251fbe83-bcaa-4711-82ff-049880d57c27",
+              "name": "Dashboard page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "dashboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"config\": {},\n      \"name\": \"string\",\n      \"id\": \"538f8b74-3171-e069-e525-88011b099dda\",\n      \"workspace_id\": \"string\",\n      \"project_id\": \"24459917-cc18-cec9-47f8-6d07b5de8176\",\n      \"slug\": \"string\",\n      \"type\": \"experiments\",\n      \"scope\": \"insights\",\n      \"description\": \"string\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"created_at\": \"2005-06-12T01:25:48.659Z\",\n      \"last_updated_at\": \"1957-04-19T09:22:26.362Z\"\n    },\n    {\n      \"config\": {},\n      \"name\": \"string\",\n      \"id\": \"3c4a139d-e450-410d-c969-56779228cbb9\",\n      \"workspace_id\": \"string\",\n      \"project_id\": \"1c7fb861-5d87-f694-b55d-788650d7f79f\",\n      \"slug\": \"string\",\n      \"type\": \"multi_project\",\n      \"scope\": \"insights\",\n      \"description\": \"string\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"created_at\": \"2013-12-27T05:03:41.972Z\",\n      \"last_updated_at\": \"1955-07-19T02:41:35.025Z\"\n    }\n  ],\n  \"page\": 1994,\n  \"size\": 9270,\n  \"total\": 3694,\n  \"sortable_by\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ae01b91-8ffb-40ee-bd6d-ce3b59c091d6",
+          "name": "Find datasets by project",
+          "request": {
+            "name": "Find datasets by project",
+            "description": {
+              "content": "Find datasets scoped to a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "with_experiments_only",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "with_optimizations_only",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab30eb3d-8ab6-4f64-b5b3-02f51bf5434c",
+              "name": "Dataset page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "datasets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "with_experiments_only",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "with_optimizations_only",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fcff1da0-337b-4d31-8331-466b78d7a8d5",
+          "name": "Find experiments by project",
+          "request": {
+            "name": "Find experiments by project",
+            "description": {
+              "content": "Find experiments scoped to a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "experiments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "datasetId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimization_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "types",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dataset_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "experiment_ids",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "force_sorting",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3085f774-02c3-4001-88c4-f30c2074a32d",
+              "name": "Experiments page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "experiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "datasetId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "optimization_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "types",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dataset_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "experiment_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force_sorting",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc814d45-5ddc-4517-a770-b4a5dea9a76f",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "experiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "datasetId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "optimization_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "types",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dataset_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "experiment_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "force_sorting",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb841a67-0172-449d-bbae-6f4da4ada09b",
+          "name": "Find optimizations by project",
+          "request": {
+            "name": "Find optimizations by project",
+            "description": {
+              "content": "Find optimizations scoped to a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "optimizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "dataset_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dataset_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dataset_deleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f3dd3c4-dfc3-4f5d-b207-13e73a7dddd1",
+              "name": "Optimizations page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "optimizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "dataset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "dataset_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dataset_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 3612,\n  \"size\": 8717,\n  \"total\": 9235,\n  \"content\": [\n    {\n      \"dataset_name\": \"string\",\n      \"objective_name\": \"string\",\n      \"status\": \"cancelled\",\n      \"id\": \"554d0b30-37cd-cf92-8ef7-e8b40f2a1ca3\",\n      \"name\": \"string\",\n      \"project_id\": \"7589ff4f-5405-a9fa-2a67-be65f7aa5a78\",\n      \"metadata\": {},\n      \"studio_config\": {\n        \"dataset_name\": \"string\",\n        \"evaluation\": {\n          \"metrics\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"llm_model\": {\n          \"model\": \"string\",\n          \"parameters\": {}\n        },\n        \"optimizer\": {\n          \"type\": \"string\",\n          \"parameters\": {}\n        },\n        \"prompt\": {\n          \"messages\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      \"dataset_id\": \"c5bff4b7-9edd-ed0d-a224-91c82f80b766\",\n      \"num_trials\": 9473,\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 6894.012207978942\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 3243.921613412267\n        }\n      ],\n      \"experiment_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 8086.292035734008\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 1845.8144269013198\n        }\n      ],\n      \"created_at\": \"1971-11-19T06:41:52.710Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"1954-07-02T10:14:24.142Z\",\n      \"last_updated_by\": \"string\",\n      \"baseline_objective_score\": 8927.930112174203,\n      \"best_objective_score\": 3797.0261734634205,\n      \"baseline_duration\": 2698.822362291191,\n      \"best_duration\": 9669.340808712253,\n      \"baseline_cost\": 1512.152186019542,\n      \"best_cost\": 3091.2826960708985,\n      \"total_optimization_cost\": 9193.193760692042\n    },\n    {\n      \"dataset_name\": \"string\",\n      \"objective_name\": \"string\",\n      \"status\": \"initialized\",\n      \"id\": \"cb130ac0-7cbb-e21c-86eb-536af05a8d88\",\n      \"name\": \"string\",\n      \"project_id\": \"68541f30-e993-b879-673e-60a9fb557ef7\",\n      \"metadata\": {},\n      \"studio_config\": {\n        \"dataset_name\": \"string\",\n        \"evaluation\": {\n          \"metrics\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"llm_model\": {\n          \"model\": \"string\",\n          \"parameters\": {}\n        },\n        \"optimizer\": {\n          \"type\": \"string\",\n          \"parameters\": {}\n        },\n        \"prompt\": {\n          \"messages\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      \"dataset_id\": \"1e004a87-9350-50b2-ecdd-3b746f14a32c\",\n      \"num_trials\": 5709,\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 350.4748920471756\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 8783.260758997245\n        }\n      ],\n      \"experiment_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 6506.285152816505\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 9581.815939264054\n        }\n      ],\n      \"created_at\": \"1979-09-11T21:00:58.950Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"1987-06-09T16:38:35.488Z\",\n      \"last_updated_by\": \"string\",\n      \"baseline_objective_score\": 1374.4432936941498,\n      \"best_objective_score\": 2715.9851411980494,\n      \"baseline_duration\": 8916.03902463797,\n      \"best_duration\": 2560.8383218433073,\n      \"baseline_cost\": 9153.881301511368,\n      \"best_cost\": 6355.3828814526805,\n      \"total_optimization_cost\": 3119.7661100258188\n    }\n  ],\n  \"sortableBy\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d4822cc-f1d5-4a6c-a1f6-e00e324c79fb",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "optimizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "dataset_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "dataset_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dataset_deleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "020d169a-52ee-44b3-b599-56bf269d850a",
+          "name": "Get prompts by project",
+          "request": {
+            "name": "Get prompts by project",
+            "description": {
+              "content": "Get prompts scoped to a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "prompts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24386e2a-c9ed-4e89-8510-b03fb52f918c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "prompts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d56d5bb3-19a6-4aff-9e93-c4c1b18516dc",
+          "name": "Find projects",
+          "request": {
+            "name": "Find projects",
+            "description": {
+              "content": "Find projects",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3edf1f7d-a0d8-4a2e-937a-b7307bc10ef8",
+              "name": "Project resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 7783,\n  \"size\": 2914,\n  \"total\": 7094,\n  \"content\": [\n    {\n      \"name\": \"string\",\n      \"id\": \"32831922-85ab-f376-627f-1327e41e799f\",\n      \"visibility\": \"public\",\n      \"description\": \"string\",\n      \"created_at\": \"1964-02-08T23:37:03.816Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"2016-08-08T04:49:26.420Z\",\n      \"last_updated_by\": \"string\",\n      \"last_updated_trace_at\": \"2002-10-16T15:10:01.835Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"id\": \"f1fc29a3-0f16-d790-cf5c-f62ad8216d3a\",\n      \"visibility\": \"public\",\n      \"description\": \"string\",\n      \"created_at\": \"1993-05-30T23:10:48.181Z\",\n      \"created_by\": \"string\",\n      \"last_updated_at\": \"2011-06-09T23:44:37.321Z\",\n      \"last_updated_by\": \"string\",\n      \"last_updated_trace_at\": \"1983-06-07T20:34:37.221Z\"\n    }\n  ],\n  \"sortableBy\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "faab2400-ca39-456d-8c75-04df6bc28f75",
+          "name": "Create project",
+          "request": {
+            "name": "Create project",
+            "description": {
+              "content": "Create project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"visibility\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5258c5c8-a6ba-4b00-bf50-ee72f2b1a91c",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"visibility\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/projects/{projectId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a320d7b-3f2f-4439-ad39-d23802ec0217",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"visibility\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f89d1728-ba5b-4a84-8261-07d6098fedb7",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"visibility\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "078e05f9-fe8e-4db5-94e3-be1a2d07a66c",
+          "name": "Get project by id",
+          "request": {
+            "name": "Get project by id",
+            "description": {
+              "content": "Get project by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5b79680-ae01-4396-aebe-a9e9efcb2c87",
+              "name": "Project resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"id\": \"375effed-2c02-73c0-c4b1-01e8dd8d293e\",\n  \"visibility\": \"private\",\n  \"description\": \"string\",\n  \"created_at\": \"1990-03-15T16:26:16.358Z\",\n  \"created_by\": \"string\",\n  \"last_updated_at\": \"1950-10-22T06:28:55.378Z\",\n  \"last_updated_by\": \"string\",\n  \"last_updated_trace_at\": \"2021-05-26T17:08:08.150Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "adb3da29-dd94-4474-a668-91dcf29f2c03",
+          "name": "Delete project by id",
+          "request": {
+            "name": "Delete project by id",
+            "description": {
+              "content": "Delete project by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ca6a0ac-8c8c-45b3-a162-863244772606",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a17f54a9-e28f-441c-adff-cd54cf092412",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2aadfdad-724f-4f56-a3b2-ce9e980935e1",
+          "name": "Update project by id",
+          "request": {
+            "name": "Update project by id",
+            "description": {
+              "content": "Update project by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visibility\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "557e49d0-a9f7-4e44-be5b-ad5b14bc13c1",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "af094b76-0918-42d6-8f1a-aa5e4d9f3ebf",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "652eb520-fb70-456d-9b7f-c4aefd836f17",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visibility\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e3565da-b91d-440c-84d9-c02ce6acdc55",
+          "name": "Delete projects",
+          "request": {
+            "name": "Delete projects",
+            "description": {
+              "content": "Delete projects batch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "803400ce-de6a-40b2-a79f-181bfeabe472",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cba4192-2241-4135-b80f-4252e8c6df37",
+          "name": "Find Feedback Score names By Project Ids",
+          "request": {
+            "name": "Find Feedback Score names By Project Ids",
+            "description": {
+              "content": "Find Feedback Score names By Project Ids",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                "feedback-scores",
+                "names"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "project_ids",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "389315e7-9df2-4961-95bf-f3f06748790f",
+              "name": "Feedback Scores resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "feedback-scores",
+                    "names"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "project_ids",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"scores\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2376cd1b-2d7c-40f1-8896-bf0946964f1e",
+          "name": "Find Token Usage names",
+          "request": {
+            "name": "Find Token Usage names",
+            "description": {
+              "content": "Find Token Usage names",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":id",
+                "token-usage",
+                "names"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1dddf7c9-31a0-4bdd-902f-f6e2181d1907",
+              "name": "Token Usage names resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id",
+                    "token-usage",
+                    "names"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"names\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25057209-37a2-4882-a745-d6c429a30da3",
+          "name": "Get Project KPI Cards",
+          "request": {
+            "name": "Get Project KPI Cards",
+            "description": {
+              "content": "Gets KPI card metrics for a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":id",
+                "kpi-cards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity_type\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"filters\": \"<string>\",\n  \"interval_end\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8fbc50ca-6562-4fa4-8827-601971751335",
+              "name": "KPI Card Metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id",
+                    "kpi-cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity_type\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"filters\": \"<string>\",\n  \"interval_end\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stats\": [\n    {\n      \"type\": \"errors\",\n      \"current_value\": 8138.295778062003,\n      \"previous_value\": 984.3530854024873\n    },\n    {\n      \"type\": \"avg_duration\",\n      \"current_value\": 9224.64776596998,\n      \"previous_value\": 1140.7048327807113\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cd85593b-5f8c-4b89-9788-de63b7a664c7",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id",
+                    "kpi-cards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity_type\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"filters\": \"<string>\",\n  \"interval_end\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f521d74-6bda-4150-a7f9-aec88558ecb7",
+          "name": "Get Project Metrics",
+          "request": {
+            "name": "Get Project Metrics",
+            "description": {
+              "content": "Gets specified metrics for a project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":id",
+                "metrics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metric_type\": \"<string>\",\n  \"interval\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"interval_end\": \"<dateTime>\",\n  \"span_filters\": [\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"trace_filters\": [\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"thread_filters\": [\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"breakdown\": {\n    \"field\": \"<string>\",\n    \"metadata_key\": \"<string>\",\n    \"sub_metric\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2d5f5272-231e-486a-ad23-4b397edbb0c5",
+              "name": "Project Metrics",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metric_type\": \"<string>\",\n  \"interval\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"interval_end\": \"<dateTime>\",\n  \"span_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"ends_with\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"not_in\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"trace_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"ends_with\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"thread_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"in\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"<=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"breakdown\": {\n    \"field\": \"none\",\n    \"metadata_key\": \"string\",\n    \"sub_metric\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"project_id\": \"aa7d622a-e0a4-ebcc-6534-e1fbb8866119\",\n  \"metric_type\": \"THREAD_FEEDBACK_SCORES\",\n  \"interval\": \"WEEKLY\",\n  \"results\": [\n    {\n      \"name\": \"string\",\n      \"data\": [\n        {\n          \"time\": \"1976-05-08T10:07:27.627Z\",\n          \"value\": 5139.77768494591\n        },\n        {\n          \"time\": \"1959-07-18T02:28:22.694Z\",\n          \"value\": 687.4351757043529\n        }\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"data\": [\n        {\n          \"time\": \"1965-08-27T03:03:06.468Z\",\n          \"value\": 3037.006827003257\n        },\n        {\n          \"time\": \"1969-09-13T12:16:48.614Z\",\n          \"value\": 4491.907238716245\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48ed30c5-e0fb-41a0-a3c3-e5957aaf2b01",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metric_type\": \"<string>\",\n  \"interval\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"interval_end\": \"<dateTime>\",\n  \"span_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"ends_with\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"not_in\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"trace_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"ends_with\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"thread_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"in\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"<=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"breakdown\": {\n    \"field\": \"none\",\n    \"metadata_key\": \"string\",\n    \"sub_metric\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2e415e1-f6e4-44d6-997a-0599169b9601",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":id",
+                    "metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metric_type\": \"<string>\",\n  \"interval\": \"<string>\",\n  \"interval_start\": \"<dateTime>\",\n  \"interval_end\": \"<dateTime>\",\n  \"span_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"ends_with\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"not_in\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"trace_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"ends_with\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"thread_filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"in\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"<=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"breakdown\": {\n    \"field\": \"none\",\n    \"metadata_key\": \"string\",\n    \"sub_metric\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2213e8a0-7e86-440c-8f47-332c58511029",
+          "name": "Get Project Stats",
+          "request": {
+            "name": "Get Project Stats",
+            "description": {
+              "content": "Get Project Stats",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25f106d5-00e8-4de5-a8cc-f27829ff2b7a",
+              "name": "Project Stats",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"project_id\": \"8e362cc0-d19b-4a2f-1b87-1cb2d6cc8fbc\",\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 6563.195374940523\n        },\n        {\n          \"name\": \"st\",\n          \"value\": 2551.2411465229834\n        }\n      ],\n      \"duration\": {\n        \"p50\": 4269.714751050185,\n        \"p90\": 5560.498588035578,\n        \"p99\": 6960.09112413268\n      },\n      \"total_estimated_cost\": 2540.013548103023,\n      \"total_estimated_cost_sum\": 3512.965284159203,\n      \"usage\": {\n        \"key_0\": 1325.9383930157953,\n        \"key_1\": 1343.209017720145\n      },\n      \"trace_count\": 3854,\n      \"thread_count\": 4169,\n      \"guardrails_failed_count\": 9980,\n      \"error_count\": {\n        \"count\": 6056,\n        \"deviation\": 9853,\n        \"deviation_percentage\": 79\n      }\n    },\n    {\n      \"project_id\": \"18f8fc98-f6a7-16f3-9cfa-d79b866e2163\",\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"value\": 3221.523939690364\n        },\n        {\n          \"name\": \"string\",\n          \"value\": 2715.0291382842406\n        }\n      ],\n      \"duration\": {\n        \"p50\": 879.8543862450581,\n        \"p90\": 1443.9866846926764,\n        \"p99\": 3578.844108813478\n      },\n      \"total_estimated_cost\": 2430.327855257123,\n      \"total_estimated_cost_sum\": 8155.114182498172,\n      \"usage\": {\n        \"key_0\": 1787.5039066428044,\n        \"key_1\": 9926.077351482994\n      },\n      \"trace_count\": 9888,\n      \"thread_count\": 9138,\n      \"guardrails_failed_count\": 4518,\n      \"error_count\": {\n        \"count\": 5129,\n        \"deviation\": 4756,\n        \"deviation_percentage\": 5286\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a0ab6b1-2c49-4491-afc6-dfefa500414d",
+          "name": "Retrieve project",
+          "request": {
+            "name": "Retrieve project",
+            "description": {
+              "content": "Retrieve project",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "93f134bf-d215-4015-a5f7-fe921970aec1",
+              "name": "Project resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"id\": \"55ef8ff4-5ce1-9edc-199d-28608d50af42\",\n  \"visibility\": \"public\",\n  \"description\": \"string\",\n  \"created_at\": \"1948-10-03T01:46:10.145Z\",\n  \"created_by\": \"string\",\n  \"last_updated_at\": \"1985-11-06T19:12:33.848Z\",\n  \"last_updated_by\": \"string\",\n  \"last_updated_trace_at\": \"1966-02-05T18:00:27.040Z\",\n  \"feedback_scores\": [\n    {\n      \"name\": \"string\",\n      \"value\": 1586.0464322398304\n    },\n    {\n      \"name\": \"string\",\n      \"value\": 5292.386976479135\n    }\n  ],\n  \"duration\": {\n    \"p50\": 3334.106897601731,\n    \"p90\": 6539.34729568306,\n    \"p99\": 4816.982371215424\n  },\n  \"total_estimated_cost\": 4425.38439450223,\n  \"total_estimated_cost_sum\": 1184.52878253824,\n  \"usage\": {\n    \"key_0\": 5799.875688048657,\n    \"key_1\": 3510.8067216692775\n  },\n  \"trace_count\": 7022,\n  \"thread_count\": 9439,\n  \"guardrails_failed_count\": 3521,\n  \"error_count\": {\n    \"count\": 3569,\n    \"deviation\": 3903,\n    \"deviation_percentage\": 1812\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58037942-c772-4e78-b6ac-343bfbcd8450",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37da2269-063b-4d67-aabf-65f30f85434f",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8737ff36-7d45-4ce8-810d-7ac511e7f12d",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5c05bb6-eb8e-42f9-857a-0e6e194008f4",
+          "name": "Get recent activity for a project",
+          "request": {
+            "name": "Get recent activity for a project",
+            "description": {
+              "content": "Returns the most recent activity items across all entity types for a project, sorted by date descending.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "projects",
+                ":projectId",
+                "activities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd3d60ae-bf04-436d-bdd2-ecd5f3f57490",
+              "name": "Recent activity page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 3720,\n  \"size\": 6132,\n  \"total\": 7023,\n  \"content\": [\n    {\n      \"type\": \"experiment\",\n      \"id\": \"ed14393e-667c-22f1-d124-b08ca4231e04\",\n      \"name\": \"string\",\n      \"resource_id\": \"7679eb90-d8d2-d092-436b-3497c0885b93\",\n      \"created_by\": \"string\",\n      \"created_at\": \"1967-08-05T16:24:43.030Z\"\n    },\n    {\n      \"type\": \"experiment\",\n      \"id\": \"f41dc8f6-9bd4-2024-9419-d1a6e207b3ce\",\n      \"name\": \"string\",\n      \"resource_id\": \"f151a324-0a84-d22b-fd69-2875fc069957\",\n      \"created_by\": \"string\",\n      \"created_at\": \"1995-12-26T11:50:00.347Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6711895-0795-4a10-8abd-ff79d7684edd",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3538736a-bc14-4b92-9e26-8ed683a38f92",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "projects",
+                    ":projectId",
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8448,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2985e1f8-9faa-4f47-8e57-30683b501dcc",
+    "name": "Opik REST Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

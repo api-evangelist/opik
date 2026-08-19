@@ -1,0 +1,4147 @@
+{
+  "item": [
+    {
+      "id": "fa934a76-f85d-4cc8-9426-72dfd457532d",
+      "name": "Traces",
+      "description": {
+        "content": "Trace related resources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9bd50ecb-2879-4270-a427-26cf275df739",
+          "name": "Add thread comment",
+          "request": {
+            "name": "Add thread comment",
+            "description": {
+              "content": "Add thread comment",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                ":id",
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66f6802c-cbf1-4ebc-ada1-df41267f7a3e",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    ":id",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/traces/threads/{threadId}/comments/{commentId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcda6073-ad3c-4996-abe7-3ff91f687fc9",
+          "name": "Add trace comment",
+          "request": {
+            "name": "Add trace comment",
+            "description": {
+              "content": "Add trace comment",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":id",
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3986df5-cada-4000-bec9-461e07378e6b",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":id",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/traces/{traceId}/comments/{commentId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0b060ef-3daf-4eae-b01f-a0c5fd2a1554",
+          "name": "Add trace feedback score",
+          "request": {
+            "name": "Add trace feedback score",
+            "description": {
+              "content": "Add trace feedback score",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":id",
+                "feedback-scores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"source\": \"<string>\",\n  \"value\": \"<number>\",\n  \"category_name\": \"<string>\",\n  \"reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30ff435e-830e-40a2-86f5-7e3832a4af53",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":id",
+                    "feedback-scores"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"source\": \"<string>\",\n  \"value\": \"<number>\",\n  \"category_name\": \"<string>\",\n  \"reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c97af0a4-dc4c-404b-8d7f-8b1d8a449edc",
+          "name": "Create traces",
+          "request": {
+            "name": "Create traces",
+            "description": {
+              "content": "Create traces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"traces\": [\n    {\n      \"start_time\": \"<dateTime>\",\n      \"id\": \"<uuid>\",\n      \"project_name\": \"<string>\",\n      \"name\": \"<string>\",\n      \"end_time\": \"<dateTime>\",\n      \"input\": \"<object>\",\n      \"output\": \"<object>\",\n      \"metadata\": \"<object>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"error_info\": {\n        \"exception_type\": \"<string>\",\n        \"traceback\": \"<string>\",\n        \"message\": \"<string>\"\n      },\n      \"last_updated_at\": \"<dateTime>\",\n      \"ttft\": \"<double>\",\n      \"thread_id\": \"<string>\",\n      \"source\": \"<string>\",\n      \"environment\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2baa0b93-8741-47a2-bdf5-139afad338c2",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d3d9a80-726e-43e3-8bf5-5840ceff193f",
+          "name": "Batch update traces",
+          "request": {
+            "name": "Batch update traces",
+            "description": {
+              "content": "Update multiple traces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"project_name\": \"<string>\",\n    \"project_id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"end_time\": \"<dateTime>\",\n    \"input\": \"<object>\",\n    \"output\": \"<object>\",\n    \"metadata\": \"<object>\",\n    \"tags\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tags_to_add\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tags_to_remove\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"error_info\": {\n      \"exception_type\": \"<string>\",\n      \"traceback\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    \"thread_id\": \"<string>\",\n    \"ttft\": \"<double>\",\n    \"source\": \"<string>\",\n    \"environment\": \"<string>\"\n  },\n  \"merge_tags\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4738de1e-95d7-41bf-8e92-f5499ce158b2",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "24410dd5-6e4a-4e1b-86c8-a7ce551c0634",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7594,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6aa0033a-f3ee-409a-8673-53382efee46a",
+          "name": "Batch update threads",
+          "request": {
+            "name": "Batch update threads",
+            "description": {
+              "content": "Update multiple threads",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"tags\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tags_to_add\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tags_to_remove\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merge_tags\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7a1fe85-6a8a-4822-bbe6-ef95045dda39",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"tags\": [\n      \"string\",\n      \"st\",\n      \"strin\"\n    ],\n    \"tags_to_add\": [\n      \"string\",\n      \"str\",\n      \"st\",\n      \"stri\"\n    ],\n    \"tags_to_remove\": [\n      \"string\",\n      \"stri\",\n      \"s\"\n    ]\n  },\n  \"merge_tags\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02e7531d-f533-436e-855e-906577cd8d5e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"tags\": [\n      \"string\",\n      \"st\",\n      \"strin\"\n    ],\n    \"tags_to_add\": [\n      \"string\",\n      \"str\",\n      \"st\",\n      \"stri\"\n    ],\n    \"tags_to_remove\": [\n      \"string\",\n      \"stri\",\n      \"s\"\n    ]\n  },\n  \"merge_tags\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7594,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5cf2d000-3a73-4043-acf8-c5fa50cf01bf",
+          "name": "Close trace thread(s)",
+          "request": {
+            "name": "Close trace thread(s)",
+            "description": {
+              "content": "Close one or multiple trace threads. Supports both single thread_id and multiple thread_ids for batch operations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "close"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"thread_id\": \"<string>\",\n  \"thread_ids\": [\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "286c4c6c-d329-4f5b-a6bd-d8a183da9089",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"thread_id\": \"<string>\",\n  \"thread_ids\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bd8b7cc5-8a01-40c4-b6f0-8b43f70bacfd",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "close"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"thread_id\": \"<string>\",\n  \"thread_ids\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7594,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7a509fb-51dd-4c47-9969-997d890fa456",
+          "name": "Get traces by project_name or project_id",
+          "request": {
+            "name": "Get traces by project_name or project_id",
+            "description": {
+              "content": "Get traces by project_name or project_id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "truncate",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "strip_attachments",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_time",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_time",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c39a692-d97f-485a-a653-a8a70e0edf67",
+              "name": "Trace resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "project_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "truncate",
+                      "value": "false"
+                    },
+                    {
+                      "key": "strip_attachments",
+                      "value": "false"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_time",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 7018,\n  \"size\": 8720,\n  \"total\": 2551,\n  \"content\": [\n    {\n      \"start_time\": \"1956-05-14T07:57:38.410Z\",\n      \"id\": \"9a083b0f-9e86-be8d-5457-337691f78944\",\n      \"project_id\": \"e9a77916-f13d-fe88-73cf-972404c16925\",\n      \"name\": \"string\",\n      \"end_time\": \"2020-08-17T03:57:09.943Z\",\n      \"input\": {},\n      \"output\": {},\n      \"metadata\": {},\n      \"tags\": [\n        \"string\"\n      ],\n      \"error_info\": {\n        \"exception_type\": \"stri\",\n        \"traceback\": \"string\",\n        \"message\": \"string\"\n      },\n      \"usage\": {\n        \"key_0\": 5801\n      },\n      \"created_at\": \"1967-02-13T14:34:41.228Z\",\n      \"last_updated_at\": \"1985-05-17T02:00:53.579Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"source\": \"sdk\",\n          \"value\": -471903811.31679064,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1962-03-19T10:32:49.283Z\",\n          \"last_updated_at\": \"1978-07-11T03:42:45.126Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_2\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_3\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"value\": 903591521.5410049,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"2012-08-06T01:12:39.477Z\",\n          \"last_updated_at\": \"1961-01-02T07:51:30.567Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        }\n      ],\n      \"span_feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"source\": \"ui\",\n          \"value\": -737638099.1409087,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1996-07-08T20:38:36.227Z\",\n          \"last_updated_at\": \"1948-03-30T21:58:09.961Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"source\": \"sdk\",\n          \"value\": 883960755.26175,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"2019-05-01T17:18:04.754Z\",\n          \"last_updated_at\": \"2005-09-08T05:49:08.961Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        }\n      ],\n      \"comments\": [\n        {\n          \"text\": \"str\",\n          \"id\": \"a94f6160-33ad-bcac-9d54-4345ce438982\",\n          \"created_at\": \"2021-04-13T17:33:45.879Z\",\n          \"last_updated_at\": \"2008-03-26T12:15:33.918Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        },\n        {\n          \"text\": \"string\",\n          \"id\": \"83890d80-2d6e-0a2c-d21f-37c9b3e30c56\",\n          \"created_at\": \"1985-12-06T22:06:43.629Z\",\n          \"last_updated_at\": \"1984-06-03T04:25:36.830Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        }\n      ],\n      \"guardrails_validations\": [\n        {\n          \"span_id\": \"6f0f40d8-3fa6-288a-c0ed-14cc7b81bbfd\",\n          \"checks\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"span_id\": \"73193c85-b48a-1500-be77-7bb30e2fd324\",\n          \"checks\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"total_estimated_cost\": 7349.761317743772,\n      \"span_count\": 7704,\n      \"duration\": 3553.119752786479,\n      \"ttft\": 9959.415559787843,\n      \"thread_id\": \"string\",\n      \"visibility_mode\": \"hidden\",\n      \"llm_span_count\": 3227,\n      \"has_tool_spans\": false,\n      \"providers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"experiment\": {\n        \"dataset_id\": \"b9aac00e-24dc-c8cb-204d-0be40b70719d\",\n        \"dataset_item_id\": \"a33f6b5c-a37d-aab9-fa23-0ec1c23fc3da\",\n        \"id\": \"b57c3922-279e-a4f2-df93-fcb8287c66c2\",\n        \"name\": \"string\"\n      },\n      \"source\": \"sdk\",\n      \"environment\": \"string\"\n    },\n    {\n      \"start_time\": \"1977-07-26T11:02:14.361Z\",\n      \"id\": \"d56fa8c5-d4a4-3e99-cbe8-dafe012724d0\",\n      \"project_id\": \"dbde3f82-5d44-d995-1dbb-d0f1ed7078bc\",\n      \"name\": \"string\",\n      \"end_time\": \"1984-01-31T08:08:53.126Z\",\n      \"input\": {},\n      \"output\": {},\n      \"metadata\": {},\n      \"tags\": [\n        \"string\"\n      ],\n      \"error_info\": {\n        \"exception_type\": \"string\",\n        \"traceback\": \"string\",\n        \"message\": \"string\"\n      },\n      \"usage\": {\n        \"key_0\": 7764,\n        \"key_1\": 8062\n      },\n      \"created_at\": \"1957-05-05T08:48:54.860Z\",\n      \"last_updated_at\": \"1955-08-14T17:20:32.019Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"source\": \"sdk\",\n          \"value\": 723106889.641881,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1977-02-09T06:52:28.594Z\",\n          \"last_updated_at\": \"2022-04-12T21:02:54.094Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_2\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"source\": \"ui\",\n          \"value\": 143335197.13062096,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1971-04-27T13:51:08.482Z\",\n          \"last_updated_at\": \"1966-01-18T18:20:39.848Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        }\n      ],\n      \"span_feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"source\": \"sdk\",\n          \"value\": -595125797.3565176,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1987-09-11T21:40:28.778Z\",\n          \"last_updated_at\": \"2010-08-13T04:57:39.327Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_2\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"value\": 711114147.9645715,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"2019-07-01T19:52:39.357Z\",\n          \"last_updated_at\": \"1971-04-12T05:48:03.106Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        }\n      ],\n      \"comments\": [\n        {\n          \"text\": \"string\",\n          \"id\": \"0edd1196-0cce-dc63-97d5-0da3ba5f7bfd\",\n          \"created_at\": \"1964-12-14T13:12:15.285Z\",\n          \"last_updated_at\": \"1973-12-21T21:11:01.646Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        },\n        {\n          \"text\": \"string\",\n          \"id\": \"75d0ae11-3174-027c-d9d0-2a177822c24c\",\n          \"created_at\": \"2007-01-01T18:40:48.038Z\",\n          \"last_updated_at\": \"1971-07-29T06:09:40.183Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        }\n      ],\n      \"guardrails_validations\": [\n        {\n          \"span_id\": \"fb5562bf-55e6-844c-e858-149570f816fa\",\n          \"checks\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"span_id\": \"7f96911a-68ae-bffb-d160-5b86edf9e757\",\n          \"checks\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"result\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"total_estimated_cost\": 5207.522388111854,\n      \"span_count\": 1851,\n      \"duration\": 9798.926495727972,\n      \"ttft\": 7939.832808625875,\n      \"thread_id\": \"string\",\n      \"visibility_mode\": \"hidden\",\n      \"llm_span_count\": 3015,\n      \"has_tool_spans\": false,\n      \"providers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"experiment\": {\n        \"dataset_id\": \"d1b78edb-7a65-a471-2e31-602f9f7f7334\",\n        \"dataset_item_id\": \"c5277cd8-4398-75aa-22ea-03be9395dd34\",\n        \"id\": \"09721a87-757e-e522-3483-2882b67e5ba6\",\n        \"name\": \"string\"\n      },\n      \"source\": \"sdk\",\n      \"environment\": \"string\"\n    }\n  ],\n  \"sortableBy\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b14263b0-ed94-4660-aea9-9331c940ee08",
+          "name": "Create trace",
+          "request": {
+            "name": "Create trace",
+            "description": {
+              "content": "Get trace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"start_time\": \"<dateTime>\",\n  \"id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"end_time\": \"<dateTime>\",\n  \"input\": \"<object>\",\n  \"output\": \"<object>\",\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"error_info\": {\n    \"exception_type\": \"<string>\",\n    \"traceback\": \"<string>\",\n    \"message\": \"<string>\"\n  },\n  \"last_updated_at\": \"<dateTime>\",\n  \"ttft\": \"<double>\",\n  \"thread_id\": \"<string>\",\n  \"source\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9ad0b22b-1902-4155-8d3d-eef88be21b07",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"start_time\": \"<dateTime>\",\n  \"id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"end_time\": \"<dateTime>\",\n  \"input\": {},\n  \"output\": {},\n  \"metadata\": {},\n  \"tags\": [\n    \"<string>\"\n  ],\n  \"error_info\": {\n    \"exception_type\": \"string\",\n    \"traceback\": \"string\",\n    \"message\": \"string\"\n  },\n  \"last_updated_at\": \"<dateTime>\",\n  \"ttft\": \"<double>\",\n  \"thread_id\": \"<string>\",\n  \"source\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/traces/{traceId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eafebca9-ed73-4444-acde-9ebb223a3b22",
+          "name": "Get trace by id",
+          "request": {
+            "name": "Get trace by id",
+            "description": {
+              "content": "Get trace by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "strip_attachments",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb7eaeeb-ad72-46fc-8672-c8a1b303b70e",
+              "name": "Trace resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "strip_attachments",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"start_time\": \"2011-11-09T01:05:20.444Z\",\n  \"id\": \"6134ca67-a7dc-e8b0-5405-a376122fd5e6\",\n  \"project_id\": \"9374999d-dfd5-87b3-913f-16544c42a750\",\n  \"name\": \"string\",\n  \"end_time\": \"2021-06-16T13:10:46.278Z\",\n  \"input\": {},\n  \"output\": {},\n  \"metadata\": {},\n  \"tags\": [\n    \"string\"\n  ],\n  \"error_info\": {\n    \"exception_type\": \"string\",\n    \"traceback\": \"string\",\n    \"message\": \"string\"\n  },\n  \"usage\": {\n    \"key_0\": 6780,\n    \"key_1\": 5459,\n    \"key_2\": 5298\n  },\n  \"created_at\": \"1960-09-26T21:04:27.580Z\",\n  \"last_updated_at\": \"1992-08-17T21:24:57.739Z\",\n  \"created_by\": \"string\",\n  \"last_updated_by\": \"string\",\n  \"feedback_scores\": [\n    {\n      \"name\": \"string\",\n      \"source\": \"ui\",\n      \"value\": 114993893.01877785,\n      \"category_name\": \"string\",\n      \"reason\": \"string\",\n      \"created_at\": \"1947-03-17T21:22:59.209Z\",\n      \"last_updated_at\": \"1977-03-15T06:10:32.067Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"value_by_author\": {\n        \"key_0\": {\n          \"value\": 8464.841866637842,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"sdk\",\n          \"last_updated_at\": \"2016-08-28T01:39:02.028Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        },\n        \"key_1\": {\n          \"value\": 5754.944489821901,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"sdk\",\n          \"last_updated_at\": \"2000-04-09T14:31:27.024Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        }\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"source\": \"online_scoring\",\n      \"value\": -93613393.49564993,\n      \"category_name\": \"string\",\n      \"reason\": \"string\",\n      \"created_at\": \"2014-03-19T03:39:03.528Z\",\n      \"last_updated_at\": \"1960-09-30T03:00:06.349Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"value_by_author\": {\n        \"key_0\": {\n          \"value\": 3457.294160539787,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"ui\",\n          \"last_updated_at\": \"2017-04-17T07:47:53.346Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        },\n        \"key_1\": {\n          \"value\": 8707.190483848699,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"ui\",\n          \"last_updated_at\": \"1973-05-14T04:13:28.561Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        }\n      }\n    }\n  ],\n  \"span_feedback_scores\": [\n    {\n      \"name\": \"string\",\n      \"source\": \"sdk\",\n      \"value\": -189937374.38660157,\n      \"category_name\": \"string\",\n      \"reason\": \"string\",\n      \"created_at\": \"1949-06-29T23:55:26.753Z\",\n      \"last_updated_at\": \"1984-03-02T17:01:58.127Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"value_by_author\": {\n        \"key_0\": {\n          \"value\": 5924.014067186202,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"last_updated_at\": \"1981-07-20T09:16:50.653Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        }\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"source\": \"sdk\",\n      \"value\": -709478183.9089922,\n      \"category_name\": \"string\",\n      \"reason\": \"string\",\n      \"created_at\": \"1949-02-15T18:20:03.704Z\",\n      \"last_updated_at\": \"1967-01-23T08:33:14.592Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"value_by_author\": {\n        \"key_0\": {\n          \"value\": 3732.1421457119254,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"last_updated_at\": \"1951-06-18T19:34:53.541Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        },\n        \"key_1\": {\n          \"value\": 513.5363310889418,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"sdk\",\n          \"last_updated_at\": \"1976-02-14T20:54:32.777Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        },\n        \"key_2\": {\n          \"value\": 9829.214206064673,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"last_updated_at\": \"2007-07-13T10:03:33.561Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        }\n      }\n    }\n  ],\n  \"comments\": [\n    {\n      \"text\": \"string\",\n      \"id\": \"79f9999a-e99f-a093-3726-8893e18ce006\",\n      \"created_at\": \"1987-04-16T16:35:10.947Z\",\n      \"last_updated_at\": \"1947-06-18T21:56:01.314Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\"\n    },\n    {\n      \"text\": \"string\",\n      \"id\": \"0594a0fe-bd97-847b-dfe2-4152858d0475\",\n      \"created_at\": \"1994-01-13T20:59:17.197Z\",\n      \"last_updated_at\": \"2024-04-24T06:34:25.395Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\"\n    }\n  ],\n  \"guardrails_validations\": [\n    {\n      \"span_id\": \"cc6d9fa9-5291-4b19-33e3-a902f015aa97\",\n      \"checks\": [\n        {\n          \"name\": \"PII\",\n          \"result\": \"failed\"\n        },\n        {\n          \"name\": \"TOPIC\",\n          \"result\": \"passed\"\n        }\n      ]\n    },\n    {\n      \"span_id\": \"5f2b741d-8443-acdf-c8c3-d25b2678ab34\",\n      \"checks\": [\n        {\n          \"name\": \"PII\",\n          \"result\": \"failed\"\n        },\n        {\n          \"name\": \"TOPIC\",\n          \"result\": \"passed\"\n        }\n      ]\n    }\n  ],\n  \"total_estimated_cost\": 3082.0013425080583,\n  \"span_count\": 6764,\n  \"duration\": 3058.1399222074624,\n  \"ttft\": 562.2883758157426,\n  \"thread_id\": \"string\",\n  \"visibility_mode\": \"hidden\",\n  \"llm_span_count\": 6853,\n  \"has_tool_spans\": false,\n  \"providers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"experiment\": {\n    \"dataset_id\": \"2178dacc-4a33-702b-1933-ecffbc398746\",\n    \"dataset_item_id\": \"ffbd7f2c-ccd5-3ba0-da9d-3ae9ecb2dafc\",\n    \"id\": \"04ba98bd-2b6f-a28f-3528-f0d617ba32c8\",\n    \"name\": \"string\"\n  },\n  \"source\": \"optimization\",\n  \"environment\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3cb2f93d-b81b-4d2a-9b8b-e12cb0561963",
+          "name": "Delete trace by id",
+          "request": {
+            "name": "Delete trace by id",
+            "description": {
+              "content": "Delete trace by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0bcd6485-d636-4065-85ef-f2b2376978e0",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "842751b9-9526-47e3-9668-0da92bbd2353",
+          "name": "Update trace by id",
+          "request": {
+            "name": "Update trace by id",
+            "description": {
+              "content": "Update trace by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"end_time\": \"<dateTime>\",\n  \"input\": \"<object>\",\n  \"output\": \"<object>\",\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tags_to_add\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tags_to_remove\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"error_info\": {\n    \"exception_type\": \"<string>\",\n    \"traceback\": \"<string>\",\n    \"message\": \"<string>\"\n  },\n  \"thread_id\": \"<string>\",\n  \"ttft\": \"<double>\",\n  \"source\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c55562af-075a-4b04-b965-b0ce68e00284",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"end_time\": \"<dateTime>\",\n  \"input\": {},\n  \"output\": {},\n  \"metadata\": {},\n  \"tags\": [\n    \"<string>\"\n  ],\n  \"tags_to_add\": [\n    \"<string>\"\n  ],\n  \"tags_to_remove\": [\n    \"<string>\"\n  ],\n  \"error_info\": {\n    \"exception_type\": \"string\",\n    \"traceback\": \"string\",\n    \"message\": \"string\"\n  },\n  \"thread_id\": \"<string>\",\n  \"ttft\": \"<double>\",\n  \"source\": \"<string>\",\n  \"environment\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0098453d-5fcd-4ce5-b861-decf65fd5b45",
+          "name": "Delete thread comments",
+          "request": {
+            "name": "Delete thread comments",
+            "description": {
+              "content": "Delete thread comments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "comments",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "68e419c4-73ce-4087-9522-f17f5e06d122",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "comments",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9085633d-086f-4edc-bb2e-c7f3023e6e8e",
+          "name": "Delete thread feedback scores",
+          "request": {
+            "name": "Delete thread feedback scores",
+            "description": {
+              "content": "Delete thread feedback scores",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "feedback-scores",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"names\": [\n    \"<string>\"\n  ],\n  \"project_name\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"author\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00e91f59-c8b6-42f9-8140-b92ddd661533",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "feedback-scores",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"names\": [\n    \"<string>\"\n  ],\n  \"project_name\": \"<string>\",\n  \"thread_id\": \"<string>\",\n  \"author\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4420a1cf-c2fe-44e0-94be-c0600b02b2d8",
+          "name": "Delete trace comments",
+          "request": {
+            "name": "Delete trace comments",
+            "description": {
+              "content": "Delete trace comments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "comments",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a18d79fb-9459-402c-a90a-6e610bc9bc4c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "comments",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c4756d7-cbf9-4c77-88f8-6a01b025d738",
+          "name": "Delete trace feedback score",
+          "request": {
+            "name": "Delete trace feedback score",
+            "description": {
+              "content": "Delete trace feedback score",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":id",
+                "feedback-scores",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"author\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a23fb3f2-118b-463a-a299-25166f2a0438",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":id",
+                    "feedback-scores",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"author\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ccd5d100-315d-4ef2-9ee3-7c16e80d55ca",
+          "name": "Delete trace threads",
+          "request": {
+            "name": "Delete trace threads",
+            "description": {
+              "content": "Delete trace threads",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"thread_ids\": [\n    \"<string>\"\n  ],\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff957f28-0dec-4e3a-8c32-cbf4a9595404",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"thread_ids\": [\n    \"<string>\"\n  ],\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87781e05-c5cd-432e-a952-4651535774c0",
+          "name": "Delete traces",
+          "request": {
+            "name": "Delete traces",
+            "description": {
+              "content": "Delete traces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d6688dcc-01c7-4a7a-9a77-67cb8f3dd9ed",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecac85f8-c352-4997-8bdd-0cdfb50e1b00",
+          "name": "Find Feedback Score names",
+          "request": {
+            "name": "Find Feedback Score names",
+            "description": {
+              "content": "Find Feedback Score names",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "feedback-scores",
+                "names"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c526a4f8-aac0-426a-bcf9-883eb964a62a",
+              "name": "Feedback Scores resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "feedback-scores",
+                    "names"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"scores\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "046d0d52-99c2-4120-8a3b-993165d19d40",
+          "name": "Find Trace Threads Feedback Score names",
+          "request": {
+            "name": "Find Trace Threads Feedback Score names",
+            "description": {
+              "content": "Find Trace Threads Feedback Score names",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "feedback-scores",
+                "names"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e01e72c-8b2d-498b-8024-539c03887e1b",
+              "name": "Find Trace Threads Feedback Score names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "feedback-scores",
+                    "names"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"scores\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "075f2539-686d-4355-a955-c87197a8b157",
+          "name": "Get trace stats",
+          "request": {
+            "name": "Get trace stats",
+            "description": {
+              "content": "Get trace stats",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_time",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_time",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03a417d4-9dc1-48de-8ce4-dd5e5c58facc",
+              "name": "Trace stats resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "project_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_time",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stats\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"AVG\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"PERCENTAGE\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2df6ac39-df7c-4ad6-a4ac-d303b02a38ce",
+          "name": "Get thread comment",
+          "request": {
+            "name": "Get thread comment",
+            "description": {
+              "content": "Get thread comment",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                ":threadId",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "commentId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "threadId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09e0e47a-8b2f-4bfa-8c18-87609a67d11b",
+              "name": "Comment resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    ":threadId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "threadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"text\": \"string\",\n  \"id\": \"08eabfee-ff24-3f8a-9d83-534d7adc137b\",\n  \"created_at\": \"1958-06-04T14:20:39.787Z\",\n  \"last_updated_at\": \"1975-05-31T11:46:07.734Z\",\n  \"created_by\": \"string\",\n  \"last_updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a24249f6-e38a-43d1-b090-420179d0c77d",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    ":threadId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "threadId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7594,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c96f256e-282c-474c-949f-225369c0cda3",
+          "name": "Get trace thread stats",
+          "request": {
+            "name": "Get trace thread stats",
+            "description": {
+              "content": "Get trace thread stats",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_time",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_time",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "680cd47f-3fb9-40ac-addd-3cc1babbdea6",
+              "name": "Trace thread stats resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "project_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_time",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stats\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"AVG\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"PERCENTAGE\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfd5023a-30bf-44a0-af46-86c886454bec",
+          "name": "Get trace comment",
+          "request": {
+            "name": "Get trace comment",
+            "description": {
+              "content": "Get trace comment",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                ":traceId",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "commentId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "traceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "020122b0-4ecb-4577-b13a-b0c332ef75af",
+              "name": "Comment resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":traceId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "traceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"text\": \"string\",\n  \"id\": \"08eabfee-ff24-3f8a-9d83-534d7adc137b\",\n  \"created_at\": \"1958-06-04T14:20:39.787Z\",\n  \"last_updated_at\": \"1975-05-31T11:46:07.734Z\",\n  \"created_by\": \"string\",\n  \"last_updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b67d51b0-4baa-43f6-9028-102d2489176e",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    ":traceId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "traceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7594,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "400c3bdf-0c66-48f5-9b46-fec1f5268ec2",
+          "name": "Get trace thread",
+          "request": {
+            "name": "Get trace thread",
+            "description": {
+              "content": "Get trace thread",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"thread_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"truncate\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9aa58530-6838-4428-9885-1431d13fcf9f",
+              "name": "Trace thread resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"thread_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"truncate\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"project_id\": \"4ec6ded4-8f2b-ad9b-a869-ad49a0a1e782\",\n  \"thread_model_id\": \"7a520ce8-3ac9-6ede-3bfe-070dc3544f0c\",\n  \"start_time\": \"1950-05-03T18:41:29.145Z\",\n  \"end_time\": \"1991-09-16T01:33:53.356Z\",\n  \"duration\": 4384.4069460062165,\n  \"first_message\": {},\n  \"last_message\": {},\n  \"feedback_scores\": [\n    {\n      \"name\": \"string\",\n      \"source\": \"ui\",\n      \"value\": 232939144.67302895,\n      \"category_name\": \"string\",\n      \"reason\": \"string\",\n      \"created_at\": \"1993-01-23T18:00:14.697Z\",\n      \"last_updated_at\": \"2025-05-17T18:49:20.411Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"value_by_author\": {\n        \"key_0\": {\n          \"value\": 9600.756101086992,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"sdk\",\n          \"last_updated_at\": \"1969-10-06T07:17:30.042Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        }\n      }\n    },\n    {\n      \"name\": \"st\",\n      \"source\": \"sdk\",\n      \"value\": -779368302.0739684,\n      \"category_name\": \"string\",\n      \"reason\": \"string\",\n      \"created_at\": \"1973-06-09T10:03:08.905Z\",\n      \"last_updated_at\": \"1960-03-26T12:09:43.756Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\",\n      \"value_by_author\": {\n        \"key_0\": {\n          \"value\": 2359.844907946993,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"last_updated_at\": \"1951-05-30T09:28:42.416Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        },\n        \"key_1\": {\n          \"value\": 817.1507895666541,\n          \"reason\": \"string\",\n          \"category_name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"last_updated_at\": \"1977-08-07T07:02:31.459Z\",\n          \"span_type\": \"string\",\n          \"span_id\": \"string\"\n        }\n      }\n    }\n  ],\n  \"status\": \"active\",\n  \"number_of_messages\": 4813,\n  \"total_estimated_cost\": 51.47253613355218,\n  \"usage\": {\n    \"key_0\": 391\n  },\n  \"comments\": [\n    {\n      \"text\": \"string\",\n      \"id\": \"49c782a1-176d-cbf5-e3ca-33742e423a43\",\n      \"created_at\": \"2014-07-23T22:15:55.325Z\",\n      \"last_updated_at\": \"1994-05-03T04:53:15.678Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\"\n    },\n    {\n      \"text\": \"string\",\n      \"id\": \"e6572c6b-2a5d-3bb6-c767-f437ac461f27\",\n      \"created_at\": \"1951-06-23T21:54:53.533Z\",\n      \"last_updated_at\": \"2009-01-29T23:22:31.050Z\",\n      \"created_by\": \"string\",\n      \"last_updated_by\": \"string\"\n    }\n  ],\n  \"tags\": [\n    \"string\"\n  ],\n  \"last_updated_at\": \"2016-09-07T06:12:24.052Z\",\n  \"last_updated_by\": \"string\",\n  \"created_by\": \"string\",\n  \"created_at\": \"1980-01-28T20:23:07.624Z\",\n  \"environment\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b508b3e-3eda-4c35-83c0-d694579b98e2",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"thread_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"truncate\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7594,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5964563-e7ab-4a8b-b11c-d1c56e7d8c3c",
+          "name": "Get trace threads",
+          "request": {
+            "name": "Get trace threads",
+            "description": {
+              "content": "Get trace threads",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "truncate",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "strip_attachments",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_time",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_time",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b879983-76ab-421f-b90a-23322d000e98",
+              "name": "Trace threads resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "project_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "truncate",
+                      "value": "false"
+                    },
+                    {
+                      "key": "strip_attachments",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to_time",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 979,\n  \"size\": 7772,\n  \"total\": 3668,\n  \"content\": [\n    {\n      \"id\": \"string\",\n      \"project_id\": \"556b5986-01a8-bbb0-c39c-87aa36a056d8\",\n      \"thread_model_id\": \"da47bb3f-3ae9-c9f6-c800-9efd4a6efccc\",\n      \"start_time\": \"1989-09-13T07:08:28.895Z\",\n      \"end_time\": \"1948-01-13T16:20:43.561Z\",\n      \"duration\": 1271.9109288767306,\n      \"first_message\": {},\n      \"last_message\": {},\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"source\": \"ui\",\n          \"value\": -680727363.5195973,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1998-03-23T00:32:45.875Z\",\n          \"last_updated_at\": \"1970-12-26T16:50:25.169Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"source\": \"online_scoring\",\n          \"value\": -974787579.1190574,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"2020-10-09T13:28:01.747Z\",\n          \"last_updated_at\": \"1950-06-09T21:28:54.828Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        }\n      ],\n      \"status\": \"active\",\n      \"number_of_messages\": 7986,\n      \"total_estimated_cost\": 1399.1807284009317,\n      \"usage\": {\n        \"key_0\": 9721,\n        \"key_1\": 1642\n      },\n      \"comments\": [\n        {\n          \"text\": \"string\",\n          \"id\": \"9fecb7c7-a509-6635-5e71-e8aad100ecf3\",\n          \"created_at\": \"2010-02-13T09:13:41.192Z\",\n          \"last_updated_at\": \"1998-09-20T20:22:13.850Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        },\n        {\n          \"text\": \"string\",\n          \"id\": \"e8f563c4-c4fd-830e-299f-944f3a38f7e7\",\n          \"created_at\": \"2025-02-28T07:52:23.915Z\",\n          \"last_updated_at\": \"2013-11-19T20:07:02.402Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        }\n      ],\n      \"tags\": [\n        \"string\"\n      ],\n      \"last_updated_at\": \"1969-02-27T12:53:14.603Z\",\n      \"last_updated_by\": \"string\",\n      \"created_by\": \"string\",\n      \"created_at\": \"2017-04-15T06:56:15.539Z\",\n      \"environment\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"project_id\": \"7e64c440-1aa7-987e-aad7-ce80c9397f91\",\n      \"thread_model_id\": \"8c5ff33b-0baa-66e1-fd15-10e7a1155347\",\n      \"start_time\": \"1946-10-16T16:16:21.230Z\",\n      \"end_time\": \"2004-06-05T16:52:09.048Z\",\n      \"duration\": 7797.047683672988,\n      \"first_message\": {},\n      \"last_message\": {},\n      \"feedback_scores\": [\n        {\n          \"name\": \"string\",\n          \"source\": \"sdk\",\n          \"value\": 387785629.06267166,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1987-08-09T11:41:14.651Z\",\n          \"last_updated_at\": \"1989-09-02T15:55:48.305Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_2\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_3\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"source\": \"sdk\",\n          \"value\": -709825099.6480755,\n          \"category_name\": \"string\",\n          \"reason\": \"string\",\n          \"created_at\": \"1961-03-07T00:24:02.136Z\",\n          \"last_updated_at\": \"1946-10-31T14:06:19.041Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\",\n          \"value_by_author\": {\n            \"key_0\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"key_1\": {\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reason\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"category_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"source\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"last_updated_at\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_type\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"span_id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          }\n        }\n      ],\n      \"status\": \"active\",\n      \"number_of_messages\": 2364,\n      \"total_estimated_cost\": 1374.7978137882044,\n      \"usage\": {\n        \"key_0\": 1718\n      },\n      \"comments\": [\n        {\n          \"text\": \"string\",\n          \"id\": \"88fc0b14-a0b4-e208-2401-53f23d3be519\",\n          \"created_at\": \"2003-12-07T06:34:21.190Z\",\n          \"last_updated_at\": \"1984-08-22T19:06:07.417Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        },\n        {\n          \"text\": \"string\",\n          \"id\": \"5854dfd3-bd59-7e3b-15a9-4dc6289f8d71\",\n          \"created_at\": \"2009-03-13T14:29:29.207Z\",\n          \"last_updated_at\": \"2005-03-27T22:16:07.844Z\",\n          \"created_by\": \"string\",\n          \"last_updated_by\": \"string\"\n        }\n      ],\n      \"tags\": [\n        \"string\"\n      ],\n      \"last_updated_at\": \"1958-04-20T03:23:14.737Z\",\n      \"last_updated_by\": \"string\",\n      \"created_by\": \"string\",\n      \"created_at\": \"2012-04-18T10:06:56.874Z\",\n      \"environment\": \"string\"\n    }\n  ],\n  \"sortableBy\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efb5fb2e-039b-49ec-85ea-f43d18e9da88",
+          "name": "Open trace thread",
+          "request": {
+            "name": "Open trace thread",
+            "description": {
+              "content": "Open trace thread",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "open"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"thread_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"truncate\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f705486b-8378-4905-ab23-9d64b2a92e8e",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "open"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"thread_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"truncate\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "253520d5-467d-4ead-8efc-3aba2c6f4902",
+          "name": "Batch feedback scoring for threads",
+          "request": {
+            "name": "Batch feedback scoring for threads",
+            "description": {
+              "content": "Batch feedback scoring for threads",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "feedback-scores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scores\": [\n    {\n      \"name\": \"<string>\",\n      \"source\": \"<string>\",\n      \"thread_id\": \"<string>\",\n      \"value\": \"<number>\",\n      \"project_name\": \"<string>\",\n      \"project_id\": \"<uuid>\",\n      \"category_name\": \"<string>\",\n      \"reason\": \"<string>\",\n      \"author\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cfa43fe7-681e-4a21-b725-82a350a1f799",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "feedback-scores"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "62ed08a8-bea3-4bd9-a9cb-ce033be8bc03",
+          "name": "Batch feedback scoring for traces",
+          "request": {
+            "name": "Batch feedback scoring for traces",
+            "description": {
+              "content": "Batch feedback scoring for traces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "feedback-scores"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scores\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"source\": \"<string>\",\n      \"value\": \"<number>\",\n      \"project_name\": \"<string>\",\n      \"project_id\": \"<uuid>\",\n      \"category_name\": \"<string>\",\n      \"reason\": \"<string>\",\n      \"author\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4d61b41f-4c3e-49c0-a63e-06446d819b43",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "feedback-scores"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "null",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9ddbc0f-6ecb-43f8-9d2d-0f1a24008032",
+          "name": "Search trace threads",
+          "request": {
+            "name": "Search trace threads",
+            "description": {
+              "content": "Search trace threads",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"last_retrieved_thread_model_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e17d4fce-8f6a-4284-b630-1f4f4b7bdb8d",
+              "name": "Trace threads stream or error during process",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"not_contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"last_retrieved_thread_model_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f966590-0ee0-4682-bf1c-d20de2f268ab",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \"not_contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \"contains\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"last_retrieved_thread_model_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e480b6fe-c149-4b7b-a229-3f99c646ea7a",
+          "name": "Search traces",
+          "request": {
+            "name": "Search traces",
+            "description": {
+              "content": "Search traces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"key\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"last_retrieved_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"exclude\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3701d095-cca8-495e-b9f1-c3fe8a03c47e",
+              "name": "Traces stream or error during process",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \">=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \">=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"last_retrieved_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"exclude\": [\n    \"<string>\"\n  ],\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e90c048d-d53b-4f74-99ac-13e7b7541df9",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \">=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \">=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"last_retrieved_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"exclude\": [\n    \"<string>\"\n  ],\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63fe8f7e-99ae-44da-8a8e-6a68d0d65762",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"filters\": [\n    {\n      \"field\": \"string\",\n      \"operator\": \">=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"operator\": \">=\",\n      \"key\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"last_retrieved_id\": \"<uuid>\",\n  \"limit\": 500,\n  \"truncate\": true,\n  \"strip_attachments\": false,\n  \"exclude\": [\n    \"<string>\"\n  ],\n  \"from_time\": \"<dateTime>\",\n  \"to_time\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d203f074-e93e-4684-bb4c-199d3420b341",
+          "name": "Update thread",
+          "request": {
+            "name": "Update thread",
+            "description": {
+              "content": "Update thread",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                ":threadModelId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "threadModelId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tags\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tags_to_add\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tags_to_remove\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c778c00-43a9-46b2-b2a7-6abbfe0cf20d",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    ":threadModelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "threadModelId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": [\n    \"<string>\"\n  ],\n  \"tags_to_add\": [\n    \"<string>\"\n  ],\n  \"tags_to_remove\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "165f8d8d-4b9b-441b-a3a6-9c8659cf8d85",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    ":threadModelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "threadModelId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": [\n    \"<string>\"\n  ],\n  \"tags_to_add\": [\n    \"<string>\"\n  ],\n  \"tags_to_remove\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52a92c75-6ea2-4269-9843-3c021bafea3b",
+          "name": "Update thread comment by id",
+          "request": {
+            "name": "Update thread comment by id",
+            "description": {
+              "content": "Update thread comment by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "threads",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "commentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "33472ac9-2e4e-4c39-93ab-159ca18126eb",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "524a49ab-e30e-4bd1-88e0-7a40a629bc9b",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "threads",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d1aa91e-963e-4c80-99bc-d9a97bd15df6",
+          "name": "Update trace comment by id",
+          "request": {
+            "name": "Update trace comment by id",
+            "description": {
+              "content": "Update trace comment by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "traces",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "commentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2b4244f0-5c5d-41eb-b884-f013b7101937",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2bb16aff-5082-41d2-aa36-85ad47a1e3f1",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "traces",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "commentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cc18ddb7-7f4d-4003-8261-939665f23a41",
+    "name": "Opik REST Traces API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

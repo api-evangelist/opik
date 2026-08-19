@@ -1,0 +1,3150 @@
+{
+  "item": [
+    {
+      "id": "8f2ae022-668d-4729-82f6-d00f0dcb84a2",
+      "name": "Prompts",
+      "description": {
+        "content": "Prompt resources",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "71794370-3e87-459e-8741-f11e332e97a8",
+          "name": "Get prompts",
+          "request": {
+            "name": "Get prompts",
+            "description": {
+              "content": "Get prompts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "project_id",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f3f6415-2907-4d32-bb31-6485846acb7b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "project_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d43b4bb-9f3b-4fec-ae24-4e0d1203d575",
+          "name": "Create prompt",
+          "request": {
+            "name": "Create prompt",
+            "description": {
+              "content": "Create prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"<string>\",\n  \"metadata\": \"<object>\",\n  \"change_description\": \"<string>\",\n  \"type\": \"<string>\",\n  \"template_structure\": \"text\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e19c566d-d1fc-4a3a-bb8c-17228c63045b",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"<string>\",\n  \"metadata\": {},\n  \"change_description\": \"<string>\",\n  \"type\": \"<string>\",\n  \"template_structure\": \"text\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/prompts/{promptId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b1019c8-5979-4ad1-80f9-4116dc4b48e7",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"<string>\",\n  \"metadata\": {},\n  \"change_description\": \"<string>\",\n  \"type\": \"<string>\",\n  \"template_structure\": \"text\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b894ec8-27de-4e27-aa12-fff4fc9b4704",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"<string>\",\n  \"metadata\": {},\n  \"change_description\": \"<string>\",\n  \"type\": \"<string>\",\n  \"template_structure\": \"text\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad452a45-52ac-43a3-9796-02151208ec2b",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"template\": \"<string>\",\n  \"metadata\": {},\n  \"change_description\": \"<string>\",\n  \"type\": \"<string>\",\n  \"template_structure\": \"text\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d26ac8bd-7ab6-45bf-8f04-2cb9ee25b125",
+          "name": "Create prompt version",
+          "request": {
+            "name": "Create prompt version",
+            "description": {
+              "content": "Create prompt version",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "versions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"version\": {\n    \"template\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"commit\": \"<string>\",\n    \"metadata\": \"<object>\",\n    \"type\": \"<string>\",\n    \"version_type\": \"<string>\",\n    \"environment\": \"<string>\",\n    \"environments\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"change_description\": \"<string>\",\n    \"tags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"template_structure\": \"text\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f3b8c70-2924-4603-8302-809a01c3a957",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": {\n    \"template\": \"string\",\n    \"id\": \"350a0d03-bb46-26ea-9c09-9077265d0704\",\n    \"commit\": \"MNccG35g\",\n    \"metadata\": {},\n    \"type\": \"mustache\",\n    \"version_type\": \"mask\",\n    \"environment\": \"_xCl\",\n    \"environments\": [\n      \"c_\",\n      \"UsILkb9FF\",\n      \"631guJbAVH6\",\n      \"CVplJUeNJ4J\",\n      \"oskFFX\",\n      \"ZU0yT8zA\",\n      \"msWr\",\n      \"x9mA\",\n      \"whPl6t3o\",\n      \"r8HX\",\n      \"vCl\",\n      \"Am9w7xw-\",\n      \"K8M8dIMNCXD\",\n      \"ToDtm5\",\n      \"ZUZNvl\",\n      \"byqLYLEnBQ\",\n      \"jK7mrZ\",\n      \"-aQwtb3HWS\",\n      \"zvAOaLAY\",\n      \"OeF\"\n    ],\n    \"change_description\": \"string\",\n    \"tags\": [\n      \"string\"\n    ]\n  },\n  \"template_structure\": \"text\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template\": \"string\",\n  \"id\": \"92b18d9d-af6c-38ea-107d-5bd78b6c9df2\",\n  \"prompt_id\": \"efce7a9f-00a7-5605-4418-56015f6f71b4\",\n  \"commit\": \"EdpL1PFJ\",\n  \"version_number\": \"string\",\n  \"metadata\": {},\n  \"type\": \"jinja2\",\n  \"version_type\": \"mask\",\n  \"environment\": \"ItGwlQJzq\",\n  \"environments\": [\n    \"SURQLCuEV0\",\n    \"_h5xX942pM\",\n    \"qnDrW\",\n    \"z\",\n    \"uOTiPl6\",\n    \"Uf\",\n    \"H\",\n    \"ah\",\n    \"1bAK7V2\",\n    \"6NT\",\n    \"-oRLJW\",\n    \"hW8\",\n    \"w\",\n    \"U\",\n    \"oUn\",\n    \"pnqFot\",\n    \"pL\",\n    \"OJKvyjaaG\",\n    \"UWlzq5rQWb\",\n    \"BBjh8d\"\n  ],\n  \"change_description\": \"string\",\n  \"tags\": [\n    \"string\"\n  ],\n  \"variables\": [\n    \"string\"\n  ],\n  \"template_structure\": \"text\",\n  \"created_at\": \"2007-08-22T06:14:52.219Z\",\n  \"created_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9ff0105-c9af-41c8-934c-ab30a8e62c9b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": {\n    \"template\": \"string\",\n    \"id\": \"350a0d03-bb46-26ea-9c09-9077265d0704\",\n    \"commit\": \"MNccG35g\",\n    \"metadata\": {},\n    \"type\": \"mustache\",\n    \"version_type\": \"mask\",\n    \"environment\": \"_xCl\",\n    \"environments\": [\n      \"c_\",\n      \"UsILkb9FF\",\n      \"631guJbAVH6\",\n      \"CVplJUeNJ4J\",\n      \"oskFFX\",\n      \"ZU0yT8zA\",\n      \"msWr\",\n      \"x9mA\",\n      \"whPl6t3o\",\n      \"r8HX\",\n      \"vCl\",\n      \"Am9w7xw-\",\n      \"K8M8dIMNCXD\",\n      \"ToDtm5\",\n      \"ZUZNvl\",\n      \"byqLYLEnBQ\",\n      \"jK7mrZ\",\n      \"-aQwtb3HWS\",\n      \"zvAOaLAY\",\n      \"OeF\"\n    ],\n    \"change_description\": \"string\",\n    \"tags\": [\n      \"string\"\n    ]\n  },\n  \"template_structure\": \"text\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7fa2afaa-703b-4583-a52e-376b1d813088",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": {\n    \"template\": \"string\",\n    \"id\": \"350a0d03-bb46-26ea-9c09-9077265d0704\",\n    \"commit\": \"MNccG35g\",\n    \"metadata\": {},\n    \"type\": \"mustache\",\n    \"version_type\": \"mask\",\n    \"environment\": \"_xCl\",\n    \"environments\": [\n      \"c_\",\n      \"UsILkb9FF\",\n      \"631guJbAVH6\",\n      \"CVplJUeNJ4J\",\n      \"oskFFX\",\n      \"ZU0yT8zA\",\n      \"msWr\",\n      \"x9mA\",\n      \"whPl6t3o\",\n      \"r8HX\",\n      \"vCl\",\n      \"Am9w7xw-\",\n      \"K8M8dIMNCXD\",\n      \"ToDtm5\",\n      \"ZUZNvl\",\n      \"byqLYLEnBQ\",\n      \"jK7mrZ\",\n      \"-aQwtb3HWS\",\n      \"zvAOaLAY\",\n      \"OeF\"\n    ],\n    \"change_description\": \"string\",\n    \"tags\": [\n      \"string\"\n    ]\n  },\n  \"template_structure\": \"text\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f92981b-c065-42ec-a310-4047f72532d2",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"version\": {\n    \"template\": \"string\",\n    \"id\": \"350a0d03-bb46-26ea-9c09-9077265d0704\",\n    \"commit\": \"MNccG35g\",\n    \"metadata\": {},\n    \"type\": \"mustache\",\n    \"version_type\": \"mask\",\n    \"environment\": \"_xCl\",\n    \"environments\": [\n      \"c_\",\n      \"UsILkb9FF\",\n      \"631guJbAVH6\",\n      \"CVplJUeNJ4J\",\n      \"oskFFX\",\n      \"ZU0yT8zA\",\n      \"msWr\",\n      \"x9mA\",\n      \"whPl6t3o\",\n      \"r8HX\",\n      \"vCl\",\n      \"Am9w7xw-\",\n      \"K8M8dIMNCXD\",\n      \"ToDtm5\",\n      \"ZUZNvl\",\n      \"byqLYLEnBQ\",\n      \"jK7mrZ\",\n      \"-aQwtb3HWS\",\n      \"zvAOaLAY\",\n      \"OeF\"\n    ],\n    \"change_description\": \"string\",\n    \"tags\": [\n      \"string\"\n    ]\n  },\n  \"template_structure\": \"text\",\n  \"project_id\": \"<uuid>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30e518cd-c423-4991-aad5-25af18af4686",
+          "name": "Update prompt versions",
+          "request": {
+            "name": "Update prompt versions",
+            "description": {
+              "content": "Update one or more prompt versions.\n\nNote: Prompt versions are immutable by design.\nOnly organizational properties, such as tags etc., can be updated.\nCore properties like template and metadata cannot be modified after creation.\n\nPATCH semantics:\n- non-empty values update the field\n- null values preserve existing field values (no change)\n- empty values explicitly clear the field\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "versions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"tags\": [\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"merge_tags\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "798cdbdb-1eb6-4405-8090-e4c00b030d2c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"tags\": [\n      \"string\",\n      \"\",\n      \"stri\"\n    ]\n  },\n  \"merge_tags\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b565f742-e469-4804-8a6e-cd5bd0ec9d55",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ],\n  \"update\": {\n    \"tags\": [\n      \"string\",\n      \"\",\n      \"stri\"\n    ]\n  },\n  \"merge_tags\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd725769-a01c-4b15-80aa-caca7dfec15c",
+          "name": "Get prompt by id",
+          "request": {
+            "name": "Get prompt by id",
+            "description": {
+              "content": "Get prompt by id; when mask_id or environment is provided, requestedVersion is populated with the resolved version. mask_id and environment are mutually exclusive.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "mask_id",
+                  "value": "<uuid>",
+                  "description": "Optional mask version id; when set, requestedVersion is the mask row for that id"
+                },
+                {
+                  "disabled": false,
+                  "key": "environment",
+                  "value": "<string>",
+                  "description": "Optional environment name; when set, requestedVersion is the version mapped to that environment for the prompt"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3aed2c85-0076-486f-a86d-0f7c54fedcf4",
+              "name": "Prompt resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mask_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "environment",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e26d16fa-2d0d-4ee9-a4be-ece5384bab17",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mask_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "environment",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24752780-dfdb-4cc1-86f1-7cb0dc8ddd6e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "mask_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "environment",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9949190f-bed3-4cc6-9d29-742080cfdf44",
+          "name": "Update prompt",
+          "request": {
+            "name": "Update prompt",
+            "description": {
+              "content": "Update prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "58b9d465-2a83-4cf7-a066-a51297e88e17",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1bcb96a1-6050-4617-b488-5d637e5eec01",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bbb4b15b-9cca-427f-abff-3bd78a47258c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79fbfc46-9047-4b5a-9c85-3e5ed516ee7e",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aef0630b-c708-4d4b-aebe-2fceb6af231c",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tags\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c2233a1-f66d-4891-b5e4-61099035888d",
+          "name": "Delete prompt",
+          "request": {
+            "name": "Delete prompt",
+            "description": {
+              "content": "Delete prompt",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9808d20e-a8cc-41c4-800a-1d73b04fbec1",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c704589-369a-43a2-a025-323e6599026b",
+          "name": "Delete prompts",
+          "request": {
+            "name": "Delete prompts",
+            "description": {
+              "content": "Delete prompts batch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "747db7cf-fe26-4125-8b41-5f9d0d180642",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbfa948e-b83a-47c2-a17c-f5b36b04344b",
+          "name": "Get prompt by commit",
+          "request": {
+            "name": "Get prompt by commit",
+            "description": {
+              "content": "Get prompt by commit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "by-commit",
+                ":commit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "commit",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36ada8f2-cdf1-4da7-a8a5-3e9ceb15c6bb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "by-commit",
+                    ":commit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "commit",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76e57b4a-2683-40b7-a673-fb8c959e3bb2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "by-commit",
+                    ":commit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "commit",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7766f723-593b-4895-aa0f-fefcd975fbdb",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "by-commit",
+                    ":commit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "commit",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0610f716-3434-4635-af64-ae5ba5643e3d",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "by-commit",
+                    ":commit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "commit",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bdc4dc5-5893-402f-9479-4eb3df24b41d",
+          "name": "Get prompt version by id",
+          "request": {
+            "name": "Get prompt version by id",
+            "description": {
+              "content": "Get prompt version by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "versions",
+                ":versionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "633e4b01-70ed-4353-a50f-858f94e87d49",
+              "name": "Prompt version resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    ":versionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template\": \"string\",\n  \"id\": \"92b18d9d-af6c-38ea-107d-5bd78b6c9df2\",\n  \"prompt_id\": \"efce7a9f-00a7-5605-4418-56015f6f71b4\",\n  \"commit\": \"EdpL1PFJ\",\n  \"version_number\": \"string\",\n  \"metadata\": {},\n  \"type\": \"jinja2\",\n  \"version_type\": \"mask\",\n  \"environment\": \"ItGwlQJzq\",\n  \"environments\": [\n    \"SURQLCuEV0\",\n    \"_h5xX942pM\",\n    \"qnDrW\",\n    \"z\",\n    \"uOTiPl6\",\n    \"Uf\",\n    \"H\",\n    \"ah\",\n    \"1bAK7V2\",\n    \"6NT\",\n    \"-oRLJW\",\n    \"hW8\",\n    \"w\",\n    \"U\",\n    \"oUn\",\n    \"pnqFot\",\n    \"pL\",\n    \"OJKvyjaaG\",\n    \"UWlzq5rQWb\",\n    \"BBjh8d\"\n  ],\n  \"change_description\": \"string\",\n  \"tags\": [\n    \"string\"\n  ],\n  \"variables\": [\n    \"string\"\n  ],\n  \"template_structure\": \"text\",\n  \"created_at\": \"2007-08-22T06:14:52.219Z\",\n  \"created_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "134b2be0-b148-4a8f-a999-9c1fdafe805f",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    ":versionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca38a073-ff0e-443a-80cf-491ea2265010",
+          "name": "Get prompt version by sequential number",
+          "request": {
+            "name": "Get prompt version by sequential number",
+            "description": {
+              "content": "Get a prompt version by its sequential v<N> number for the given prompt.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                ":promptId",
+                "versions",
+                "by-number",
+                ":versionNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "promptId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "versionNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7055d554-3631-44f1-a2fe-0062b63a9d4d",
+              "name": "Prompt version resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":promptId",
+                    "versions",
+                    "by-number",
+                    ":versionNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "promptId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "versionNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template\": \"string\",\n  \"id\": \"92b18d9d-af6c-38ea-107d-5bd78b6c9df2\",\n  \"prompt_id\": \"efce7a9f-00a7-5605-4418-56015f6f71b4\",\n  \"commit\": \"EdpL1PFJ\",\n  \"version_number\": \"string\",\n  \"metadata\": {},\n  \"type\": \"jinja2\",\n  \"version_type\": \"mask\",\n  \"environment\": \"ItGwlQJzq\",\n  \"environments\": [\n    \"SURQLCuEV0\",\n    \"_h5xX942pM\",\n    \"qnDrW\",\n    \"z\",\n    \"uOTiPl6\",\n    \"Uf\",\n    \"H\",\n    \"ah\",\n    \"1bAK7V2\",\n    \"6NT\",\n    \"-oRLJW\",\n    \"hW8\",\n    \"w\",\n    \"U\",\n    \"oUn\",\n    \"pnqFot\",\n    \"pL\",\n    \"OJKvyjaaG\",\n    \"UWlzq5rQWb\",\n    \"BBjh8d\"\n  ],\n  \"change_description\": \"string\",\n  \"tags\": [\n    \"string\"\n  ],\n  \"variables\": [\n    \"string\"\n  ],\n  \"template_structure\": \"text\",\n  \"created_at\": \"2007-08-22T06:14:52.219Z\",\n  \"created_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5a34f3c-ac4c-449c-9bc0-6ad688c0f71e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":promptId",
+                    "versions",
+                    "by-number",
+                    ":versionNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "promptId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "versionNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "142cdf17-9841-468d-b9d2-12209bac7acb",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":promptId",
+                    "versions",
+                    "by-number",
+                    ":versionNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "promptId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "versionNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ebddb42-9b45-4208-9ede-97b7bd297eee",
+          "name": "Get prompt versions",
+          "request": {
+            "name": "Get prompt versions",
+            "description": {
+              "content": "Get prompt versions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                ":id",
+                "versions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search text to find in template or change description fields"
+                },
+                {
+                  "disabled": false,
+                  "key": "sorting",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f861a48a-12c4-4395-9c0c-e7679612c4cf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":id",
+                    "versions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sorting",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 8633,\n  \"size\": 8838,\n  \"total\": 5771,\n  \"content\": [\n    {\n      \"template\": \"string\",\n      \"id\": \"e4f85c3d-5d03-5a88-d40e-eaa89794716c\",\n      \"prompt_id\": \"76a090e0-b6b3-ff81-a4cd-7cc35cb8aa31\",\n      \"commit\": \"BIHfyzsC\",\n      \"version_number\": \"string\",\n      \"metadata\": {},\n      \"type\": \"python\",\n      \"version_type\": \"prompt_version\",\n      \"environment\": \"7Y8UPwLR1P\",\n      \"environments\": [\n        \"frVE\",\n        \"O\",\n        \"b4AhTiSasyI\",\n        \"i_\",\n        \"BqTI3F\",\n        \"BqQ2\",\n        \"l40A-\",\n        \"h\",\n        \"s-DTXtrH\",\n        \"XP3SBECUl\",\n        \"T6PX9K\",\n        \"gO0\",\n        \"MbHlL\",\n        \"Hf\",\n        \"sODjdrLL\",\n        \"2F-\",\n        \"e_MyUAC0Mlf\",\n        \"pEVdpeNR\",\n        \"hhbIf2LVS\",\n        \"UUM_QnnqH\"\n      ],\n      \"change_description\": \"string\",\n      \"tags\": [\n        \"string\"\n      ],\n      \"template_structure\": \"chat\",\n      \"created_at\": \"2021-02-09T10:31:32.968Z\",\n      \"created_by\": \"string\"\n    },\n    {\n      \"template\": \"string\",\n      \"id\": \"2f923ad8-1e9e-ef40-c0a6-c206eeaf433d\",\n      \"prompt_id\": \"a60e3ab2-5969-f574-fda4-9c7f6540ee91\",\n      \"commit\": \"PBAgWkAn\",\n      \"version_number\": \"string\",\n      \"metadata\": {},\n      \"type\": \"jinja2\",\n      \"version_type\": \"prompt_version\",\n      \"environment\": \"-SATW7ZSc\",\n      \"environments\": [\n        \"azFoaM2\",\n        \"twp_f\",\n        \"HPXB7cck4am\",\n        \"e1kV\",\n        \"fIxJ_3j\",\n        \"2YRuwat\",\n        \"S\",\n        \"8\",\n        \"f\",\n        \"YKSq\",\n        \"DFBcB5vw\",\n        \"7MgvM\",\n        \"eKL\",\n        \"VLeT5\",\n        \"HhS\",\n        \"sg5vwPWNEz\",\n        \"XcQoVK7bbnW\",\n        \"obZh\",\n        \"GEo\",\n        \"IQ-AUoREAY\"\n      ],\n      \"change_description\": \"string\",\n      \"tags\": [\n        \"string\",\n        \"stri\"\n      ],\n      \"template_structure\": \"text\",\n      \"created_at\": \"2018-04-06T07:48:08.274Z\",\n      \"created_by\": \"string\"\n    }\n  ],\n  \"sortableBy\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94e426cf-6894-449d-8ea6-e481e47c8642",
+          "name": "Get prompts by commits",
+          "request": {
+            "name": "Get prompts by commits",
+            "description": {
+              "content": "Get prompts by prompt version commits",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "retrieve-by-commits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commits\": [\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "de853c33-2712-49b0-b337-54cfe4ef86df",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "retrieve-by-commits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"commits\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"prompt_version_id\": \"b11efe60-483d-7b10-6970-562a4393ec01\",\n    \"commit\": \"string\",\n    \"prompt_id\": \"646f1b28-95f6-ba91-419e-759e78440335\",\n    \"prompt_name\": \"string\"\n  },\n  {\n    \"prompt_version_id\": \"f92b4889-ce93-20b4-bdce-606967bedb4a\",\n    \"commit\": \"string\",\n    \"prompt_id\": \"dc4db94d-1d66-0823-b0b5-00865c9a6b9b\",\n    \"prompt_name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b01c75d6-1fa4-488b-98a4-a59e72ecfbdd",
+          "name": "Restore prompt version",
+          "request": {
+            "name": "Restore prompt version",
+            "description": {
+              "content": "Restore a prompt version by creating a new version with the content from the specified version",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                ":promptId",
+                "versions",
+                ":versionId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "promptId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d8acad99-24c4-400c-8c58-e9523ee5abcb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":promptId",
+                    "versions",
+                    ":versionId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "promptId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template\": \"string\",\n  \"id\": \"92b18d9d-af6c-38ea-107d-5bd78b6c9df2\",\n  \"prompt_id\": \"efce7a9f-00a7-5605-4418-56015f6f71b4\",\n  \"commit\": \"EdpL1PFJ\",\n  \"version_number\": \"string\",\n  \"metadata\": {},\n  \"type\": \"jinja2\",\n  \"version_type\": \"mask\",\n  \"environment\": \"ItGwlQJzq\",\n  \"environments\": [\n    \"SURQLCuEV0\",\n    \"_h5xX942pM\",\n    \"qnDrW\",\n    \"z\",\n    \"uOTiPl6\",\n    \"Uf\",\n    \"H\",\n    \"ah\",\n    \"1bAK7V2\",\n    \"6NT\",\n    \"-oRLJW\",\n    \"hW8\",\n    \"w\",\n    \"U\",\n    \"oUn\",\n    \"pnqFot\",\n    \"pL\",\n    \"OJKvyjaaG\",\n    \"UWlzq5rQWb\",\n    \"BBjh8d\"\n  ],\n  \"change_description\": \"string\",\n  \"tags\": [\n    \"string\"\n  ],\n  \"variables\": [\n    \"string\"\n  ],\n  \"template_structure\": \"text\",\n  \"created_at\": \"2007-08-22T06:14:52.219Z\",\n  \"created_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8273757e-3180-48c0-89de-1168907331f8",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":promptId",
+                    "versions",
+                    ":versionId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "promptId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91b95fcb-2295-456d-a688-62733a1e49d1",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    ":promptId",
+                    "versions",
+                    ":versionId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "promptId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a80456d4-aa55-472d-bbfb-1b0f4a9f3a92",
+          "name": "Retrieve prompt version",
+          "request": {
+            "name": "Retrieve prompt version",
+            "description": {
+              "content": "Retrieve prompt version",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "versions",
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"commit\": \"<string>\",\n  \"environment\": \"<string>\",\n  \"version_number\": \"<string>\",\n  \"project_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd873dac-6a74-45a9-bb7f-33602e7f99c4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"commit\": \"<string>\",\n  \"environment\": \"<string>\",\n  \"version_number\": \"<string>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"template\": \"string\",\n  \"id\": \"92b18d9d-af6c-38ea-107d-5bd78b6c9df2\",\n  \"prompt_id\": \"efce7a9f-00a7-5605-4418-56015f6f71b4\",\n  \"commit\": \"EdpL1PFJ\",\n  \"version_number\": \"string\",\n  \"metadata\": {},\n  \"type\": \"jinja2\",\n  \"version_type\": \"mask\",\n  \"environment\": \"ItGwlQJzq\",\n  \"environments\": [\n    \"SURQLCuEV0\",\n    \"_h5xX942pM\",\n    \"qnDrW\",\n    \"z\",\n    \"uOTiPl6\",\n    \"Uf\",\n    \"H\",\n    \"ah\",\n    \"1bAK7V2\",\n    \"6NT\",\n    \"-oRLJW\",\n    \"hW8\",\n    \"w\",\n    \"U\",\n    \"oUn\",\n    \"pnqFot\",\n    \"pL\",\n    \"OJKvyjaaG\",\n    \"UWlzq5rQWb\",\n    \"BBjh8d\"\n  ],\n  \"change_description\": \"string\",\n  \"tags\": [\n    \"string\"\n  ],\n  \"variables\": [\n    \"string\"\n  ],\n  \"template_structure\": \"text\",\n  \"created_at\": \"2007-08-22T06:14:52.219Z\",\n  \"created_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b16455df-044c-4182-bd0a-fa5d4f222c2e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"commit\": \"<string>\",\n  \"environment\": \"<string>\",\n  \"version_number\": \"<string>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "824269bb-bcbd-4638-b159-0035a1aa91cd",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"commit\": \"<string>\",\n  \"environment\": \"<string>\",\n  \"version_number\": \"<string>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "344aacb7-0349-4fa3-9abe-d7c0d9197914",
+              "name": "Unprocessable Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    "retrieve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"commit\": \"<string>\",\n  \"environment\": \"<string>\",\n  \"version_number\": \"<string>\",\n  \"project_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f8bcd1f-8768-4c00-a939-2d563f682cf5",
+          "name": "Retrieve prompt versions by ids",
+          "request": {
+            "name": "Retrieve prompt versions by ids",
+            "description": {
+              "content": "Retrieve a batch of prompt versions by their ids. Typically used by the UI to resolve mask overlays.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "versions",
+                "retrieve-by-ids"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "09273485-7cce-4845-a11d-a02af8175e7d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    "retrieve-by-ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"template\": \"string\",\n    \"id\": \"f9f7c563-d86f-c30e-2782-68ba1a9e5ddc\",\n    \"prompt_id\": \"0c85b3db-07e3-2871-fa32-53192c4c6ace\",\n    \"commit\": \"Jla6evdc\",\n    \"version_number\": \"string\",\n    \"metadata\": {},\n    \"type\": \"mustache\",\n    \"version_type\": \"mask\",\n    \"environment\": \"0lkI6\",\n    \"environments\": [\n      \"I\",\n      \"kQUtCmLk\",\n      \"6A46m\",\n      \"jZahwpIdY\",\n      \"fhNx_JXCzv\",\n      \"cY516Hvqqz\",\n      \"rZV\",\n      \"ZlQLLsZKcQD\",\n      \"ZRD3\",\n      \"f0EsqI\",\n      \"0HKGRKRJ\",\n      \"QmZC3\",\n      \"YqIZtnIWBt\",\n      \"h-\",\n      \"YsX6CjkwDRr\",\n      \"i7joZ_\",\n      \"9W5NN_64B1G\",\n      \"Seuw_NfRGn\",\n      \"euJG\",\n      \"wA\"\n    ],\n    \"change_description\": \"string\",\n    \"tags\": [\n      \"string\",\n      \"strin\"\n    ],\n    \"variables\": [\n      \"string\"\n    ],\n    \"template_structure\": \"chat\",\n    \"created_at\": \"1985-09-16T05:18:19.816Z\",\n    \"created_by\": \"string\"\n  },\n  {\n    \"template\": \"string\",\n    \"id\": \"883bf9f4-25a3-644f-d92c-084aff6bf98b\",\n    \"prompt_id\": \"3727127d-bcdc-7182-4417-d08f1211376f\",\n    \"commit\": \"DkNm2tXi\",\n    \"version_number\": \"string\",\n    \"metadata\": {},\n    \"type\": \"jinja2\",\n    \"version_type\": \"prompt_version\",\n    \"environment\": \"eBMbfIVRArH\",\n    \"environments\": [\n      \"Z94H30LcE\",\n      \"YxtdJWy\",\n      \"oPubgb70K\",\n      \"xkKmGcNJ\",\n      \"jqQik\",\n      \"y\",\n      \"XVWQwJlOWvG\",\n      \"ZRaU0VwBiR\",\n      \"b08T2ErD4k\",\n      \"mekwEmQCZ\",\n      \"G\",\n      \"m9aFBp\",\n      \"bNSF1AdrriS\",\n      \"TWWx5-fQki\",\n      \"Rhu2\",\n      \"5k_x\",\n      \"almiWABYG\",\n      \"fU7786MTB\",\n      \"dycHpZvSFg\",\n      \"VHt2Fg7XOI\"\n    ],\n    \"change_description\": \"string\",\n    \"tags\": [\n      \"string\",\n      \"strin\"\n    ],\n    \"variables\": [\n      \"string\"\n    ],\n    \"template_structure\": \"text\",\n    \"created_at\": \"2003-03-07T12:30:38.159Z\",\n    \"created_by\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f531699-1674-41e6-b336-774013ed865e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    "retrieve-by-ids"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ids\": [\n    \"<uuid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8d5b663-6ca6-4c16-bd75-d5b2e4c275ee",
+          "name": "Set prompt version environment",
+          "request": {
+            "name": "Set prompt version environment",
+            "description": {
+              "content": "Set or clear the environment owned by a prompt version.\nSetting a non-null environment moves ownership atomically: any previous owner of that\nenvironment for the same prompt has its environment cleared in the same transaction.\nSetting null clears the environment from the version.\nThe environment must already exist in the workspace registry; unknown names return 404.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "prompts",
+                "versions",
+                ":versionId",
+                "environments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"environments\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb8d6514-4988-434d-8e0e-14c4f96e9ef9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    ":versionId",
+                    "environments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environments\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "239f3a73-1d74-4056-9b5c-a834a22d6e83",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    ":versionId",
+                    "environments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environments\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1000571-96f1-4ab5-9bfd-a0b6e32c33c7",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "prompts",
+                    "versions",
+                    ":versionId",
+                    "environments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"environments\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7626,\n  \"message\": \"string\",\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "11f19f2f-54b0-4666-9ea5-68c1fad4dc30",
+    "name": "Opik REST Prompts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

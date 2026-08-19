@@ -1,0 +1,488 @@
+{
+  "item": [
+    {
+      "id": "bc2b8829-20e8-4c00-9fcd-14a8342e8baf",
+      "name": "System usage",
+      "description": {
+        "content": "System usage related resource",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f7a30df-fffd-4fed-b906-79b8d6797234",
+          "name": "Get datasets information for BI events",
+          "request": {
+            "name": "Get datasets information for BI events",
+            "description": {
+              "content": "Get datasets information for BI events per user per workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "usage",
+                "bi-datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23934324-d668-4a24-bc0c-0953ac800ead",
+              "name": "Datasets BiInformationResponse resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "usage",
+                    "bi-datasets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bi_information\": [\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 5125\n    },\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 7883\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83a05f2b-fb30-425c-8183-e12116e27f6c",
+          "name": "Get experiments information for BI events",
+          "request": {
+            "name": "Get experiments information for BI events",
+            "description": {
+              "content": "Get experiments information for BI events per user per workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "usage",
+                "bi-experiments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4774bf82-d951-4b6f-9b43-425a8ddef32d",
+              "name": "Experiments BiInformationResponse resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "usage",
+                    "bi-experiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bi_information\": [\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 5125\n    },\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 7883\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "027da60c-4eed-47fb-816e-6ecd6e12c3db",
+          "name": "Get spans information for BI events",
+          "request": {
+            "name": "Get spans information for BI events",
+            "description": {
+              "content": "Get spans information for BI events per user per workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "usage",
+                "bi-spans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbf1577e-4e22-4068-888b-f79dbd4867f3",
+              "name": "Spans BiInformationResponse resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "usage",
+                    "bi-spans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bi_information\": [\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 5125\n    },\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 7883\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0021c5c1-05bb-402b-8b6f-755a57b6518e",
+          "name": "Get spans count on previous day for all available workspaces",
+          "request": {
+            "name": "Get spans count on previous day for all available workspaces",
+            "description": {
+              "content": "Get spans count on previous day for all available workspaces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "usage",
+                "workspace-span-counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a64ae6a-e3e0-4583-9169-47b562dd9c18",
+              "name": "SpanCountResponse resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "usage",
+                    "workspace-span-counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"workspaces_spans_count\": [\n    {\n      \"workspace\": \"string\",\n      \"span_count\": 8246\n    },\n    {\n      \"workspace\": \"string\",\n      \"span_count\": 5830\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf7532d3-92fe-4ae5-8bf8-c68c31894434",
+          "name": "Get traces information for BI events",
+          "request": {
+            "name": "Get traces information for BI events",
+            "description": {
+              "content": "Get traces information for BI events per user per workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "usage",
+                "bi-traces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c8556d5-bdf5-48e2-9a63-180e89bea65c",
+              "name": "Traces BiInformationResponse resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "usage",
+                    "bi-traces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bi_information\": [\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 5125\n    },\n    {\n      \"workspace_id\": \"string\",\n      \"user\": \"string\",\n      \"count\": 7883\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea7bc697-cced-4304-9b0a-e2fc00859583",
+          "name": "Get traces count on previous day for all available workspaces",
+          "request": {
+            "name": "Get traces count on previous day for all available workspaces",
+            "description": {
+              "content": "Get traces count on previous day for all available workspaces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "internal",
+                "usage",
+                "workspace-trace-counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "161efe46-2109-4fb6-a156-953d7ec89f8f",
+              "name": "TraceCountResponse resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "internal",
+                    "usage",
+                    "workspace-trace-counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"workspaces_traces_count\": [\n    {\n      \"workspace\": \"string\",\n      \"trace_count\": 9730\n    },\n    {\n      \"workspace\": \"string\",\n      \"trace_count\": 2173\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7b2d3e60-7beb-4c5c-9e45-270f602d1367",
+    "name": "Opik REST System usage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}

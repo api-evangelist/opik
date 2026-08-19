@@ -1,0 +1,498 @@
+{
+  "item": [
+    {
+      "id": "21eb1698-a935-45c9-93d4-bcfd7c02c029",
+      "name": "Retention Rules",
+      "description": {
+        "content": "Data retention rule management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "591ac236-9809-4a7b-9654-8d4c8fcc9f64",
+          "name": "Find retention rules",
+          "request": {
+            "name": "Find retention rules",
+            "description": {
+              "content": "List retention rules for the caller's workspace. Defaults to active only.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "retention",
+                "rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_inactive",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2176443e-2c08-4ad5-b608-9c8c071c9ad8",
+              "name": "Retention rules page",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "retention",
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "include_inactive",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"retention\": \"base_60d\",\n      \"id\": \"90a69884-56df-ce47-0ed0-803921112693\",\n      \"workspace_id\": \"string\",\n      \"project_id\": \"438bb980-f725-ba8a-e333-bc00c0fbd18d\",\n      \"level\": \"workspace\",\n      \"apply_to_past\": true,\n      \"enabled\": true,\n      \"created_by\": \"string\",\n      \"created_at\": \"1976-10-17T06:38:21.321Z\",\n      \"last_updated_by\": \"string\",\n      \"last_updated_at\": \"1976-10-19T18:20:41.363Z\",\n      \"catch_up_cursor\": \"5167e143-69c1-f4c2-b861-a50a054e53d8\",\n      \"catch_up_done\": true\n    },\n    {\n      \"retention\": \"short_14d\",\n      \"id\": \"8a615412-f50b-815d-1737-563eca2911a3\",\n      \"workspace_id\": \"string\",\n      \"project_id\": \"f0a29153-2cae-a8ae-c328-494a0650b54c\",\n      \"level\": \"workspace\",\n      \"apply_to_past\": false,\n      \"enabled\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"1963-03-15T11:02:20.228Z\",\n      \"last_updated_by\": \"string\",\n      \"last_updated_at\": \"1976-09-13T04:09:49.345Z\",\n      \"catch_up_cursor\": \"3cbb858c-a6df-5bef-4fb9-5bb5b58c6329\",\n      \"catch_up_done\": true\n    }\n  ],\n  \"page\": 532,\n  \"size\": 5740,\n  \"total\": 624\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2850e65-771b-420c-909a-3801c3061926",
+          "name": "Create retention rule",
+          "request": {
+            "name": "Create retention rule",
+            "description": {
+              "content": "Create a new retention rule. Auto-deactivates any existing active rule for the same scope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "retention",
+                "rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"retention\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"organization_level\": \"<boolean>\",\n  \"apply_to_past\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0c019e69-a27a-4deb-9a54-58dde53ea21e",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "retention",
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"retention\": \"<string>\",\n  \"project_id\": \"<uuid>\",\n  \"organization_level\": \"<boolean>\",\n  \"apply_to_past\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) ",
+                  "key": "Location",
+                  "value": "${basePath}/v1/private/retention/rules/{ruleId}"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"retention\": \"short_14d\",\n  \"id\": \"b113691a-37aa-09b4-f46b-e5083b675869\",\n  \"workspace_id\": \"string\",\n  \"project_id\": \"c16ee9a1-35a4-c594-8226-e85503616069\",\n  \"level\": \"organization\",\n  \"apply_to_past\": false,\n  \"enabled\": true,\n  \"created_by\": \"string\",\n  \"created_at\": \"1974-01-09T13:35:44.512Z\",\n  \"last_updated_by\": \"string\",\n  \"last_updated_at\": \"1950-01-21T08:54:22.691Z\",\n  \"catch_up_cursor\": \"2c3dbf4f-ebdf-5d60-4b19-e05000f292be\",\n  \"catch_up_done\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edc5bf0c-dbd4-41ed-8a74-45ffa6286639",
+          "name": "Get retention rule by id",
+          "request": {
+            "name": "Get retention rule by id",
+            "description": {
+              "content": "Get a specific retention rule by id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "retention",
+                "rules",
+                ":ruleId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "ruleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29cd6788-64c4-41e5-b5d9-84d32a1f2693",
+              "name": "Retention rule",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "retention",
+                    "rules",
+                    ":ruleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "ruleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"retention\": \"short_14d\",\n  \"id\": \"b113691a-37aa-09b4-f46b-e5083b675869\",\n  \"workspace_id\": \"string\",\n  \"project_id\": \"c16ee9a1-35a4-c594-8226-e85503616069\",\n  \"level\": \"organization\",\n  \"apply_to_past\": false,\n  \"enabled\": true,\n  \"created_by\": \"string\",\n  \"created_at\": \"1974-01-09T13:35:44.512Z\",\n  \"last_updated_by\": \"string\",\n  \"last_updated_at\": \"1950-01-21T08:54:22.691Z\",\n  \"catch_up_cursor\": \"2c3dbf4f-ebdf-5d60-4b19-e05000f292be\",\n  \"catch_up_done\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9719f25c-4501-4a52-81d5-47d3dc7fe05b",
+              "name": "Retention rule not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "retention",
+                    "rules",
+                    ":ruleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "ruleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bca9f7a-e541-40ad-b66f-66f2edda5b25",
+          "name": "Deactivate retention rule",
+          "request": {
+            "name": "Deactivate retention rule",
+            "description": {
+              "content": "Soft-deactivate a retention rule (sets enabled=false). Rules are never hard-deleted for audit trail.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "private",
+                "retention",
+                "rules",
+                ":ruleId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "ruleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2471ad03-520b-49ac-b4cf-bb9f7332b357",
+              "name": "No content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "retention",
+                    "rules",
+                    ":ruleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "ruleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "92e91476-031f-4ba2-9525-3db9222b76d9",
+              "name": "Retention rule not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "private",
+                    "retention",
+                    "rules",
+                    ":ruleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "ruleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5173/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "014a497c-f017-48f1-92b6-120fa1b59b0f",
+    "name": "Opik REST Retention Rules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n\n\nContact Support:\n Name: Github Repository",
+      "type": "text/plain"
+    }
+  }
+}
