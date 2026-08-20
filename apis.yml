@@ -32,6 +32,17 @@ tags:
   - Evaluation
   - Observability
   - Tracing
+  - Open-Source
+  - LLMOps
+  - RAG
+  - Artificial Intelligence
+  - Machine-Learning
+  - Monitoring
+tags_raw:
+  - LLM
+  - Evaluation
+  - Observability
+  - Tracing
   - Open Source
   - LLMOps
   - RAG
@@ -357,6 +368,8 @@ apis:
   humanURL: https://www.comet.com/docs/opik/reference/rest-api/overview
   baseURL: https://www.comet.com/opik/api/v1
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
