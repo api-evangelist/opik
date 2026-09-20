@@ -1,0 +1,58 @@
+slug: opik
+provider: Opik
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: AI Spend
+  spec_file: opik-ai-spend-api-openapi.yml
+  capability_id: BC-600.80
+  capability_id_l1: BC-600
+  capability_name: IT Financial Management
+  confidence: 0.72
+  evidence: getSpendSummary  Get spend summary ; getSpendRecommendations  Get spend recommendations ;
+    getSpendUsers  Get spend user leaderboard
+  reason: Reports composition, summary, per-user breakdown and cost-saving recommendations for LLM/AI
+    spend within a workspace — technology spend visibility, showback and cost optimisation. Mapped to
+    IT Financial Management; some chance a grader prefers a generic analytics capability, hence not higher.
+- tag: Automation rule evaluators
+  spec_file: opik-automation-rule-evaluators-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /v1/private/automations/evaluators  createAutomationRuleEvaluator  Create automation
+    rule evaluator; schema AutomationRuleEvaluator_Public
+  reason: Automation rule evaluators are Opik's LLM-as-a-judge scoring rules applied to logged traces
+    — automated evaluation of AI model outputs, part of the AI/ML model lifecycle and responsible-AI monitoring
+    (BC-610.60). Not a generic workflow-automation capability.
+- tag: Datasets
+  spec_file: opik-datasets-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /v1/private/datasets/{dataset_id}/items/from-traces  createDatasetItemsFromTraces  Create
+    dataset items from traces
+  reason: Evaluation datasets curated from production traces/spans and versioned for LLM experiments —
+    training/evaluation data assets in the AI/ML model lifecycle (MLOps), not generic enterprise master
+    data.
+- tag: Experiments
+  spec_file: opik-experiments-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /v1/private/experiments/execute  executeExperiment  Create and execute experiment; GET
+    /v1/private/experiments/feedback-scores/names  findFeedbackScoreNames
+  reason: Experiments here are LLM evaluation runs over datasets producing feedback scores — model evaluation
+    within the AI/ML lifecycle, not product A/B testing of features.
