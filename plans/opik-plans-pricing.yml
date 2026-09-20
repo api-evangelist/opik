@@ -10,6 +10,13 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: developer-api
 pricing_basis: tiered-subscription
+delivery:
+  delivery: open-core
+  method: page
+  read: '2026-09-20'
+  evidence: Open Source Download, install, & run Opik your way $0 Free GitHub
+  free_edition: Open Source
+  managed_tier: Pro Cloud
 published: true
 note: Comet pricing page covering Opik (observability) and MLOps plan families; span- and training-hour-based
   overages listed.
