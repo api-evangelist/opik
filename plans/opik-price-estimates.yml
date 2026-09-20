@@ -11,6 +11,10 @@ pricing_basis: tiered-subscription
 delivery: open-core
 delivery_method: page
 delivery_evidence: Open Source Download, install, & run Opik your way $0 Free GitHub
+open_source_repository:
+  repo: comet-ml/opik
+  license: Apache-2.0
+  stars: 22160
 free_self_hosted_tiers:
 - Open Source
 managed_premium:
