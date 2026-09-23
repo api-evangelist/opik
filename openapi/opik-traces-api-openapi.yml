@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Opik REST Traces API
-  description: "The Opik REST API is currently in beta and subject to change. If you have any questions or feedback about the APIs, please reach out on GitHub: https://github.com/comet-ml/opik.\n\nAll of the methods listed in this documentation are used by either the SDK or the UI to interact with the Opik server. As a result,\nthe methods have been optimized for these use-cases in mind. If you are looking for a method that is not listed above, please create\nand issue on GitHub or raise a PR!\n\nOpik includes two main deployment options that results in slightly different API usage:\n\n- **Self-hosted Opik instance:** You will simply need to specify the URL as `http://localhost:5173/api/<endpoint_path>` or similar. This is the default option for the docs.\n- **Opik Cloud:** You will need to specify the Opik API Key and Opik Workspace in the header. The format of the header should be:\n\n  ```\n  {\n    \"Comet-Workspace\": \"your-workspace-name\",\n    \"authorization\": \"your-api-key\"\n  }\n  ```\n\n  The full payload would therefore look like:\n  \n  ```\n  curl -X GET 'https://www.comet.com/opik/api/v1/private/projects' \\\n  -H 'Accept: application/json' \\\n  -H 'Comet-Workspace: <your-workspace-name>' \\\n  -H 'authorization: <your-api-key>'\n  ```\n\n  Do take note here that the authorization header value does not include the `Bearer ` prefix. To switch to using the Opik Cloud in the documentation, you can\n  click on the edit button displayed when hovering over the `Base URL` displayed on the right hand side of the docs.\n"
+  description: The Opik REST API is currently in beta and subject to change.
   contact:
     name: Github Repository
     url: https://github.com/comet-ml/opik
@@ -23,7 +23,6 @@ paths:
       tags:
       - Traces
       summary: Add thread comment
-      description: Add thread comment
       operationId: addThreadComment
       parameters:
       - name: id
@@ -52,7 +51,6 @@ paths:
       tags:
       - Traces
       summary: Add trace comment
-      description: Add trace comment
       operationId: addTraceComment
       parameters:
       - name: id
@@ -81,7 +79,6 @@ paths:
       tags:
       - Traces
       summary: Add trace feedback score
-      description: Add trace feedback score
       operationId: addTraceFeedbackScore
       parameters:
       - name: id
@@ -103,7 +100,6 @@ paths:
       tags:
       - Traces
       summary: Create traces
-      description: Create traces
       operationId: createTraces
       requestBody:
         content:
@@ -180,7 +176,6 @@ paths:
       tags:
       - Traces
       summary: Get traces by project_name or project_id
-      description: Get traces by project_name or project_id
       operationId: getTracesByProject
       parameters:
       - name: page
@@ -280,7 +275,6 @@ paths:
       tags:
       - Traces
       summary: Get trace by id
-      description: Get trace by id
       operationId: getTraceById
       parameters:
       - name: id
@@ -306,7 +300,6 @@ paths:
       tags:
       - Traces
       summary: Delete trace by id
-      description: Delete trace by id
       operationId: deleteTraceById
       parameters:
       - name: id
@@ -322,7 +315,6 @@ paths:
       tags:
       - Traces
       summary: Update trace by id
-      description: Update trace by id
       operationId: updateTrace
       parameters:
       - name: id
@@ -344,7 +336,6 @@ paths:
       tags:
       - Traces
       summary: Delete thread comments
-      description: Delete thread comments
       operationId: deleteThreadComments
       requestBody:
         content:
@@ -359,7 +350,6 @@ paths:
       tags:
       - Traces
       summary: Delete thread feedback scores
-      description: Delete thread feedback scores
       operationId: deleteThreadFeedbackScores
       requestBody:
         content:
@@ -374,7 +364,6 @@ paths:
       tags:
       - Traces
       summary: Delete trace comments
-      description: Delete trace comments
       operationId: deleteTraceComments
       requestBody:
         content:
@@ -389,7 +378,6 @@ paths:
       tags:
       - Traces
       summary: Delete trace feedback score
-      description: Delete trace feedback score
       operationId: deleteTraceFeedbackScore
       parameters:
       - name: id
@@ -411,7 +399,6 @@ paths:
       tags:
       - Traces
       summary: Delete trace threads
-      description: Delete trace threads
       operationId: deleteTraceThreads
       requestBody:
         content:
@@ -426,7 +413,6 @@ paths:
       tags:
       - Traces
       summary: Delete traces
-      description: Delete traces
       operationId: deleteTraces
       requestBody:
         content:
@@ -441,7 +427,6 @@ paths:
       tags:
       - Traces
       summary: Find Feedback Score names
-      description: Find Feedback Score names
       operationId: findFeedbackScoreNames_2
       parameters:
       - name: project_id
@@ -461,7 +446,6 @@ paths:
       tags:
       - Traces
       summary: Find Trace Threads Feedback Score names
-      description: Find Trace Threads Feedback Score names
       operationId: findTraceThreadsFeedbackScoreNames
       parameters:
       - name: project_id
@@ -481,7 +465,6 @@ paths:
       tags:
       - Traces
       summary: Get trace stats
-      description: Get trace stats
       operationId: getTraceStats
       parameters:
       - name: project_id
@@ -526,7 +509,6 @@ paths:
       tags:
       - Traces
       summary: Get thread comment
-      description: Get thread comment
       operationId: getThreadComment
       parameters:
       - name: commentId
@@ -559,7 +541,6 @@ paths:
       tags:
       - Traces
       summary: Get trace thread stats
-      description: Get trace thread stats
       operationId: getTraceThreadStats
       parameters:
       - name: project_id
@@ -604,7 +585,6 @@ paths:
       tags:
       - Traces
       summary: Get trace comment
-      description: Get trace comment
       operationId: getTraceComment
       parameters:
       - name: commentId
@@ -637,7 +617,6 @@ paths:
       tags:
       - Traces
       summary: Get trace thread
-      description: Get trace thread
       operationId: getTraceThread
       requestBody:
         content:
@@ -662,7 +641,6 @@ paths:
       tags:
       - Traces
       summary: Get trace threads
-      description: Get trace threads
       operationId: getTraceThreads
       parameters:
       - name: page
@@ -737,7 +715,6 @@ paths:
       tags:
       - Traces
       summary: Open trace thread
-      description: Open trace thread
       operationId: openTraceThread
       requestBody:
         content:
@@ -752,7 +729,6 @@ paths:
       tags:
       - Traces
       summary: Batch feedback scoring for threads
-      description: Batch feedback scoring for threads
       operationId: scoreBatchOfThreads
       requestBody:
         content:
@@ -767,7 +743,6 @@ paths:
       tags:
       - Traces
       summary: Batch feedback scoring for traces
-      description: Batch feedback scoring for traces
       operationId: scoreBatchOfTraces
       requestBody:
         content:
@@ -782,7 +757,6 @@ paths:
       tags:
       - Traces
       summary: Search trace threads
-      description: Search trace threads
       operationId: searchTraceThreads
       requestBody:
         content:
@@ -813,7 +787,6 @@ paths:
       tags:
       - Traces
       summary: Search traces
-      description: Search traces
       operationId: searchTraces
       requestBody:
         content:
@@ -850,7 +823,6 @@ paths:
       tags:
       - Traces
       summary: Update thread
-      description: Update thread
       operationId: updateThread
       parameters:
       - name: threadModelId
@@ -874,7 +846,6 @@ paths:
       tags:
       - Traces
       summary: Update thread comment by id
-      description: Update thread comment by id
       operationId: updateThreadComment
       parameters:
       - name: commentId
@@ -898,7 +869,6 @@ paths:
       tags:
       - Traces
       summary: Update trace comment by id
-      description: Update trace comment by id
       operationId: updateTraceComment
       parameters:
       - name: commentId
@@ -929,6 +899,369 @@ components:
           type: string
         details:
           type: string
+    TraceThreadFilter:
+      type: object
+      properties:
+        field:
+          type: string
+        operator:
+          type: string
+          enum:
+          - contains
+          - not_contains
+          - starts_with
+          - ends_with
+          - '='
+          - '!='
+          - '>'
+          - '>='
+          - <
+          - <=
+          - is_empty
+          - is_not_empty
+          - in
+          - not_in
+        key:
+          type: string
+        value:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    ExperimentItemReference_Public:
+      required:
+      - dataset_id
+      - dataset_item_id
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          description: Experiment ID
+          format: uuid
+        name:
+          type: string
+          description: Experiment name
+        dataset_id:
+          type: string
+          description: Dataset ID
+          format: uuid
+        dataset_item_id:
+          type: string
+          description: Dataset Item ID
+          format: uuid
+      description: Experiment reference with ID, name, dataset ID, and dataset item ID
+      readOnly: true
+    Comment_Public:
+      required:
+      - text
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        text:
+          minLength: 1
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+      readOnly: true
+    TraceFilter_Public:
+      type: object
+      properties:
+        field:
+          type: string
+        operator:
+          type: string
+          enum:
+          - contains
+          - not_contains
+          - starts_with
+          - ends_with
+          - '='
+          - '!='
+          - '>'
+          - '>='
+          - <
+          - <=
+          - is_empty
+          - is_not_empty
+          - in
+          - not_in
+        key:
+          type: string
+        value:
+          type: string
+    TraceThreadIdentifier:
+      required:
+      - thread_id
+      type: object
+      properties:
+        project_name:
+          type: string
+        project_id:
+          type: string
+          format: uuid
+        thread_id:
+          minLength: 1
+          type: string
+        truncate:
+          type: boolean
+    TraceThreadUpdate:
+      type: object
+      properties:
+        tags:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+        tags_to_add:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+        tags_to_remove:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+    TraceThreadBatchUpdate:
+      required:
+      - ids
+      - update
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          description: List of thread model IDs to update (max 1000)
+          items:
+            type: string
+            description: List of thread model IDs to update (max 1000)
+            format: uuid
+        update:
+          $ref: '#/components/schemas/TraceThreadUpdate'
+        merge_tags:
+          type: boolean
+          description: 'If true, merge tags with existing tags instead of replacing them. Default: false'
+      description: Request to batch update multiple trace threads
+    TraceBatch_Write:
+      required:
+      - traces
+      type: object
+      properties:
+        traces:
+          maxItems: 1000
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/Trace_Write'
+    JsonListString:
+      type: object
+      anyOf:
+      - type: object
+      - type: array
+        items:
+          type: object
+      - type: string
+    FeedbackScoreBatchItem:
+      required:
+      - id
+      - name
+      - source
+      - value
+      type: object
+      properties:
+        project_name:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: If null, the default project is used
+        project_id:
+          type: string
+          format: uuid
+        name:
+          minLength: 1
+          type: string
+        category_name:
+          type: string
+        value:
+          maximum: 1000000000.0
+          exclusiveMaximum: false
+          minimum: -1000000000.0
+          exclusiveMinimum: false
+          type: number
+        reason:
+          type: string
+        source:
+          type: string
+          enum:
+          - ui
+          - sdk
+          - online_scoring
+        author:
+          type: string
+        id:
+          type: string
+          format: uuid
+    GuardrailsValidation_Public:
+      type: object
+      properties:
+        span_id:
+          type: string
+          format: uuid
+        checks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Check_Public'
+      readOnly: true
+    Comment:
+      required:
+      - text
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        text:
+          minLength: 1
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+    TraceSearchStreamRequest_Public:
+      type: object
+      properties:
+        project_name:
+          type: string
+        project_id:
+          type: string
+          format: uuid
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceFilter_Public'
+        last_retrieved_id:
+          type: string
+          format: uuid
+        limit:
+          maximum: 2000
+          minimum: 1
+          type: integer
+          description: Max number of traces to be streamed
+          format: int32
+          default: 500
+        truncate:
+          type: boolean
+          description: Truncate input, output and metadata to slim payloads
+          default: true
+        strip_attachments:
+          type: boolean
+          description: If true, returns attachment references like [file.png]; if false, downloads and reinjects stripped attachments
+          default: false
+        exclude:
+          uniqueItems: true
+          type: array
+          description: Fields to exclude from the response
+          items:
+            type: string
+            description: Fields to exclude from the response
+            enum:
+            - name
+            - start_time
+            - end_time
+            - input
+            - output
+            - metadata
+            - tags
+            - error_info
+            - usage
+            - created_at
+            - created_by
+            - last_updated_by
+            - feedback_scores
+            - span_feedback_scores
+            - comments
+            - guardrails_validations
+            - total_estimated_cost
+            - span_count
+            - llm_span_count
+            - has_tool_spans
+            - duration
+            - ttft
+            - thread_id
+            - visibility_mode
+            - providers
+            - experiment
+            - source
+            - environment
+        from_time:
+          type: string
+          description: Filter traces created from this time (ISO-8601 format).
+          format: date-time
+        to_time:
+          type: string
+          description: Filter traces created up to this time (ISO-8601 format). If not provided, defaults to current time. Must be after 'from_time'.
+          format: date-time
+    BatchDelete:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
     FeedbackScoreBatchItemThread:
       required:
       - name
@@ -968,34 +1301,29 @@ components:
         thread_id:
           minLength: 1
           type: string
-    Comment_Public:
+    TraceBatchUpdate:
       required:
-      - text
+      - ids
+      - update
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        text:
-          minLength: 1
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-      readOnly: true
-    ValueEntry:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          description: List of trace IDs to update (max 1000)
+          items:
+            type: string
+            description: List of trace IDs to update (max 1000)
+            format: uuid
+        update:
+          $ref: '#/components/schemas/TraceUpdate'
+        merge_tags:
+          type: boolean
+          description: 'If true, merge tags with existing tags instead of replacing them. Default: false'
+      description: Request to batch update multiple traces
+    ValueEntry_Public:
       type: object
       properties:
         value:
@@ -1018,19 +1346,78 @@ components:
         span_id:
           type: string
       readOnly: true
-    ErrorInfo_Write:
-      required:
-      - exception_type
-      - traceback
+    TraceUpdate:
       type: object
       properties:
-        exception_type:
-          minLength: 1
+        project_name:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
           type: string
-        message:
+          description: If null and project_id not specified, Default Project is assumed
+        project_id:
           type: string
-        traceback:
-          minLength: 1
+          description: If null and project_name not specified, Default Project is assumed
+          format: uuid
+        name:
+          type: string
+        end_time:
+          type: string
+          format: date-time
+        input:
+          $ref: '#/components/schemas/JsonListString'
+        output:
+          $ref: '#/components/schemas/JsonListString'
+        metadata:
+          $ref: '#/components/schemas/JsonListString'
+        tags:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          description: Tags
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Tags
+        tags_to_add:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          description: Tags to add
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Tags to add
+        tags_to_remove:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          description: Tags to remove
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Tags to remove
+        error_info:
+          $ref: '#/components/schemas/ErrorInfo'
+        thread_id:
+          type: string
+        ttft:
+          type: number
+          format: double
+        source:
+          type: string
+          enum:
+          - sdk
+          - experiment
+          - playground
+          - optimization
+        environment:
+          maxLength: 150
+          minLength: 0
           type: string
     FeedbackScore_Public:
       required:
@@ -1079,108 +1466,92 @@ components:
           readOnly: true
       description: Aggregated feedback scores from all spans in this trace, averaged by score name
       readOnly: true
-    TraceBatchUpdate:
+    DeleteTraceThreads:
       required:
-      - ids
-      - update
-      type: object
-      properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          description: List of trace IDs to update (max 1000)
-          items:
-            type: string
-            description: List of trace IDs to update (max 1000)
-            format: uuid
-        update:
-          $ref: '#/components/schemas/TraceUpdate'
-        merge_tags:
-          type: boolean
-          description: 'If true, merge tags with existing tags instead of replacing them. Default: false'
-      description: Request to batch update multiple traces
-    TraceBatch_Write:
-      required:
-      - traces
-      type: object
-      properties:
-        traces:
-          maxItems: 1000
-          minItems: 1
-          type: array
-          items:
-            $ref: '#/components/schemas/Trace_Write'
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    ProjectStats_Public:
-      type: object
-      properties:
-        stats:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProjectStatItemObject_Public'
-    FeedbackScoreBatchItem:
-      required:
-      - id
-      - name
-      - source
-      - value
+      - thread_ids
       type: object
       properties:
         project_name:
           pattern: (?s)^\s*(\S.*\S|\S)\s*$
           type: string
-          description: If null, the default project is used
+          description: If null, project_id must be provided
         project_id:
           type: string
+          description: If null, project_name must be provided
           format: uuid
+        thread_ids:
+          maxItems: 1000
+          minItems: 1
+          type: array
+          items:
+            minLength: 1
+            type: string
+    Trace_Write:
+      required:
+      - start_time
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        project_name:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: If null, the default project is used
         name:
-          minLength: 1
           type: string
-        category_name:
+        start_time:
           type: string
-        value:
-          maximum: 1000000000.0
-          exclusiveMaximum: false
-          minimum: -1000000000.0
-          exclusiveMinimum: false
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        input:
+          $ref: '#/components/schemas/JsonListString_Write'
+        output:
+          $ref: '#/components/schemas/JsonListString_Write'
+        metadata:
+          $ref: '#/components/schemas/JsonListString_Write'
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        error_info:
+          $ref: '#/components/schemas/ErrorInfo_Write'
+        last_updated_at:
+          type: string
+          format: date-time
+        ttft:
           type: number
-        reason:
+          description: Time to first token in milliseconds
+          format: double
+        thread_id:
           type: string
         source:
           type: string
           enum:
-          - ui
           - sdk
-          - online_scoring
-        author:
+          - experiment
+          - playground
+          - optimization
+        environment:
+          maxLength: 150
+          minLength: 0
           type: string
-        id:
-          type: string
-          format: uuid
-    ErrorInfo_Public:
-      required:
-      - exception_type
-      - traceback
+    FeedbackScoreNames_Public:
       type: object
       properties:
-        exception_type:
-          minLength: 1
+        scores:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreName_Public'
+    ScoreName_Public:
+      type: object
+      properties:
+        name:
           type: string
-        message:
-          type: string
-        traceback:
-          minLength: 1
+        type:
           type: string
     Trace_Public:
       required:
@@ -1308,99 +1679,30 @@ components:
           maxLength: 150
           minLength: 0
           type: string
-    GuardrailsValidation_Public:
+    ValueEntry:
       type: object
       properties:
-        span_id:
-          type: string
-          format: uuid
-        checks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Check_Public'
-      readOnly: true
-    TraceUpdate:
-      type: object
-      properties:
-        project_name:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-          description: If null and project_id not specified, Default Project is assumed
-        project_id:
-          type: string
-          description: If null and project_name not specified, Default Project is assumed
-          format: uuid
-        name:
-          type: string
-        end_time:
-          type: string
-          format: date-time
-        input:
-          $ref: '#/components/schemas/JsonListString'
-        output:
-          $ref: '#/components/schemas/JsonListString'
-        metadata:
-          $ref: '#/components/schemas/JsonListString'
-        tags:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          description: Tags
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-            description: Tags
-        tags_to_add:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          description: Tags to add
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-            description: Tags to add
-        tags_to_remove:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          description: Tags to remove
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-            description: Tags to remove
-        error_info:
-          $ref: '#/components/schemas/ErrorInfo'
-        thread_id:
-          type: string
-        ttft:
+        value:
           type: number
-          format: double
+        reason:
+          type: string
+        category_name:
+          type: string
         source:
           type: string
           enum:
+          - ui
           - sdk
-          - experiment
-          - playground
-          - optimization
-        environment:
-          maxLength: 150
-          minLength: 0
+          - online_scoring
+        last_updated_at:
           type: string
-    JsonListString:
-      type: object
-      anyOf:
-      - type: object
-      - type: array
-        items:
-          type: object
-      - type: string
-    JsonListString_Public:
+          format: date-time
+        span_type:
+          type: string
+        span_id:
+          type: string
+      readOnly: true
+    JsonListString_Write:
       type: object
       anyOf:
       - type: object
@@ -1472,252 +1774,6 @@ components:
           format: date-time
         environment:
           type: string
-    TraceSearchStreamRequest_Public:
-      type: object
-      properties:
-        project_name:
-          type: string
-        project_id:
-          type: string
-          format: uuid
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/TraceFilter_Public'
-        last_retrieved_id:
-          type: string
-          format: uuid
-        limit:
-          maximum: 2000
-          minimum: 1
-          type: integer
-          description: Max number of traces to be streamed
-          format: int32
-          default: 500
-        truncate:
-          type: boolean
-          description: Truncate input, output and metadata to slim payloads
-          default: true
-        strip_attachments:
-          type: boolean
-          description: If true, returns attachment references like [file.png]; if false, downloads and reinjects stripped attachments
-          default: false
-        exclude:
-          uniqueItems: true
-          type: array
-          description: Fields to exclude from the response
-          items:
-            type: string
-            description: Fields to exclude from the response
-            enum:
-            - name
-            - start_time
-            - end_time
-            - input
-            - output
-            - metadata
-            - tags
-            - error_info
-            - usage
-            - created_at
-            - created_by
-            - last_updated_by
-            - feedback_scores
-            - span_feedback_scores
-            - comments
-            - guardrails_validations
-            - total_estimated_cost
-            - span_count
-            - llm_span_count
-            - has_tool_spans
-            - duration
-            - ttft
-            - thread_id
-            - visibility_mode
-            - providers
-            - experiment
-            - source
-            - environment
-        from_time:
-          type: string
-          description: Filter traces created from this time (ISO-8601 format).
-          format: date-time
-        to_time:
-          type: string
-          description: Filter traces created up to this time (ISO-8601 format). If not provided, defaults to current time. Must be after 'from_time'.
-          format: date-time
-    TraceFilter_Public:
-      type: object
-      properties:
-        field:
-          type: string
-        operator:
-          type: string
-          enum:
-          - contains
-          - not_contains
-          - starts_with
-          - ends_with
-          - '='
-          - '!='
-          - '>'
-          - '>='
-          - <
-          - <=
-          - is_empty
-          - is_not_empty
-          - in
-          - not_in
-        key:
-          type: string
-        value:
-          type: string
-    DeleteTraceThreads:
-      required:
-      - thread_ids
-      type: object
-      properties:
-        project_name:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-          description: If null, project_id must be provided
-        project_id:
-          type: string
-          description: If null, project_name must be provided
-          format: uuid
-        thread_ids:
-          maxItems: 1000
-          minItems: 1
-          type: array
-          items:
-            minLength: 1
-            type: string
-    JsonListString_Write:
-      type: object
-      anyOf:
-      - type: object
-      - type: array
-        items:
-          type: object
-      - type: string
-    TraceThreadPage:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/TraceThread'
-        sortableBy:
-          type: array
-          items:
-            type: string
-    Trace_Write:
-      required:
-      - start_time
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        project_name:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-          description: If null, the default project is used
-        name:
-          type: string
-        start_time:
-          type: string
-          format: date-time
-        end_time:
-          type: string
-          format: date-time
-        input:
-          $ref: '#/components/schemas/JsonListString_Write'
-        output:
-          $ref: '#/components/schemas/JsonListString_Write'
-        metadata:
-          $ref: '#/components/schemas/JsonListString_Write'
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        error_info:
-          $ref: '#/components/schemas/ErrorInfo_Write'
-        last_updated_at:
-          type: string
-          format: date-time
-        ttft:
-          type: number
-          description: Time to first token in milliseconds
-          format: double
-        thread_id:
-          type: string
-        source:
-          type: string
-          enum:
-          - sdk
-          - experiment
-          - playground
-          - optimization
-        environment:
-          maxLength: 150
-          minLength: 0
-          type: string
-    ExperimentItemReference_Public:
-      required:
-      - dataset_id
-      - dataset_item_id
-      - id
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-          description: Experiment ID
-          format: uuid
-        name:
-          type: string
-          description: Experiment name
-        dataset_id:
-          type: string
-          description: Dataset ID
-          format: uuid
-        dataset_item_id:
-          type: string
-          description: Dataset Item ID
-          format: uuid
-      description: Experiment reference with ID, name, dataset ID, and dataset item ID
-      readOnly: true
-    TracePage_Public:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/Trace_Public'
-        sortableBy:
-          type: array
-          items:
-            type: string
     DeleteFeedbackScore:
       required:
       - name
@@ -1728,77 +1784,6 @@ components:
           type: string
         author:
           type: string
-    DeleteThreadFeedbackScores:
-      required:
-      - names
-      - project_name
-      - thread_id
-      type: object
-      properties:
-        project_name:
-          minLength: 1
-          type: string
-        thread_id:
-          minLength: 1
-          type: string
-        names:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            minLength: 1
-            type: string
-        author:
-          type: string
-    TraceThreadIdentifier:
-      required:
-      - thread_id
-      type: object
-      properties:
-        project_name:
-          type: string
-        project_id:
-          type: string
-          format: uuid
-        thread_id:
-          minLength: 1
-          type: string
-        truncate:
-          type: boolean
-    FeedbackScoreNames_Public:
-      type: object
-      properties:
-        scores:
-          type: array
-          items:
-            $ref: '#/components/schemas/ScoreName_Public'
-    Comment:
-      required:
-      - text
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        text:
-          minLength: 1
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
     ErrorInfo:
       required:
       - exception_type
@@ -1813,30 +1798,7 @@ components:
         traceback:
           minLength: 1
           type: string
-    ValueEntry_Public:
-      type: object
-      properties:
-        value:
-          type: number
-        reason:
-          type: string
-        category_name:
-          type: string
-        source:
-          type: string
-          enum:
-          - ui
-          - sdk
-          - online_scoring
-        last_updated_at:
-          type: string
-          format: date-time
-        span_type:
-          type: string
-        span_id:
-          type: string
-      readOnly: true
-    FeedbackScoreBatchThread:
+    FeedbackScoreBatch:
       required:
       - scores
       type: object
@@ -1846,92 +1808,7 @@ components:
           minItems: 1
           type: array
           items:
-            $ref: '#/components/schemas/FeedbackScoreBatchItemThread'
-    TraceThreadBatchIdentifier:
-      type: object
-      properties:
-        project_name:
-          type: string
-        project_id:
-          type: string
-          format: uuid
-        thread_id:
-          type: string
-        thread_ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            minLength: 1
-            type: string
-    BatchDelete:
-      required:
-      - ids
-      type: object
-      properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
-    ScoreName_Public:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-    ProjectStatItemObject_Public:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - COUNT
-          - PERCENTAGE
-          - AVG
-      discriminator:
-        propertyName: type
-        mapping:
-          PERCENTAGE: '#/components/schemas/PercentageValueStat_Public'
-          COUNT: '#/components/schemas/CountValueStat_Public'
-          AVG: '#/components/schemas/AvgValueStat_Public'
-    TraceThreadUpdate:
-      type: object
-      properties:
-        tags:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-        tags_to_add:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-        tags_to_remove:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
+            $ref: '#/components/schemas/FeedbackScoreBatchItem'
     FeedbackScore:
       required:
       - name
@@ -1977,6 +1854,43 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/ValueEntry'
           readOnly: true
+    DeleteThreadFeedbackScores:
+      required:
+      - names
+      - project_name
+      - thread_id
+      type: object
+      properties:
+        project_name:
+          minLength: 1
+          type: string
+        thread_id:
+          minLength: 1
+          type: string
+        names:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            minLength: 1
+            type: string
+        author:
+          type: string
+    ErrorInfo_Write:
+      required:
+      - exception_type
+      - traceback
+      type: object
+      properties:
+        exception_type:
+          minLength: 1
+          type: string
+        message:
+          type: string
+        traceback:
+          minLength: 1
+          type: string
     Check_Public:
       type: object
       properties:
@@ -1990,33 +1904,7 @@ components:
           enum:
           - passed
           - failed
-    TraceThreadFilter:
-      type: object
-      properties:
-        field:
-          type: string
-        operator:
-          type: string
-          enum:
-          - contains
-          - not_contains
-          - starts_with
-          - ends_with
-          - '='
-          - '!='
-          - '>'
-          - '>='
-          - <
-          - <=
-          - is_empty
-          - is_not_empty
-          - in
-          - not_in
-        key:
-          type: string
-        value:
-          type: string
-    FeedbackScoreBatch:
+    FeedbackScoreBatchThread:
       required:
       - scores
       type: object
@@ -2026,7 +1914,21 @@ components:
           minItems: 1
           type: array
           items:
-            $ref: '#/components/schemas/FeedbackScoreBatchItem'
+            $ref: '#/components/schemas/FeedbackScoreBatchItemThread'
+    ErrorInfo_Public:
+      required:
+      - exception_type
+      - traceback
+      type: object
+      properties:
+        exception_type:
+          minLength: 1
+          type: string
+        message:
+          type: string
+        traceback:
+          minLength: 1
+          type: string
     TraceThreadSearchStreamRequest:
       type: object
       properties:
@@ -2065,25 +1967,93 @@ components:
           type: string
           description: Filter trace threads created up to this time (ISO-8601 format). If not provided, defaults to current time. Must be after 'from_time'.
           format: date-time
-    TraceThreadBatchUpdate:
-      required:
-      - ids
-      - update
+    TracePage_Public:
       type: object
       properties:
-        ids:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Trace_Public'
+        sortableBy:
+          type: array
+          items:
+            type: string
+    ProjectStats_Public:
+      type: object
+      properties:
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProjectStatItemObject_Public'
+    ProjectStatItemObject_Public:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - COUNT
+          - PERCENTAGE
+          - AVG
+      discriminator:
+        propertyName: type
+        mapping:
+          PERCENTAGE: '#/components/schemas/PercentageValueStat_Public'
+          COUNT: '#/components/schemas/CountValueStat_Public'
+          AVG: '#/components/schemas/AvgValueStat_Public'
+    TraceThreadBatchIdentifier:
+      type: object
+      properties:
+        project_name:
+          type: string
+        project_id:
+          type: string
+          format: uuid
+        thread_id:
+          type: string
+        thread_ids:
           maxItems: 1000
           minItems: 1
           uniqueItems: true
           type: array
-          description: List of thread model IDs to update (max 1000)
+          items:
+            minLength: 1
+            type: string
+    JsonListString_Public:
+      type: object
+      anyOf:
+      - type: object
+      - type: array
+        items:
+          type: object
+      - type: string
+    TraceThreadPage:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/TraceThread'
+        sortableBy:
+          type: array
           items:
             type: string
-            description: List of thread model IDs to update (max 1000)
-            format: uuid
-        update:
-          $ref: '#/components/schemas/TraceThreadUpdate'
-        merge_tags:
-          type: boolean
-          description: 'If true, merge tags with existing tags instead of replacing them. Default: false'
-      description: Request to batch update multiple trace threads

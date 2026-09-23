@@ -1,7 +1,7 @@
 {
   "provider": "opik",
   "sources": [
-    "opik-rest-api-openapi.yml"
+    "_original/opik-rest-api-openapi.yml"
   ],
   "outputs": [
     "opik-ai-spend-api-openapi.yml",
@@ -44,15 +44,56 @@
     "opik-workspace-permissions-api-openapi.yml",
     "opik-workspaces-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/opik-rest-api-openapi.yml"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "opik-rest-api-openapi.yml: tagged GET /is-alive/ping -> Is Alive",
-    "opik-rest-api-openapi.yml: tagged GET /is-alive/ver -> Is Alive",
-    "opik-rest-api-openapi.yml: declared missing tag: Is Alive"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "opik-rest-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "opik-rest-api-openapi.yml: tagged paths GET /is-alive/ping -> Is Alive",
+    "opik-rest-api-openapi.yml: tagged paths GET /is-alive/ver -> Is Alive",
+    "opik-rest-api-openapi.yml: declared missing tag: Is Alive",
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "opik-agent-configs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-ai-spend-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-alerts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-annotation-queues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-assertion-results-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-attachments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-automation-rule-evaluators-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-check-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-dashboards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-datasets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-environments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-experiments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-feedback-definitions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-guardrails-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-insights-views-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-is-alive-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-llm-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-llmproviderkey-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-manual-evaluation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-mcp-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-ollama-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-ollie-state-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-opentelemetry-ingestion-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-optimizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-pairing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-prompts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-redirect-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-retention-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-runners-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-service-toggles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-spans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-system-usage-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-traces-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-welcome-wizard-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-workspace-permissions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "opik-workspaces-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
