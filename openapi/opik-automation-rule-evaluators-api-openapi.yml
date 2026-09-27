@@ -198,94 +198,13 @@ components:
           items:
             type: string
             format: uuid
-    ProjectReference_Public:
-      required:
-      - project_id
-      - project_name
+    LogPage:
       type: object
       properties:
-        project_id:
-          type: string
-          description: Project ID
-          format: uuid
-        project_name:
-          type: string
-          description: Project name
-      description: Project reference with ID and name
-      readOnly: true
-    AutomationRuleEvaluator_Public:
-      required:
-      - action
-      - name
-      - type
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        project_id:
-          type: string
-          description: Primary project ID (legacy field for backwards compatibility)
-          format: uuid
-        project_name:
-          type: string
-          description: Primary project name (legacy field for backwards compatibility)
-          readOnly: true
-        projects:
-          uniqueItems: true
+        content:
           type: array
-          description: Projects assigned to this rule (unique, sorted alphabetically by name)
-          readOnly: true
           items:
-            $ref: '#/components/schemas/ProjectReference_Public'
-        name:
-          minLength: 1
-          type: string
-        sampling_rate:
-          type: number
-          format: float
-        enabled:
-          type: boolean
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          enum:
-          - llm_as_judge
-          - user_defined_metric_python
-          - trace_thread_llm_as_judge
-          - trace_thread_user_defined_metric_python
-          - span_llm_as_judge
-          - span_user_defined_metric_python
-        action:
-          type: string
-          enum:
-          - evaluator
-      discriminator:
-        propertyName: type
-        mapping:
-          llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorLlmAsJudge_Public'
-          user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorUserDefinedMetricPython_Public'
-          trace_thread_llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorTraceThreadLlmAsJudge_Public'
-          trace_thread_user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorTraceThreadUserDefinedMetricPython_Public'
-          span_llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorSpanLlmAsJudge_Public'
-          span_user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorSpanUserDefinedMetricPython_Public'
-    AutomationRuleEvaluatorPage_Public:
-      type: object
-      properties:
+            $ref: '#/components/schemas/LogItem'
         page:
           type: integer
           format: int32
@@ -295,14 +214,6 @@ components:
         total:
           type: integer
           format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/AutomationRuleEvaluatorObjectObject_Public'
-        sortable_by:
-          type: array
-          items:
-            type: string
     AutomationRuleEvaluatorUpdate:
       required:
       - action
@@ -380,22 +291,6 @@ components:
             type: string
             readOnly: true
           readOnly: true
-    LogPage:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/LogItem'
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
     AutomationRuleEvaluator_Write:
       required:
       - action
@@ -445,7 +340,112 @@ components:
           trace_thread_user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorTraceThreadUserDefinedMetricPython_Write'
           span_llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorSpanLlmAsJudge_Write'
           span_user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorSpanUserDefinedMetricPython_Write'
+    AutomationRuleEvaluatorPage_Public:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutomationRuleEvaluatorObjectObject_Public'
+        sortable_by:
+          type: array
+          items:
+            type: string
+    ProjectReference_Public:
+      required:
+      - project_id
+      - project_name
+      type: object
+      properties:
+        project_id:
+          type: string
+          description: Project ID
+          format: uuid
+        project_name:
+          type: string
+          description: Project name
+      description: Project reference with ID and name
+      readOnly: true
     AutomationRuleEvaluatorObjectObject_Public:
+      required:
+      - action
+      - name
+      - type
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        project_id:
+          type: string
+          description: Primary project ID (legacy field for backwards compatibility)
+          format: uuid
+        project_name:
+          type: string
+          description: Primary project name (legacy field for backwards compatibility)
+          readOnly: true
+        projects:
+          uniqueItems: true
+          type: array
+          description: Projects assigned to this rule (unique, sorted alphabetically by name)
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/ProjectReference_Public'
+        name:
+          minLength: 1
+          type: string
+        sampling_rate:
+          type: number
+          format: float
+        enabled:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          enum:
+          - llm_as_judge
+          - user_defined_metric_python
+          - trace_thread_llm_as_judge
+          - trace_thread_user_defined_metric_python
+          - span_llm_as_judge
+          - span_user_defined_metric_python
+        action:
+          type: string
+          enum:
+          - evaluator
+      discriminator:
+        propertyName: type
+        mapping:
+          llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorLlmAsJudge_Public'
+          user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorUserDefinedMetricPython_Public'
+          trace_thread_llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorTraceThreadLlmAsJudge_Public'
+          trace_thread_user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorTraceThreadUserDefinedMetricPython_Public'
+          span_llm_as_judge: '#/components/schemas/AutomationRuleEvaluatorSpanLlmAsJudge_Public'
+          span_user_defined_metric_python: '#/components/schemas/AutomationRuleEvaluatorSpanUserDefinedMetricPython_Public'
+    AutomationRuleEvaluator_Public:
       required:
       - action
       - name

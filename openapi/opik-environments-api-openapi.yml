@@ -133,6 +133,72 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
+    BatchDelete:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+    EnvironmentUpdate:
+      type: object
+      properties:
+        name:
+          maxLength: 150
+          minLength: 0
+          pattern: ^[A-Za-z0-9_-]+$
+          type: string
+        description:
+          maxLength: 500
+          minLength: 0
+          type: string
+        color:
+          maxLength: 20
+          minLength: 0
+          type: string
+        position:
+          type: integer
+          format: int32
+    Environment_Write:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          maxLength: 150
+          minLength: 0
+          pattern: ^[A-Za-z0-9_-]+$
+          type: string
+        description:
+          maxLength: 500
+          minLength: 0
+          type: string
+        color:
+          maxLength: 20
+          minLength: 0
+          type: string
+        position:
+          type: integer
+          format: int32
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
     ErrorMessage_Public:
       type: object
       properties:
@@ -143,6 +209,26 @@ components:
           type: string
         details:
           type: string
+    EnvironmentPage_Public:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment_Public'
+        sortableBy:
+          type: array
+          items:
+            type: string
     Environment_Public:
       required:
       - name
@@ -181,89 +267,3 @@ components:
         last_updated_by:
           type: string
           readOnly: true
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    Environment_Write:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          maxLength: 150
-          minLength: 0
-          pattern: ^[A-Za-z0-9_-]+$
-          type: string
-        description:
-          maxLength: 500
-          minLength: 0
-          type: string
-        color:
-          maxLength: 20
-          minLength: 0
-          type: string
-        position:
-          type: integer
-          format: int32
-    EnvironmentPage_Public:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/Environment_Public'
-        sortableBy:
-          type: array
-          items:
-            type: string
-    BatchDelete:
-      required:
-      - ids
-      type: object
-      properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
-    EnvironmentUpdate:
-      type: object
-      properties:
-        name:
-          maxLength: 150
-          minLength: 0
-          pattern: ^[A-Za-z0-9_-]+$
-          type: string
-        description:
-          maxLength: 500
-          minLength: 0
-          type: string
-        color:
-          maxLength: 20
-          minLength: 0
-          type: string
-        position:
-          type: integer
-          format: int32

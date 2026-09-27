@@ -181,19 +181,6 @@ paths:
                 $ref: '#/components/schemas/OAuthError'
 components:
   schemas:
-    AuthorizeContext:
-      type: object
-      properties:
-        client_name:
-          type: string
-        client_logo_uri:
-          type: string
-        workspaces:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkspaceInfo'
-        csrf_token:
-          type: string
     AuthorizationServerMetadata:
       type: object
       properties:
@@ -223,34 +210,6 @@ components:
           type: array
           items:
             type: string
-    OAuthError:
-      type: object
-      properties:
-        error:
-          type: string
-        error_description:
-          type: string
-    TokenResponse:
-      type: object
-      properties:
-        access_token:
-          type: string
-        refresh_token:
-          type: string
-        token_type:
-          type: string
-        expires_in:
-          type: integer
-          format: int64
-        workspace_id:
-          type: string
-        workspace_name:
-          type: string
-    ConsentResponse:
-      type: object
-      properties:
-        redirect_to:
-          type: string
     WorkspaceInfo:
       type: object
       properties:
@@ -290,4 +249,45 @@ components:
         workspace_name:
           type: string
         csrf:
+          type: string
+    ConsentResponse:
+      type: object
+      properties:
+        redirect_to:
+          type: string
+    OAuthError:
+      type: object
+      properties:
+        error:
+          type: string
+        error_description:
+          type: string
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+          format: int64
+        workspace_id:
+          type: string
+        workspace_name:
+          type: string
+    AuthorizeContext:
+      type: object
+      properties:
+        client_name:
+          type: string
+        client_logo_uri:
+          type: string
+        workspaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceInfo'
+        csrf_token:
           type: string

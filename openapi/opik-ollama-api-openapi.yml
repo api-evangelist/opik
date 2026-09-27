@@ -94,19 +94,6 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    OllamaConnectionTestResponse:
-      type: object
-      properties:
-        connected:
-          type: boolean
-          description: Whether the connection was successful
-        version:
-          type: string
-          description: Server version (returned even if connection failed or version is incompatible)
-        error_message:
-          type: string
-          description: Error message if connection failed
-      description: Response from Ollama connection test.
     ErrorMessage:
       type: object
       properties:
@@ -131,6 +118,19 @@ components:
           type: string
           description: Optional API key for authenticated Ollama instances. If provided, will be sent as Bearer token in Authorization header.
       description: Request with Ollama instance base URL for connection testing or model discovery.
+    OllamaConnectionTestResponse:
+      type: object
+      properties:
+        connected:
+          type: boolean
+          description: Whether the connection was successful
+        version:
+          type: string
+          description: Server version (returned even if connection failed or version is incompatible)
+        error_message:
+          type: string
+          description: Error message if connection failed
+      description: Response from Ollama connection test.
     OllamaModel:
       required:
       - name

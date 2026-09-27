@@ -144,42 +144,30 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    ProviderApiKeyPage_Public:
+    ProviderApiKeyUpdate:
       type: object
       properties:
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProviderApiKey_Public'
-        sortableBy:
-          type: array
-          items:
+        api_key:
+          type: string
+        name:
+          maxLength: 150
+          minLength: 0
+          type: string
+        provider_name:
+          maxLength: 150
+          minLength: 0
+          type: string
+          description: Provider name - can be set to migrate legacy custom LLM or Bedrock providers to the new multi-provider format. Once set, it cannot be changed. Should only be set for custom LLM and Bedrock providers.
+          example: ollama
+        headers:
+          type: object
+          additionalProperties:
             type: string
-    ErrorMessage_Public:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
+        configuration:
+          type: object
+          additionalProperties:
+            type: string
+        base_url:
           type: string
     BatchDelete:
       required:
@@ -194,6 +182,66 @@ components:
           items:
             type: string
             format: uuid
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    ProviderApiKey_Write:
+      required:
+      - provider
+      type: object
+      properties:
+        provider:
+          type: string
+          enum:
+          - openai
+          - anthropic
+          - gemini
+          - openrouter
+          - vertex-ai
+          - bedrock
+          - ollama
+          - custom-llm
+          - opik-free
+        api_key:
+          type: string
+        name:
+          maxLength: 150
+          minLength: 0
+          type: string
+        provider_name:
+          maxLength: 150
+          minLength: 0
+          type: string
+          description: Provider name - required for custom LLM and Bedrock providers to uniquely identify them (e.g., 'ollama', 'vllm', 'Bedrock us-east-1'). Must not be blank for custom and Bedrock providers. Should not be set for standard providers (OpenAI, Anthropic, etc.). This requirement is conditional and validation is enforced programmatically.
+          example: ollama
+        headers:
+          type: object
+          additionalProperties:
+            type: string
+        configuration:
+          type: object
+          additionalProperties:
+            type: string
+        base_url:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+    ErrorMessage_Public:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
     ProviderApiKey_Public:
       required:
       - provider
@@ -256,68 +304,20 @@ components:
           type: boolean
           description: If true, this provider is system-managed and cannot be edited or deleted
           readOnly: true
-    ProviderApiKeyUpdate:
+    ProviderApiKeyPage_Public:
       type: object
       properties:
-        api_key:
-          type: string
-        name:
-          maxLength: 150
-          minLength: 0
-          type: string
-        provider_name:
-          maxLength: 150
-          minLength: 0
-          type: string
-          description: Provider name - can be set to migrate legacy custom LLM or Bedrock providers to the new multi-provider format. Once set, it cannot be changed. Should only be set for custom LLM and Bedrock providers.
-          example: ollama
-        headers:
-          type: object
-          additionalProperties:
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderApiKey_Public'
+        sortableBy:
+          type: array
+          items:
             type: string
-        configuration:
-          type: object
-          additionalProperties:
-            type: string
-        base_url:
-          type: string
-    ProviderApiKey_Write:
-      required:
-      - provider
-      type: object
-      properties:
-        provider:
-          type: string
-          enum:
-          - openai
-          - anthropic
-          - gemini
-          - openrouter
-          - vertex-ai
-          - bedrock
-          - ollama
-          - custom-llm
-          - opik-free
-        api_key:
-          type: string
-        name:
-          maxLength: 150
-          minLength: 0
-          type: string
-        provider_name:
-          maxLength: 150
-          minLength: 0
-          type: string
-          description: Provider name - required for custom LLM and Bedrock providers to uniquely identify them (e.g., 'ollama', 'vllm', 'Bedrock us-east-1'). Must not be blank for custom and Bedrock providers. Should not be set for standard providers (OpenAI, Anthropic, etc.). This requirement is conditional and validation is enforced programmatically.
-          example: ollama
-        headers:
-          type: object
-          additionalProperties:
-            type: string
-        configuration:
-          type: object
-          additionalProperties:
-            type: string
-        base_url:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string

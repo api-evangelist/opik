@@ -35,8 +35,6 @@ paths:
           description: No Content
 components:
   schemas:
-    JsonNode:
-      type: object
     GuardrailBatch_Write:
       required:
       - guardrails
@@ -48,6 +46,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Guardrail_Write'
+    JsonNode:
+      type: object
     Guardrail_Write:
       required:
       - config

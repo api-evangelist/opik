@@ -102,6 +102,20 @@ paths:
                 $ref: '#/components/schemas/TraceCountResponse'
 components:
   schemas:
+    TraceCountResponse:
+      type: object
+      properties:
+        workspaces_traces_count:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceTraceCount'
+    SpansCountResponse:
+      type: object
+      properties:
+        workspaces_spans_count:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceSpansCount'
     WorkspaceTraceCount:
       type: object
       properties:
@@ -110,27 +124,6 @@ components:
         trace_count:
           type: integer
           format: int32
-    SpansCountResponse:
-      type: object
-      properties:
-        workspaces_spans_count:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkspaceSpansCount'
-    BiInformationResponse:
-      type: object
-      properties:
-        bi_information:
-          type: array
-          items:
-            $ref: '#/components/schemas/BiInformation'
-    TraceCountResponse:
-      type: object
-      properties:
-        workspaces_traces_count:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkspaceTraceCount'
     WorkspaceSpansCount:
       type: object
       properties:
@@ -149,3 +142,10 @@ components:
         count:
           type: integer
           format: int64
+    BiInformationResponse:
+      type: object
+      properties:
+        bi_information:
+          type: array
+          items:
+            $ref: '#/components/schemas/BiInformation'

@@ -46,11 +46,11 @@ tags:
   - Evaluation
   - Observability
   - Tracing
-  - Open-Source
+  - Open Source
   - LLMOps
   - RAG
   - Artificial Intelligence
-  - Machine-Learning
+  - Machine Learning
   - Monitoring
 tags_raw:
   - LLM
@@ -63,6 +63,8 @@ tags_raw:
   - AI
   - Machine Learning
   - Monitoring
+  - Open-Source
+  - Machine-Learning
 apis:
 - aid: opik:opik-agent-configs-api
   name: Opik Agent Configs API

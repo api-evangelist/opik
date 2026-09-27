@@ -119,15 +119,16 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    CreateSessionResponse:
+    ErrorMessage:
       type: object
       properties:
-        session_id:
+        code:
+          type: integer
+          format: int32
+        message:
           type: string
-          format: uuid
-        runner_id:
+        details:
           type: string
-          format: uuid
     CreateSessionRequest:
       required:
       - activation_key
@@ -152,16 +153,15 @@ components:
           enum:
           - connect
           - endpoint
-    ErrorMessage:
+    CreateSessionResponse:
       type: object
       properties:
-        code:
-          type: integer
-          format: int32
-        message:
+        session_id:
           type: string
-        details:
+          format: uuid
+        runner_id:
           type: string
+          format: uuid
     ActivateRequest:
       required:
       - hmac

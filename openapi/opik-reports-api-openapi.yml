@@ -157,6 +157,22 @@ paths:
                 $ref: '#/components/schemas/OllieReportPage'
 components:
   schemas:
+    OllieReportPage:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/OllieReport'
     ReportCompleteRequest:
       required:
       - status
@@ -174,22 +190,6 @@ components:
           type: string
         recommended_actions:
           $ref: '#/components/schemas/JsonNode'
-    OllieReportPage:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/OllieReport'
     OllieReport:
       type: object
       properties:
@@ -219,15 +219,6 @@ components:
           type: string
           format: date-time
           readOnly: true
-    GenerateReportResponse:
-      type: object
-      properties:
-        reportId:
-          type: string
-          format: uuid
-      description: Response for report generation trigger
-    JsonNode:
-      type: object
     ReportPreference:
       type: object
       properties:
@@ -251,3 +242,12 @@ components:
           type: string
           format: date-time
           readOnly: true
+    GenerateReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: string
+          format: uuid
+      description: Response for report generation trigger
+    JsonNode:
+      type: object
