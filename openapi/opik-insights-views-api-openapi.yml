@@ -174,21 +174,6 @@ paths:
           description: No content
 components:
   schemas:
-    JsonNode_Public:
-      type: object
-    BatchDelete:
-      required:
-      - ids
-      type: object
-      properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
     Dashboard_Public:
       required:
       - config
@@ -244,8 +229,25 @@ components:
           type: string
           format: date-time
           readOnly: true
-    JsonNode_Write:
+    DashboardUpdate_Public:
       type: object
+      properties:
+        name:
+          maxLength: 120
+          minLength: 1
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+        type:
+          type: string
+          enum:
+          - multi_project
+          - experiments
+        description:
+          maxLength: 1000
+          minLength: 0
+          type: string
+        config:
+          $ref: '#/components/schemas/JsonNode_Public'
     Dashboard_Write:
       required:
       - config
@@ -275,25 +277,21 @@ components:
           type: string
         config:
           $ref: '#/components/schemas/JsonNode_Write'
-    DashboardUpdate_Public:
+    BatchDelete:
+      required:
+      - ids
       type: object
       properties:
-        name:
-          maxLength: 120
-          minLength: 1
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        type:
-          type: string
-          enum:
-          - multi_project
-          - experiments
-        description:
-          maxLength: 1000
-          minLength: 0
-          type: string
-        config:
-          $ref: '#/components/schemas/JsonNode_Public'
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+    JsonNode_Public:
+      type: object
     DashboardPage_Public:
       type: object
       properties:
@@ -314,3 +312,5 @@ components:
           type: array
           items:
             type: string
+    JsonNode_Write:
+      type: object

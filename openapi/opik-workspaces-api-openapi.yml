@@ -216,61 +216,6 @@ paths:
       deprecated: true
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    WorkspaceMetricsSummaryResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Result'
-    WorkspaceVersion:
-      type: object
-      properties:
-        opik_version:
-          type: string
-          description: 'The determined Opik navigation version for this workspace.
-
-            ''version_1'' = legacy workspace-scoped navigation,
-
-            ''version_2'' = new project-first navigation.'
-          enum:
-          - version_1
-          - version_2
-      description: 'Workspace version response.
-
-        The opik_version field indicates which navigation mode the frontend should render:
-
-        ''version_1'' (legacy workspace-scoped) or ''version_2'' (project-first).'
-    WorkspaceMetricsSummaryRequest:
-      required:
-      - interval_end
-      - interval_start
-      type: object
-      properties:
-        project_ids:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
-        interval_start:
-          type: string
-          format: date-time
-        interval_end:
-          type: string
-          format: date-time
-        start_before_end:
-          type: boolean
     WorkspaceConfiguration:
       type: object
       properties:
@@ -298,6 +243,61 @@ components:
         previous:
           type: number
           format: double
+    WorkspaceVersion:
+      type: object
+      properties:
+        opik_version:
+          type: string
+          description: 'The determined Opik navigation version for this workspace.
+
+            ''version_1'' = legacy workspace-scoped navigation,
+
+            ''version_2'' = new project-first navigation.'
+          enum:
+          - version_1
+          - version_2
+      description: 'Workspace version response.
+
+        The opik_version field indicates which navigation mode the frontend should render:
+
+        ''version_1'' (legacy workspace-scoped) or ''version_2'' (project-first).'
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    WorkspaceMetricsSummaryRequest:
+      required:
+      - interval_end
+      - interval_start
+      type: object
+      properties:
+        project_ids:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+        interval_start:
+          type: string
+          format: date-time
+        interval_end:
+          type: string
+          format: date-time
+        start_before_end:
+          type: boolean
+    WorkspaceMetricsSummaryResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Result'
     WorkspaceMetricResponse:
       type: object
       properties:

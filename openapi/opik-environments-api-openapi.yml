@@ -133,19 +133,16 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    BatchDelete:
-      required:
-      - ids
+    ErrorMessage:
       type: object
       properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
     EnvironmentUpdate:
       type: object
       properties:
@@ -165,50 +162,19 @@ components:
         position:
           type: integer
           format: int32
-    Environment_Write:
+    BatchDelete:
       required:
-      - name
+      - ids
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          maxLength: 150
-          minLength: 0
-          pattern: ^[A-Za-z0-9_-]+$
-          type: string
-        description:
-          maxLength: 500
-          minLength: 0
-          type: string
-        color:
-          maxLength: 20
-          minLength: 0
-          type: string
-        position:
-          type: integer
-          format: int32
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    ErrorMessage_Public:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
     EnvironmentPage_Public:
       type: object
       properties:
@@ -267,3 +233,37 @@ components:
         last_updated_by:
           type: string
           readOnly: true
+    Environment_Write:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          maxLength: 150
+          minLength: 0
+          pattern: ^[A-Za-z0-9_-]+$
+          type: string
+        description:
+          maxLength: 500
+          minLength: 0
+          type: string
+        color:
+          maxLength: 20
+          minLength: 0
+          type: string
+        position:
+          type: integer
+          format: int32
+    ErrorMessage_Public:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string

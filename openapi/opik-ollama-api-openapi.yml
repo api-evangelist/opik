@@ -94,16 +94,6 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
     OllamaInstanceBaseUrlRequest:
       required:
       - base_url
@@ -118,6 +108,16 @@ components:
           type: string
           description: Optional API key for authenticated Ollama instances. If provided, will be sent as Bearer token in Authorization header.
       description: Request with Ollama instance base URL for connection testing or model discovery.
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
     OllamaConnectionTestResponse:
       type: object
       properties:
