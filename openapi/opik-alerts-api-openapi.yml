@@ -226,65 +226,60 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    AlertTrigger_Write:
+    Webhook_Write:
       required:
-      - event_type
+      - url
       type: object
       properties:
         id:
           type: string
           format: uuid
-        event_type:
+        name:
           type: string
-          enum:
-          - trace:errors
-          - trace:feedback_score
-          - trace_thread:feedback_score
-          - prompt:created
-          - prompt:committed
-          - trace:guardrails_triggered
-          - prompt:deleted
-          - experiment:finished
-          - trace:cost
-          - trace:latency
-        trigger_configs:
-          type: array
-          items:
-            $ref: '#/components/schemas/AlertTriggerConfig_Write'
-    AlertTrigger_Public:
+        url:
+          minLength: 1
+          type: string
+        secret_token:
+          maxLength: 250
+          minLength: 0
+          type: string
+        headers:
+          type: object
+          additionalProperties:
+            type: string
+    Webhook_Public:
       required:
-      - event_type
+      - url
       type: object
       properties:
         id:
           type: string
           format: uuid
-        alert_id:
+        name:
           type: string
-          format: uuid
-          readOnly: true
-        event_type:
+        url:
+          minLength: 1
           type: string
-          enum:
-          - trace:errors
-          - trace:feedback_score
-          - trace_thread:feedback_score
-          - prompt:created
-          - prompt:committed
-          - trace:guardrails_triggered
-          - prompt:deleted
-          - experiment:finished
-          - trace:cost
-          - trace:latency
-        trigger_configs:
-          type: array
-          items:
-            $ref: '#/components/schemas/AlertTriggerConfig_Public'
+        secret_token:
+          maxLength: 250
+          minLength: 0
+          type: string
+        headers:
+          type: object
+          additionalProperties:
+            type: string
         created_at:
           type: string
           format: date-time
           readOnly: true
         created_by:
+          type: string
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_by:
           type: string
           readOnly: true
     Alert_Write:
@@ -321,6 +316,43 @@ components:
           type: string
           description: Optional project scope for this alert. When set, the alert is scoped to the specified project. Do NOT also provide a 'scope:project' trigger config — the system will create it automatically from this field. Sending both project_id and a scope:project trigger config will result in an error.
           format: uuid
+    BatchDelete:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+    AlertTriggerConfig_Write:
+      required:
+      - type
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum:
+          - scope:project
+          - threshold:feedback_score
+          - threshold:cost
+          - threshold:latency
+          - threshold:errors
+        config_value:
+          type: object
+          additionalProperties:
+            type: string
+        group_index:
+          type: integer
+          description: 'Groups configs within a trigger: same group_index means AND between configs, different group_index means OR between groups. Null means a legacy/singleton group of one config. Always null for scope:project configs.'
+          format: int32
     ErrorMessage:
       type: object
       properties:
@@ -330,6 +362,28 @@ components:
         message:
           type: string
         details:
+          type: string
+    WebhookExamples:
+      type: object
+      properties:
+        response_examples:
+          type: object
+          additionalProperties:
+            type: object
+    WebhookTestResult:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+          - success
+          - failure
+        status_code:
+          type: integer
+          format: int32
+        request_body:
+          type: string
+        error_message:
           type: string
     Alert_Public:
       required:
@@ -421,19 +475,16 @@ components:
         last_updated_by:
           type: string
           readOnly: true
-    BatchDelete:
-      required:
-      - ids
+    ErrorMessage_Public:
       type: object
       properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
     AlertPage_Public:
       type: object
       properties:
@@ -454,34 +505,60 @@ components:
           type: array
           items:
             type: string
-    WebhookExamples:
-      type: object
-      properties:
-        response_examples:
-          type: object
-          additionalProperties:
-            type: object
-    Webhook_Public:
+    AlertTrigger_Write:
       required:
-      - url
+      - event_type
       type: object
       properties:
         id:
           type: string
           format: uuid
-        name:
+        event_type:
           type: string
-        url:
-          minLength: 1
+          enum:
+          - trace:errors
+          - trace:feedback_score
+          - trace_thread:feedback_score
+          - prompt:created
+          - prompt:committed
+          - trace:guardrails_triggered
+          - prompt:deleted
+          - experiment:finished
+          - trace:cost
+          - trace:latency
+        trigger_configs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertTriggerConfig_Write'
+    AlertTrigger_Public:
+      required:
+      - event_type
+      type: object
+      properties:
+        id:
           type: string
-        secret_token:
-          maxLength: 250
-          minLength: 0
+          format: uuid
+        alert_id:
           type: string
-        headers:
-          type: object
-          additionalProperties:
-            type: string
+          format: uuid
+          readOnly: true
+        event_type:
+          type: string
+          enum:
+          - trace:errors
+          - trace:feedback_score
+          - trace_thread:feedback_score
+          - prompt:created
+          - prompt:committed
+          - trace:guardrails_triggered
+          - prompt:deleted
+          - experiment:finished
+          - trace:cost
+          - trace:latency
+        trigger_configs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertTriggerConfig_Public'
         created_at:
           type: string
           format: date-time
@@ -489,80 +566,3 @@ components:
         created_by:
           type: string
           readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-    ErrorMessage_Public:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    AlertTriggerConfig_Write:
-      required:
-      - type
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        type:
-          type: string
-          enum:
-          - scope:project
-          - threshold:feedback_score
-          - threshold:cost
-          - threshold:latency
-          - threshold:errors
-        config_value:
-          type: object
-          additionalProperties:
-            type: string
-        group_index:
-          type: integer
-          description: 'Groups configs within a trigger: same group_index means AND between configs, different group_index means OR between groups. Null means a legacy/singleton group of one config. Always null for scope:project configs.'
-          format: int32
-    WebhookTestResult:
-      type: object
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-          - failure
-        status_code:
-          type: integer
-          format: int32
-        request_body:
-          type: string
-        error_message:
-          type: string
-    Webhook_Write:
-      required:
-      - url
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        url:
-          minLength: 1
-          type: string
-        secret_token:
-          maxLength: 250
-          minLength: 0
-          type: string
-        headers:
-          type: object
-          additionalProperties:
-            type: string

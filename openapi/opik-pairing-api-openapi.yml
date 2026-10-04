@@ -129,15 +129,6 @@ components:
           type: string
         details:
           type: string
-    CreateSessionResponse:
-      type: object
-      properties:
-        session_id:
-          type: string
-          format: uuid
-        runner_id:
-          type: string
-          format: uuid
     ActivateRequest:
       required:
       - hmac
@@ -152,6 +143,15 @@ components:
           maxLength: 44
           minLength: 43
           type: string
+    CreateSessionResponse:
+      type: object
+      properties:
+        session_id:
+          type: string
+          format: uuid
+        runner_id:
+          type: string
+          format: uuid
     CreateSessionRequest:
       required:
       - activation_key

@@ -133,19 +133,14 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    ErrorMessage:
+    Environment_Write:
+      required:
+      - name
       type: object
       properties:
-        code:
-          type: integer
-          format: int32
-        message:
+        id:
           type: string
-        details:
-          type: string
-    EnvironmentUpdate:
-      type: object
-      properties:
+          format: uuid
         name:
           maxLength: 150
           minLength: 0
@@ -162,19 +157,6 @@ components:
         position:
           type: integer
           format: int32
-    BatchDelete:
-      required:
-      - ids
-      type: object
-      properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
     EnvironmentPage_Public:
       type: object
       properties:
@@ -195,6 +177,19 @@ components:
           type: array
           items:
             type: string
+    BatchDelete:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
     Environment_Public:
       required:
       - name
@@ -233,14 +228,29 @@ components:
         last_updated_by:
           type: string
           readOnly: true
-    Environment_Write:
-      required:
-      - name
+    ErrorMessage_Public:
       type: object
       properties:
-        id:
+        code:
+          type: integer
+          format: int32
+        message:
           type: string
-          format: uuid
+        details:
+          type: string
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    EnvironmentUpdate:
+      type: object
+      properties:
         name:
           maxLength: 150
           minLength: 0
@@ -257,13 +267,3 @@ components:
         position:
           type: integer
           format: int32
-    ErrorMessage_Public:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string

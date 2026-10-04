@@ -181,6 +181,55 @@ paths:
                 $ref: '#/components/schemas/OAuthError'
 components:
   schemas:
+    WorkspaceInfo:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    AuthorizeContext:
+      type: object
+      properties:
+        client_name:
+          type: string
+        client_logo_uri:
+          type: string
+        workspaces:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkspaceInfo'
+        csrf_token:
+          type: string
+    AuthorizationServerMetadata:
+      type: object
+      properties:
+        issuer:
+          type: string
+        authorization_endpoint:
+          type: string
+        token_endpoint:
+          type: string
+        revocation_endpoint:
+          type: string
+        registration_endpoint:
+          type: string
+        response_types_supported:
+          type: array
+          items:
+            type: string
+        grant_types_supported:
+          type: array
+          items:
+            type: string
+        code_challenge_methods_supported:
+          type: array
+          items:
+            type: string
+        token_endpoint_auth_methods_supported:
+          type: array
+          items:
+            type: string
     ConsentRequest:
       required:
       - client_id
@@ -214,60 +263,6 @@ components:
           type: string
         csrf:
           type: string
-    ConsentResponse:
-      type: object
-      properties:
-        redirect_to:
-          type: string
-    OAuthError:
-      type: object
-      properties:
-        error:
-          type: string
-        error_description:
-          type: string
-    AuthorizationServerMetadata:
-      type: object
-      properties:
-        issuer:
-          type: string
-        authorization_endpoint:
-          type: string
-        token_endpoint:
-          type: string
-        revocation_endpoint:
-          type: string
-        registration_endpoint:
-          type: string
-        response_types_supported:
-          type: array
-          items:
-            type: string
-        grant_types_supported:
-          type: array
-          items:
-            type: string
-        code_challenge_methods_supported:
-          type: array
-          items:
-            type: string
-        token_endpoint_auth_methods_supported:
-          type: array
-          items:
-            type: string
-    AuthorizeContext:
-      type: object
-      properties:
-        client_name:
-          type: string
-        client_logo_uri:
-          type: string
-        workspaces:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkspaceInfo'
-        csrf_token:
-          type: string
     TokenResponse:
       type: object
       properties:
@@ -284,10 +279,15 @@ components:
           type: string
         workspace_name:
           type: string
-    WorkspaceInfo:
+    OAuthError:
       type: object
       properties:
-        id:
+        error:
           type: string
-        name:
+        error_description:
+          type: string
+    ConsentResponse:
+      type: object
+      properties:
+        redirect_to:
           type: string

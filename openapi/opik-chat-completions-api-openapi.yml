@@ -46,23 +46,12 @@ paths:
                 $ref: '#/components/schemas/ChatCompletionResponse'
 components:
   schemas:
-    CompletionTokensDetails:
+    PromptTokensDetails:
       type: object
       properties:
-        reasoning_tokens:
+        cached_tokens:
           type: integer
           format: int32
-    ResponseFormat:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - text
-          - json_object
-          - json_schema
-        json_schema:
-          $ref: '#/components/schemas/JsonSchema'
     ToolCall:
       type: object
       properties:
@@ -77,6 +66,57 @@ components:
           - function
         function:
           $ref: '#/components/schemas/FunctionCall'
+    ChatCompletionChoice:
+      type: object
+      properties:
+        index:
+          type: integer
+          format: int32
+        message:
+          $ref: '#/components/schemas/AssistantMessage'
+        delta:
+          $ref: '#/components/schemas/Delta'
+        finish_reason:
+          type: string
+        logprobs:
+          $ref: '#/components/schemas/LogProbs'
+    CompletionTokensDetails:
+      type: object
+      properties:
+        reasoning_tokens:
+          type: integer
+          format: int32
+    JsonNode:
+      type: object
+    Usage:
+      type: object
+      properties:
+        total_tokens:
+          type: integer
+          format: int32
+        prompt_tokens:
+          type: integer
+          format: int32
+        prompt_tokens_details:
+          $ref: '#/components/schemas/PromptTokensDetails'
+        completion_tokens:
+          type: integer
+          format: int32
+        completion_tokens_details:
+          $ref: '#/components/schemas/CompletionTokensDetails'
+    Function:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        strict:
+          type: boolean
+        parameters:
+          type: object
+          additionalProperties:
+            type: object
     FunctionCall:
       type: object
       properties:
@@ -84,34 +124,13 @@ components:
           type: string
         arguments:
           type: string
-    LogProb:
+    LogProbs:
       type: object
       properties:
-        token:
-          type: string
-        logprob:
-          type: number
-          format: double
-        bytes:
+        content:
           type: array
           items:
-            type: integer
-            format: int32
-    StreamOptions:
-      type: object
-      properties:
-        include_usage:
-          type: boolean
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
+            $ref: '#/components/schemas/LogProb'
     ChatCompletionResponse:
       type: object
       properties:
@@ -132,109 +151,17 @@ components:
           type: string
         service_tier:
           type: string
-    AssistantMessage:
-      type: object
-      properties:
-        role:
-          type: string
-          enum:
-          - system
-          - user
-          - assistant
-          - tool
-          - function
-        content:
-          type: string
-        reasoning_content:
-          type: string
-        name:
-          type: string
-        tool_calls:
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolCall'
-        refusal:
-          type: string
-        function_call:
-          $ref: '#/components/schemas/FunctionCall'
-    Delta:
-      type: object
-      properties:
-        role:
-          type: string
-        content:
-          type: string
-        reasoning_content:
-          type: string
-        tool_calls:
-          type: array
-          items:
-            $ref: '#/components/schemas/ToolCall'
-        function_call:
-          $ref: '#/components/schemas/FunctionCall'
-    Tool:
+    ResponseFormat:
       type: object
       properties:
         type:
           type: string
           enum:
-          - function
-        function:
-          $ref: '#/components/schemas/Function'
-    PromptTokensDetails:
-      type: object
-      properties:
-        cached_tokens:
-          type: integer
-          format: int32
-    Usage:
-      type: object
-      properties:
-        total_tokens:
-          type: integer
-          format: int32
-        prompt_tokens:
-          type: integer
-          format: int32
-        prompt_tokens_details:
-          $ref: '#/components/schemas/PromptTokensDetails'
-        completion_tokens:
-          type: integer
-          format: int32
-        completion_tokens_details:
-          $ref: '#/components/schemas/CompletionTokensDetails'
-    ChatCompletionChoice:
-      type: object
-      properties:
-        index:
-          type: integer
-          format: int32
-        message:
-          $ref: '#/components/schemas/AssistantMessage'
-        delta:
-          $ref: '#/components/schemas/Delta'
-        finish_reason:
-          type: string
-        logprobs:
-          $ref: '#/components/schemas/LogProbs'
-    LogProbs:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/LogProb'
-    JsonSchema:
-      type: object
-      properties:
-        name:
-          type: string
-        strict:
-          type: boolean
-        schema:
-          type: object
-          additionalProperties:
-            type: object
+          - text
+          - json_object
+          - json_schema
+        json_schema:
+          $ref: '#/components/schemas/JsonSchema'
     ChatCompletionRequest:
       type: object
       properties:
@@ -314,21 +241,44 @@ components:
             $ref: '#/components/schemas/Function'
         function_call:
           $ref: '#/components/schemas/FunctionCall'
-    JsonNode:
-      type: object
-    Function:
+    AssistantMessage:
       type: object
       properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+          - function
+        content:
+          type: string
+        reasoning_content:
+          type: string
         name:
           type: string
-        description:
+        tool_calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolCall'
+        refusal:
           type: string
-        strict:
-          type: boolean
-        parameters:
-          type: object
-          additionalProperties:
-            type: object
+        function_call:
+          $ref: '#/components/schemas/FunctionCall'
+    LogProb:
+      type: object
+      properties:
+        token:
+          type: string
+        logprob:
+          type: number
+          format: double
+        bytes:
+          type: array
+          items:
+            type: integer
+            format: int32
     Message:
       required:
       - content
@@ -340,3 +290,53 @@ components:
           type: string
         content:
           $ref: '#/components/schemas/JsonNode'
+    StreamOptions:
+      type: object
+      properties:
+        include_usage:
+          type: boolean
+    Tool:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - function
+        function:
+          $ref: '#/components/schemas/Function'
+    Delta:
+      type: object
+      properties:
+        role:
+          type: string
+        content:
+          type: string
+        reasoning_content:
+          type: string
+        tool_calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/ToolCall'
+        function_call:
+          $ref: '#/components/schemas/FunctionCall'
+    JsonSchema:
+      type: object
+      properties:
+        name:
+          type: string
+        strict:
+          type: boolean
+        schema:
+          type: object
+          additionalProperties:
+            type: object
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
