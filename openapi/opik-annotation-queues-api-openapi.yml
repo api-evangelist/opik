@@ -305,6 +305,58 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
+    ErrorMessage_Public:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    AnnotationQueue_Write:
+      required:
+      - name
+      - project_id
+      - scope
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        project_id:
+          type: string
+          format: uuid
+        name:
+          minLength: 1
+          type: string
+        description:
+          type: string
+        instructions:
+          type: string
+        scope:
+          type: string
+          enum:
+          - trace
+          - thread
+        comments_enabled:
+          type: boolean
+        feedback_definition_names:
+          type: array
+          items:
+            type: string
+        annotators_per_item:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          format: int32
+        lock_timeout_seconds:
+          maximum: 3600
+          minimum: 1
+          type: integer
+          format: int32
+      description: List of annotation queues to create
     AnnotationQueue_Public:
       required:
       - name
@@ -377,43 +429,6 @@ components:
         last_updated_by:
           type: string
           readOnly: true
-    AnnotationQueuePage_Public:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/AnnotationQueue_Public'
-        sortableBy:
-          type: array
-          items:
-            type: string
-    LocksResponse:
-      type: object
-      properties:
-        locks:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/ItemLockInfo'
-    ItemLockInfo:
-      type: object
-      properties:
-        active_locks:
-          type: integer
-          format: int32
-        locked_by:
-          type: array
-          items:
-            type: string
     AnnotationQueueUpdate:
       type: object
       properties:
@@ -441,48 +456,23 @@ components:
           minimum: 1
           type: integer
           format: int32
-    AnnotationQueue_Write:
-      required:
-      - name
-      - project_id
-      - scope
+    LocksResponse:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        project_id:
-          type: string
-          format: uuid
-        name:
-          minLength: 1
-          type: string
-        description:
-          type: string
-        instructions:
-          type: string
-        scope:
-          type: string
-          enum:
-          - trace
-          - thread
-        comments_enabled:
-          type: boolean
-        feedback_definition_names:
+        locks:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ItemLockInfo'
+    ItemLockInfo:
+      type: object
+      properties:
+        active_locks:
+          type: integer
+          format: int32
+        locked_by:
           type: array
           items:
             type: string
-        annotators_per_item:
-          maximum: 1000
-          minimum: 1
-          type: integer
-          format: int32
-        lock_timeout_seconds:
-          maximum: 3600
-          minimum: 1
-          type: integer
-          format: int32
-      description: List of annotation queues to create
     BatchDelete:
       required:
       - ids
@@ -496,15 +486,6 @@ components:
           items:
             type: string
             format: uuid
-    AnnotationQueueReviewer_Public:
-      type: object
-      properties:
-        username:
-          type: string
-        status:
-          type: integer
-          format: int64
-      readOnly: true
     LockResponse:
       type: object
       properties:
@@ -518,19 +499,26 @@ components:
         expires_at:
           type: string
           format: date-time
-    AnnotationQueueItemIds:
-      required:
-      - ids
+    AnnotationQueuePage_Public:
       type: object
       properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnnotationQueue_Public'
+        sortableBy:
           type: array
           items:
             type: string
-            format: uuid
     FeedbackScoreAverage_Public:
       required:
       - name
@@ -543,26 +531,6 @@ components:
         value:
           type: number
       readOnly: true
-    ErrorMessage_Public:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
     AnnotationQueueBatch_Write:
       required:
       - annotation_queues
@@ -577,3 +545,35 @@ components:
           items:
             $ref: '#/components/schemas/AnnotationQueue_Write'
       description: Batch of annotation queues to create
+    AnnotationQueueReviewer_Public:
+      type: object
+      properties:
+        username:
+          type: string
+        status:
+          type: integer
+          format: int64
+      readOnly: true
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    AnnotationQueueItemIds:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid

@@ -287,18 +287,6 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    MultipartUploadPart:
-      required:
-      - e_tag
-      - part_number
-      type: object
-      properties:
-        e_tag:
-          minLength: 1
-          type: string
-        part_number:
-          type: integer
-          format: int32
     AttachmentPage:
       type: object
       properties:
@@ -376,16 +364,6 @@ components:
           format: int64
         mime_type:
           type: string
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
     StartMultipartUploadRequest:
       required:
       - entity_id
@@ -421,6 +399,28 @@ components:
           readOnly: true
         path:
           minLength: 1
+          type: string
+    MultipartUploadPart:
+      required:
+      - e_tag
+      - part_number
+      type: object
+      properties:
+        e_tag:
+          minLength: 1
+          type: string
+        part_number:
+          type: integer
+          format: int32
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
           type: string
     StartMultipartUploadResponse:
       required:

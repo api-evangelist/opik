@@ -94,6 +94,19 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
+    OllamaConnectionTestResponse:
+      type: object
+      properties:
+        connected:
+          type: boolean
+          description: Whether the connection was successful
+        version:
+          type: string
+          description: Server version (returned even if connection failed or version is incompatible)
+        error_message:
+          type: string
+          description: Error message if connection failed
+      description: Response from Ollama connection test.
     OllamaInstanceBaseUrlRequest:
       required:
       - base_url
@@ -118,19 +131,6 @@ components:
           type: string
         details:
           type: string
-    OllamaConnectionTestResponse:
-      type: object
-      properties:
-        connected:
-          type: boolean
-          description: Whether the connection was successful
-        version:
-          type: string
-          description: Server version (returned even if connection failed or version is incompatible)
-        error_message:
-          type: string
-          description: Error message if connection failed
-      description: Response from Ollama connection test.
     OllamaModel:
       required:
       - name

@@ -164,6 +164,51 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
+    FeedbackObject_Public:
+      required:
+      - name
+      - type
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          minLength: 1
+          type: string
+        description:
+          maxLength: 255
+          minLength: 0
+          type: string
+          description: Optional description for the feedback definition
+          example: This feedback definition is used to rate response quality
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+        createdBy:
+          type: string
+          readOnly: true
+        lastUpdatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+        lastUpdatedBy:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          enum:
+          - numerical
+          - categorical
+          - boolean
+      discriminator:
+        propertyName: type
+        mapping:
+          numerical: '#/components/schemas/NumericalFeedbackDefinition_Public'
+          categorical: '#/components/schemas/CategoricalFeedbackDefinition_Public'
+          boolean: '#/components/schemas/BooleanFeedbackDefinition_Public'
     Feedback_Update:
       required:
       - name
@@ -195,37 +240,22 @@ components:
           numerical: '#/components/schemas/NumericalFeedbackDefinition_Update'
           categorical: '#/components/schemas/CategoricalFeedbackDefinition_Update'
           boolean: '#/components/schemas/BooleanFeedbackDefinition_Update'
-    Feedback_Create:
-      required:
-      - name
-      - type
+    FeedbackDefinitionPage_Public:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        name:
-          minLength: 1
-          type: string
-        description:
-          maxLength: 255
-          minLength: 0
-          type: string
-          description: Optional description for the feedback definition
-          example: This feedback definition is used to rate response quality
-        type:
-          type: string
-          enum:
-          - numerical
-          - categorical
-          - boolean
-      discriminator:
-        propertyName: type
-        mapping:
-          numerical: '#/components/schemas/NumericalFeedbackDefinition_Create'
-          categorical: '#/components/schemas/CategoricalFeedbackDefinition_Create'
-          boolean: '#/components/schemas/BooleanFeedbackDefinition_Create'
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedbackObject_Public'
     BatchDelete:
       required:
       - ids
@@ -284,7 +314,7 @@ components:
           numerical: '#/components/schemas/NumericalFeedbackDefinition_Public'
           categorical: '#/components/schemas/CategoricalFeedbackDefinition_Public'
           boolean: '#/components/schemas/BooleanFeedbackDefinition_Public'
-    FeedbackObject_Public:
+    Feedback_Create:
       required:
       - name
       - type
@@ -303,20 +333,6 @@ components:
           type: string
           description: Optional description for the feedback definition
           example: This feedback definition is used to rate response quality
-        createdAt:
-          type: string
-          format: date-time
-          readOnly: true
-        createdBy:
-          type: string
-          readOnly: true
-        lastUpdatedAt:
-          type: string
-          format: date-time
-          readOnly: true
-        lastUpdatedBy:
-          type: string
-          readOnly: true
         type:
           type: string
           enum:
@@ -326,25 +342,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          numerical: '#/components/schemas/NumericalFeedbackDefinition_Public'
-          categorical: '#/components/schemas/CategoricalFeedbackDefinition_Public'
-          boolean: '#/components/schemas/BooleanFeedbackDefinition_Public'
-    FeedbackDefinitionPage_Public:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/FeedbackObject_Public'
+          numerical: '#/components/schemas/NumericalFeedbackDefinition_Create'
+          categorical: '#/components/schemas/CategoricalFeedbackDefinition_Create'
+          boolean: '#/components/schemas/BooleanFeedbackDefinition_Create'
     ErrorMessage:
       type: object
       properties:

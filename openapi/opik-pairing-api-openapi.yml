@@ -119,30 +119,6 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    ActivateRequest:
-      required:
-      - hmac
-      - runner_name
-      type: object
-      properties:
-        runner_name:
-          maxLength: 128
-          minLength: 0
-          type: string
-        hmac:
-          maxLength: 44
-          minLength: 43
-          type: string
     CreateSessionResponse:
       type: object
       properties:
@@ -176,3 +152,27 @@ components:
           enum:
           - connect
           - endpoint
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    ActivateRequest:
+      required:
+      - hmac
+      - runner_name
+      type: object
+      properties:
+        runner_name:
+          maxLength: 128
+          minLength: 0
+          type: string
+        hmac:
+          maxLength: 44
+          minLength: 43
+          type: string

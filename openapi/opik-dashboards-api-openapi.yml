@@ -229,21 +229,28 @@ components:
           type: string
           format: date-time
           readOnly: true
-    JsonNode_Public:
-      type: object
-    BatchDelete:
-      required:
-      - ids
+    DashboardPage_Public:
       type: object
       properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dashboard_Public'
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        sortable_by:
           type: array
           items:
             type: string
-            format: uuid
+    JsonNode_Write:
+      type: object
     Dashboard_Write:
       required:
       - config
@@ -273,6 +280,21 @@ components:
           type: string
         config:
           $ref: '#/components/schemas/JsonNode_Write'
+    JsonNode_Public:
+      type: object
+    BatchDelete:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
     DashboardUpdate_Public:
       type: object
       properties:
@@ -292,25 +314,3 @@ components:
           type: string
         config:
           $ref: '#/components/schemas/JsonNode_Public'
-    JsonNode_Write:
-      type: object
-    DashboardPage_Public:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/Dashboard_Public'
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        sortable_by:
-          type: array
-          items:
-            type: string

@@ -181,6 +181,13 @@ paths:
                 $ref: '#/components/schemas/OAuthError'
 components:
   schemas:
+    OAuthError:
+      type: object
+      properties:
+        error:
+          type: string
+        error_description:
+          type: string
     WorkspaceInfo:
       type: object
       properties:
@@ -200,6 +207,11 @@ components:
           items:
             $ref: '#/components/schemas/WorkspaceInfo'
         csrf_token:
+          type: string
+    ConsentResponse:
+      type: object
+      properties:
+        redirect_to:
           type: string
     AuthorizationServerMetadata:
       type: object
@@ -278,16 +290,4 @@ components:
         workspace_id:
           type: string
         workspace_name:
-          type: string
-    OAuthError:
-      type: object
-      properties:
-        error:
-          type: string
-        error_description:
-          type: string
-    ConsentResponse:
-      type: object
-      properties:
-        redirect_to:
           type: string

@@ -176,79 +176,26 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage'
 components:
   schemas:
-    WorkspaceMetricsSummaryResponse:
+    SpendRecommendationsResponse:
       type: object
       properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Result'
-    Lane:
-      type: object
-      properties:
-        key:
-          type: string
-        label:
-          type: string
-        total_tokens:
+        total_savings_tokens:
           type: integer
           format: int64
-        input_tokens:
-          type: integer
-          format: int64
-        cache_read_tokens:
-          type: integer
-          format: int64
-        cache_creation_tokens:
-          type: integer
-          format: int64
-        output_tokens:
-          type: integer
-          format: int64
-        has_breakdown:
-          type: boolean
-    SpendBreakdownResponse:
-      type: object
-      properties:
-        lane_key:
-          type: string
-        title:
-          type: string
-        subtitle:
-          type: string
-        total_tokens:
-          type: integer
-          format: int64
-        input_tokens:
-          type: integer
-          format: int64
-        cache_read_tokens:
-          type: integer
-          format: int64
-        cache_creation_tokens:
-          type: integer
-          format: int64
-        output_tokens:
-          type: integer
-          format: int64
-        model:
-          type: string
-        item_count:
-          type: integer
-          format: int32
-        item_unit:
-          type: string
         items:
           type: array
           items:
             $ref: '#/components/schemas/Item'
-    HarnessEntry:
+    Side:
       type: object
       properties:
-        key:
-          type: string
-        label:
-          type: string
+        total_tokens:
+          type: integer
+          format: int64
+        lanes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lane'
     Item:
       type: object
       properties:
@@ -271,31 +218,6 @@ components:
           type: string
         related_lane_key:
           type: string
-    SpendCompositionResponse:
-      type: object
-      properties:
-        input:
-          $ref: '#/components/schemas/Side'
-        harness:
-          type: array
-          items:
-            $ref: '#/components/schemas/HarnessEntry'
-        output:
-          $ref: '#/components/schemas/Side'
-        models:
-          type: array
-          items:
-            type: string
-    SpendRecommendationsResponse:
-      type: object
-      properties:
-        total_savings_tokens:
-          type: integer
-          format: int64
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item'
     Result:
       type: object
       properties:
@@ -307,50 +229,6 @@ components:
         previous:
           type: number
           format: double
-    SpendUserPage:
-      type: object
-      properties:
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/SpendUserRow'
-        sortable_by:
-          type: array
-          items:
-            type: string
-    SpendMetricRequest:
-      required:
-      - interval_end
-      - interval_start
-      type: object
-      properties:
-        project_id:
-          type: string
-          format: uuid
-        project_name:
-          type: string
-        interval_start:
-          type: string
-          format: date-time
-        interval_end:
-          type: string
-          format: date-time
-        user_id:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        start_before_end:
-          type: boolean
-        project_provided:
-          type: boolean
     SpendUserRow:
       type: object
       properties:
@@ -397,16 +275,138 @@ components:
           type: array
           items:
             type: string
-    Side:
+    WorkspaceMetricsSummaryResponse:
       type: object
       properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Result'
+    SpendCompositionResponse:
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/Side'
+        harness:
+          type: array
+          items:
+            $ref: '#/components/schemas/HarnessEntry'
+        output:
+          $ref: '#/components/schemas/Side'
+        models:
+          type: array
+          items:
+            type: string
+    SpendUserPage:
+      type: object
+      properties:
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpendUserRow'
+        sortable_by:
+          type: array
+          items:
+            type: string
+    SpendBreakdownResponse:
+      type: object
+      properties:
+        lane_key:
+          type: string
+        title:
+          type: string
+        subtitle:
+          type: string
         total_tokens:
           type: integer
           format: int64
-        lanes:
+        input_tokens:
+          type: integer
+          format: int64
+        cache_read_tokens:
+          type: integer
+          format: int64
+        cache_creation_tokens:
+          type: integer
+          format: int64
+        output_tokens:
+          type: integer
+          format: int64
+        model:
+          type: string
+        item_count:
+          type: integer
+          format: int32
+        item_unit:
+          type: string
+        items:
           type: array
           items:
-            $ref: '#/components/schemas/Lane'
+            $ref: '#/components/schemas/Item'
+    SpendMetricRequest:
+      required:
+      - interval_end
+      - interval_start
+      type: object
+      properties:
+        project_id:
+          type: string
+          format: uuid
+        project_name:
+          type: string
+        interval_start:
+          type: string
+          format: date-time
+        interval_end:
+          type: string
+          format: date-time
+        user_id:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+        start_before_end:
+          type: boolean
+        project_provided:
+          type: boolean
+    Lane:
+      type: object
+      properties:
+        key:
+          type: string
+        label:
+          type: string
+        total_tokens:
+          type: integer
+          format: int64
+        input_tokens:
+          type: integer
+          format: int64
+        cache_read_tokens:
+          type: integer
+          format: int64
+        cache_creation_tokens:
+          type: integer
+          format: int64
+        output_tokens:
+          type: integer
+          format: int64
+        has_breakdown:
+          type: boolean
+    HarnessEntry:
+      type: object
+      properties:
+        key:
+          type: string
+        label:
+          type: string
     ErrorMessage:
       type: object
       properties:

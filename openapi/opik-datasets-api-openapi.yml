@@ -1078,41 +1078,30 @@ paths:
                 $ref: '#/components/schemas/ErrorMessage_Public'
 components:
   schemas:
-    JsonListString:
-      type: object
-      anyOf:
-      - type: object
-      - type: array
-        items:
-          type: object
-      - type: string
-    Comment_Compare:
+    CreateDatasetItemsFromTracesRequest:
       required:
-      - text
+      - enrichment_options
+      - trace_ids
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        text:
-          minLength: 1
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-      readOnly: true
+        trace_ids:
+          minItems: 1
+          uniqueItems: true
+          type: array
+          description: Set of trace IDs to add to the dataset
+          items:
+            type: string
+            description: Set of trace IDs to add to the dataset
+            format: uuid
+        enrichment_options:
+          $ref: '#/components/schemas/TraceEnrichmentOptions'
+        evaluators:
+          type: array
+          description: Optional evaluators to apply to the created items
+          items:
+            $ref: '#/components/schemas/EvaluatorItem'
+        execution_policy:
+          $ref: '#/components/schemas/ExecutionPolicy'
     DatasetVersionTag:
       required:
       - tag
@@ -1122,29 +1111,6 @@ components:
           maxLength: 100
           minLength: 0
           type: string
-    ValueEntry_Compare:
-      type: object
-      properties:
-        value:
-          type: number
-        reason:
-          type: string
-        category_name:
-          type: string
-        source:
-          type: string
-          enum:
-          - ui
-          - sdk
-          - online_scoring
-        last_updated_at:
-          type: string
-          format: date-time
-        span_type:
-          type: string
-        span_id:
-          type: string
-      readOnly: true
     DatasetPage_Public:
       type: object
       properties:
@@ -1165,233 +1131,16 @@ components:
           type: array
           items:
             type: string
-    ExecutionPolicy_Compare:
+    AssertionResult_Compare:
       type: object
       properties:
-        runs_per_item:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-        pass_threshold:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
+        value:
+          type: string
+        passed:
+          type: boolean
+        reason:
+          type: string
       readOnly: true
-    DatasetVersionUpdate_Public:
-      type: object
-      properties:
-        change_description:
-          type: string
-          description: Optional description of changes in this version
-          example: Updated baseline version
-        tags_to_add:
-          maxItems: 100
-          minItems: 0
-          type: array
-          description: Optional list of tags to add to this version
-          example:
-          - production
-          - reviewed
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-            description: Optional list of tags to add to this version
-            example: '["production","reviewed"]'
-    Column_Compare:
-      type: object
-      properties:
-        name:
-          type: string
-        types:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            enum:
-            - string
-            - number
-            - object
-            - boolean
-            - array
-            - 'null'
-        filter_field_prefix:
-          type: string
-        filterField:
-          type: string
-          description: The field to use for filtering
-          readOnly: true
-    ExperimentItem_Public:
-      required:
-      - dataset_item_id
-      - experiment_id
-      - trace_id
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        experiment_id:
-          type: string
-          format: uuid
-        dataset_item_id:
-          type: string
-          format: uuid
-        trace_id:
-          type: string
-          format: uuid
-        project_id:
-          type: string
-          format: uuid
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-        trace_visibility_mode:
-          type: string
-          readOnly: true
-          enum:
-          - default
-          - hidden
-    DatasetItem_Compare:
-      required:
-      - data
-      - source
-      type: object
-      properties:
-        id:
-          type: string
-          description: 'Stable item identifier.
-
-            On write, used as the upsert key.
-
-            If omitted, a new ID is generated.
-
-            Remains the same across dataset versions
-
-            '
-          format: uuid
-        dataset_item_id:
-          type: string
-          description: 'Deprecated.
-
-            Always equals ''id''.
-
-            Retained for backward compatibility and will be removed in a future version
-
-            '
-          format: uuid
-          readOnly: true
-        trace_id:
-          type: string
-          format: uuid
-        span_id:
-          type: string
-          format: uuid
-        source:
-          type: string
-          enum:
-          - manual
-          - trace
-          - span
-          - sdk
-        data:
-          $ref: '#/components/schemas/JsonNode'
-        description:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        evaluators:
-          type: array
-          items:
-            $ref: '#/components/schemas/EvaluatorItem_Compare'
-        execution_policy:
-          $ref: '#/components/schemas/ExecutionPolicy_Compare'
-        experiment_items:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/ExperimentItem_Compare'
-        run_summaries_by_experiment:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/ExperimentRunSummary_Compare'
-          readOnly: true
-        dataset_id:
-          type: string
-          format: uuid
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-    ExecutionPolicy:
-      type: object
-      properties:
-        runs_per_item:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-        pass_threshold:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-      readOnly: true
-    ExecutionPolicy_Public:
-      type: object
-      properties:
-        runs_per_item:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-        pass_threshold:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-      description: Default execution policy for items in this version
-      readOnly: true
-    DatasetVersionRetrieveRequest_Public:
-      required:
-      - version_name
-      type: object
-      properties:
-        version_name:
-          minLength: 1
-          pattern: ^v\d+$
-          type: string
-          description: Version name in format 'vN' (e.g., 'v1', 'v373')
-          example: v1
     ExperimentItem:
       required:
       - dataset_item_id
@@ -1484,171 +1233,88 @@ components:
           enum:
           - passed
           - failed
-    EvaluatorItem_Compare:
+    ExperimentItem_Public:
       required:
-      - config
-      - name
-      - type
+      - dataset_item_id
+      - experiment_id
+      - trace_id
       type: object
       properties:
-        name:
-          minLength: 1
+        id:
           type: string
-        type:
+          format: uuid
+        experiment_id:
           type: string
+          format: uuid
+        dataset_item_id:
+          type: string
+          format: uuid
+        trace_id:
+          type: string
+          format: uuid
+        project_id:
+          type: string
+          format: uuid
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+        trace_visibility_mode:
+          type: string
+          readOnly: true
           enum:
-          - llm_judge
-          - code_metric
-        config:
-          $ref: '#/components/schemas/JsonNode_Compare'
-    ExperimentRunSummary_Public:
-      type: object
-      properties:
-        passed_runs:
-          type: integer
-          format: int32
-        total_runs:
-          type: integer
-          format: int32
-        status:
-          type: string
-          enum:
-          - passed
-          - failed
-      readOnly: true
-    DatasetItemFilter:
-      type: object
-      properties:
-        field:
-          type: string
-        operator:
-          type: string
-          enum:
-          - contains
-          - not_contains
-          - starts_with
-          - ends_with
-          - '='
-          - '!='
-          - '>'
-          - '>='
-          - <
-          - <=
-          - is_empty
-          - is_not_empty
-          - in
-          - not_in
-        key:
-          type: string
-        value:
-          type: string
-      description: Filters to select dataset items to delete within the specified dataset. Must be used with 'dataset_id'. Mutually exclusive with 'item_ids'. Empty array means 'delete all items in the dataset'.
-    DatasetVersionDiffStats:
-      type: object
-      properties:
-        itemsAdded:
-          type: integer
-          format: int32
-        itemsModified:
-          type: integer
-          format: int32
-        itemsDeleted:
-          type: integer
-          format: int32
-        itemsUnchanged:
-          type: integer
-          format: int32
-    ErrorMessage_Public:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: string
-    CreateDatasetItemsFromTracesRequest:
+          - default
+          - hidden
+    DatasetItemBatch_Write:
       required:
-      - enrichment_options
-      - trace_ids
+      - items
       type: object
       properties:
-        trace_ids:
-          minItems: 1
-          uniqueItems: true
-          type: array
-          description: Set of trace IDs to add to the dataset
-          items:
-            type: string
-            description: Set of trace IDs to add to the dataset
-            format: uuid
-        enrichment_options:
-          $ref: '#/components/schemas/TraceEnrichmentOptions'
-        evaluators:
-          type: array
-          description: Optional evaluators to apply to the created items
-          items:
-            $ref: '#/components/schemas/EvaluatorItem'
-        execution_policy:
-          $ref: '#/components/schemas/ExecutionPolicy'
-    TraceEnrichmentOptions:
-      type: object
-      properties:
-        includeSpans:
-          type: boolean
-        includeTags:
-          type: boolean
-        includeFeedbackScores:
-          type: boolean
-        includeComments:
-          type: boolean
-        includeUsage:
-          type: boolean
-        includeMetadata:
-          type: boolean
-      description: Options for enriching trace data
-    DatasetItemsDelete:
-      type: object
-      properties:
-        item_ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          description: List of dataset item IDs to delete (max 1000). Use this to delete specific items by their IDs. Mutually exclusive with 'dataset_id' and 'filters'.
-          items:
-            type: string
-            description: List of dataset item IDs to delete (max 1000). Use this to delete specific items by their IDs. Mutually exclusive with 'dataset_id' and 'filters'.
-            format: uuid
+        dataset_name:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: If null, dataset_id must be provided
         dataset_id:
           type: string
-          description: Dataset ID to scope the deletion. Required when using 'filters'. Mutually exclusive with 'item_ids'.
+          description: If null, dataset_name must be provided
           format: uuid
-        filters:
+        project_name:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: Optional. Associates the batch with a project by name. Ignored if project_id is provided.
+        project_id:
+          type: string
+          description: Optional. Associates the batch with a project by ID. Takes precedence over project_name.
+          format: uuid
+        items:
+          maxItems: 1000
+          minItems: 1
           type: array
-          description: Filters to select dataset items to delete within the specified dataset. Must be used with 'dataset_id'. Mutually exclusive with 'item_ids'. Empty array means 'delete all items in the dataset'.
           items:
-            $ref: '#/components/schemas/DatasetItemFilter'
+            $ref: '#/components/schemas/DatasetItem_Write'
         batch_group_id:
           type: string
-          description: Optional batch group ID to group multiple delete operations into a single dataset version. If null, mutates the latest version instead of creating a new one.
+          description: Optional batch group ID to group multiple batches into a single dataset version. If null, mutates the latest version instead of creating a new one.
           format: uuid
-      description: Request to delete multiple dataset items
-    SpanEnrichmentOptions:
-      type: object
-      properties:
-        includeTags:
-          type: boolean
-        includeFeedbackScores:
-          type: boolean
-        includeComments:
-          type: boolean
-        includeUsage:
-          type: boolean
-        includeMetadata:
-          type: boolean
-      description: Options for enriching span data
+        copy_from_dataset_id:
+          type: string
+          description: Optional. Dataset to read carry-forward rows from when materializing the new version. Required together with copy_from_version_id. When null, carry-forward rows are read from the destination dataset's prior version.
+          format: uuid
+        copy_from_version_id:
+          type: string
+          description: Optional. Version within copy_from_dataset_id to read carry-forward rows from. Required together with copy_from_dataset_id.
+          format: uuid
     FeedbackScore:
       required:
       - name
@@ -1694,33 +1360,38 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/ValueEntry'
           readOnly: true
-    JsonNode:
+    JsonListString:
       type: object
-    DatasetItemChanges_Public:
-      type: object
-    DatasetUpdate:
-      required:
-      - name
+      anyOf:
+      - type: object
+      - type: array
+        items:
+          type: object
+      - type: string
+    ExperimentRunSummary_Compare:
       type: object
       properties:
-        name:
-          minLength: 1
-          type: string
-        description:
-          maxLength: 255
-          minLength: 0
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        visibility:
+        passed_runs:
+          type: integer
+          format: int32
+        total_runs:
+          type: integer
+          format: int32
+        status:
           type: string
           enum:
-          - private
-          - public
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
+          - passed
+          - failed
+      readOnly: true
+    JsonListString_Compare:
+      type: object
+      readOnly: true
+      anyOf:
+      - type: object
+      - type: array
+        items:
+          type: object
+      - type: string
     FeedbackScore_Compare:
       required:
       - name
@@ -1766,450 +1437,6 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/ValueEntry_Compare'
           readOnly: true
-      readOnly: true
-    DatasetExportJob_Public:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        dataset_id:
-          type: string
-          format: uuid
-          readOnly: true
-        dataset_name:
-          type: string
-          readOnly: true
-        status:
-          type: string
-          readOnly: true
-          enum:
-          - PENDING
-          - PROCESSING
-          - COMPLETED
-          - FAILED
-        file_path:
-          type: string
-          readOnly: true
-        error_message:
-          type: string
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        expires_at:
-          type: string
-          format: date-time
-          readOnly: true
-        viewed_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-    Dataset_Public:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          minLength: 1
-          type: string
-        project_id:
-          type: string
-          description: Project ID. Takes precedence over project_name when both are provided.
-          format: uuid
-        type:
-          type: string
-          enum:
-          - dataset
-          - evaluation_suite
-        visibility:
-          type: string
-          enum:
-          - private
-          - public
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        description:
-          maxLength: 255
-          minLength: 0
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-        experiment_count:
-          type: integer
-          format: int64
-          readOnly: true
-        dataset_items_count:
-          type: integer
-          format: int64
-          readOnly: true
-        optimization_count:
-          type: integer
-          format: int64
-          readOnly: true
-        most_recent_experiment_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_created_experiment_at:
-          type: string
-          format: date-time
-          readOnly: true
-        most_recent_optimization_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_created_optimization_at:
-          type: string
-          format: date-time
-          readOnly: true
-        status:
-          type: string
-          readOnly: true
-          enum:
-          - unknown
-          - processing
-          - completed
-          - failed
-        latest_version:
-          $ref: '#/components/schemas/DatasetVersionSummary_Public'
-    DatasetVersionSummary_Public:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier of the version
-          format: uuid
-        version_hash:
-          type: string
-          description: Hash of the version content
-        version_name:
-          type: string
-          description: Sequential version name formatted as 'v1', 'v2', etc.
-        change_description:
-          type: string
-          description: Description of changes in this version
-        tags:
-          uniqueItems: true
-          type: array
-          description: Tags associated with this version
-          items:
-            type: string
-            description: Tags associated with this version
-      description: Summary of the latest dataset version
-      readOnly: true
-    Column_Public:
-      type: object
-      properties:
-        name:
-          type: string
-        types:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            enum:
-            - string
-            - number
-            - object
-            - boolean
-            - array
-            - 'null'
-        filter_field_prefix:
-          type: string
-        filterField:
-          type: string
-          description: The field to use for filtering
-          readOnly: true
-    ExecutionPolicy_Write:
-      type: object
-      properties:
-        runs_per_item:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-        pass_threshold:
-          maximum: 100
-          minimum: 1
-          type: integer
-          format: int32
-    DatasetVersionDiff:
-      type: object
-      properties:
-        from_version:
-          type: string
-        to_version:
-          type: string
-        statistics:
-          $ref: '#/components/schemas/DatasetVersionDiffStats'
-    JsonListString_Compare:
-      type: object
-      readOnly: true
-      anyOf:
-      - type: object
-      - type: array
-        items:
-          type: object
-      - type: string
-    DatasetItem_Write:
-      required:
-      - data
-      - source
-      type: object
-      properties:
-        id:
-          type: string
-          description: 'Stable item identifier.
-
-            On write, used as the upsert key.
-
-            If omitted, a new ID is generated.
-
-            Remains the same across dataset versions
-
-            '
-          format: uuid
-        trace_id:
-          type: string
-          format: uuid
-        span_id:
-          type: string
-          format: uuid
-        source:
-          type: string
-          enum:
-          - manual
-          - trace
-          - span
-          - sdk
-        data:
-          $ref: '#/components/schemas/JsonNode'
-        description:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        evaluators:
-          type: array
-          items:
-            $ref: '#/components/schemas/EvaluatorItem_Write'
-        execution_policy:
-          $ref: '#/components/schemas/ExecutionPolicy_Write'
-    AssertionResult_Compare:
-      type: object
-      properties:
-        value:
-          type: string
-        passed:
-          type: boolean
-        reason:
-          type: string
-      readOnly: true
-    ValueEntry:
-      type: object
-      properties:
-        value:
-          type: number
-        reason:
-          type: string
-        category_name:
-          type: string
-        source:
-          type: string
-          enum:
-          - ui
-          - sdk
-          - online_scoring
-        last_updated_at:
-          type: string
-          format: date-time
-        span_type:
-          type: string
-        span_id:
-          type: string
-      readOnly: true
-    AssertionResult:
-      type: object
-      properties:
-        value:
-          type: string
-        passed:
-          type: boolean
-        reason:
-          type: string
-      readOnly: true
-    EvaluatorItem:
-      required:
-      - config
-      - name
-      - type
-      type: object
-      properties:
-        name:
-          minLength: 1
-          type: string
-        type:
-          type: string
-          enum:
-          - llm_judge
-          - code_metric
-        config:
-          $ref: '#/components/schemas/JsonNode'
-    DatasetIdentifier:
-      required:
-      - dataset_name
-      type: object
-      properties:
-        dataset_name:
-          minLength: 1
-          type: string
-        project_name:
-          type: string
-    DatasetItem:
-      required:
-      - data
-      - source
-      type: object
-      properties:
-        id:
-          type: string
-          description: 'Stable item identifier.
-
-            On write, used as the upsert key.
-
-            If omitted, a new ID is generated.
-
-            Remains the same across dataset versions
-
-            '
-          format: uuid
-        dataset_item_id:
-          type: string
-          description: 'Deprecated.
-
-            Always equals ''id''.
-
-            Retained for backward compatibility and will be removed in a future version
-
-            '
-          format: uuid
-          readOnly: true
-        trace_id:
-          type: string
-          format: uuid
-        span_id:
-          type: string
-          format: uuid
-        source:
-          type: string
-          enum:
-          - manual
-          - trace
-          - span
-          - sdk
-        data:
-          $ref: '#/components/schemas/JsonNode'
-        description:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        evaluators:
-          type: array
-          items:
-            $ref: '#/components/schemas/EvaluatorItem'
-        execution_policy:
-          $ref: '#/components/schemas/ExecutionPolicy'
-        experiment_items:
-          type: array
-          readOnly: true
-          items:
-            $ref: '#/components/schemas/ExperimentItem'
-        run_summaries_by_experiment:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/ExperimentRunSummary'
-          readOnly: true
-        dataset_id:
-          type: string
-          format: uuid
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-    DatasetIdentifier_Public:
-      required:
-      - dataset_name
-      type: object
-      properties:
-        dataset_name:
-          minLength: 1
-          type: string
-        project_name:
-          type: string
-    ExperimentRunSummary:
-      type: object
-      properties:
-        passed_runs:
-          type: integer
-          format: int32
-        total_runs:
-          type: integer
-          format: int32
-        status:
-          type: string
-          enum:
-          - passed
-          - failed
       readOnly: true
     DatasetItem_Public:
       required:
@@ -2297,142 +1524,27 @@ components:
         last_updated_by:
           type: string
           readOnly: true
-    JsonNode_Write:
+    ErrorMessage:
       type: object
-    CreateDatasetItemsFromSpansRequest:
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: string
+    DatasetVersionRetrieveRequest_Public:
       required:
-      - enrichment_options
-      - span_ids
+      - version_name
       type: object
       properties:
-        span_ids:
-          minItems: 1
-          uniqueItems: true
-          type: array
-          description: Set of span IDs to add to the dataset
-          items:
-            type: string
-            description: Set of span IDs to add to the dataset
-            format: uuid
-        enrichment_options:
-          $ref: '#/components/schemas/SpanEnrichmentOptions'
-        evaluators:
-          type: array
-          description: Optional evaluators to apply to the created items
-          items:
-            $ref: '#/components/schemas/EvaluatorItem'
-        execution_policy:
-          $ref: '#/components/schemas/ExecutionPolicy'
-    PageColumns:
-      type: object
-      properties:
-        columns:
-          type: array
-          items:
-            $ref: '#/components/schemas/Column'
-    ProjectStatItemObject_Public:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - COUNT
-          - PERCENTAGE
-          - AVG
-      discriminator:
-        propertyName: type
-        mapping:
-          PERCENTAGE: '#/components/schemas/PercentageValueStat_Public'
-          COUNT: '#/components/schemas/CountValueStat_Public'
-          AVG: '#/components/schemas/AvgValueStat_Public'
-    Dataset_Write:
-      required:
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
+        version_name:
           minLength: 1
+          pattern: ^v\d+$
           type: string
-        project_id:
-          type: string
-          description: Project ID. Takes precedence over project_name when both are provided.
-          format: uuid
-        project_name:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-          description: For project scope, specify either project_id or project_name. If project_name is provided and the project does not exist, it will be created. Ignored when project_id is provided. If neither is provided, the dataset is created at workspace level.
-        type:
-          type: string
-          enum:
-          - dataset
-          - evaluation_suite
-        visibility:
-          type: string
-          enum:
-          - private
-          - public
-        tags:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        description:
-          maxLength: 255
-          minLength: 0
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-    DatasetItemPage_Compare:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/DatasetItem_Compare'
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-        columns:
-          uniqueItems: true
-          type: array
-          items:
-            $ref: '#/components/schemas/Column_Compare'
-        sortableBy:
-          type: array
-          items:
-            type: string
-    DatasetItemStreamRequest:
-      required:
-      - dataset_name
-      type: object
-      properties:
-        dataset_name:
-          minLength: 1
-          type: string
-        last_retrieved_id:
-          type: string
-          format: uuid
-        steam_limit:
-          maximum: 2000
-          minimum: 1
-          type: integer
-          format: int32
-        dataset_version:
-          type: string
-        project_name:
-          type: string
-        filters:
-          type: string
+          description: Version name in format 'vN' (e.g., 'v1', 'v373')
+          example: v1
     ProjectStats_Public:
       type: object
       properties:
@@ -2440,44 +1552,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProjectStatItemObject_Public'
-    Column:
-      type: object
-      properties:
-        name:
-          type: string
-        types:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            enum:
-            - string
-            - number
-            - object
-            - boolean
-            - array
-            - 'null'
-        filter_field_prefix:
-          type: string
-        filterField:
-          type: string
-          description: The field to use for filtering
-          readOnly: true
-    BatchDelete:
-      required:
-      - ids
-      type: object
-      properties:
-        ids:
-          maxItems: 1000
-          minItems: 1
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-            format: uuid
-    JsonNode_Public:
-      type: object
     DatasetItemBatchUpdate:
       required:
       - update
@@ -2507,160 +1581,40 @@ components:
           type: boolean
           description: 'If true, merge tags with existing tags instead of replacing them. Default: false. When using ''filters'', this is automatically set to true.'
       description: Request to batch update multiple dataset items
-    Comment:
-      required:
-      - text
+    PageColumns:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        text:
-          minLength: 1
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        last_updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: string
-          readOnly: true
-        last_updated_by:
-          type: string
-          readOnly: true
-    DatasetVersionRestore_Public:
-      required:
-      - version_ref
-      type: object
-      properties:
-        version_ref:
-          minLength: 1
-          type: string
-          description: Version hash or tag to restore from
-    DatasetVersionPage_Public:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/DatasetVersion_Public'
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
-    DatasetItemPage_Public:
-      type: object
-      properties:
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/DatasetItem_Public'
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int64
         columns:
-          uniqueItems: true
           type: array
           items:
-            $ref: '#/components/schemas/Column_Public'
-        sortableBy:
-          type: array
-          items:
-            type: string
-    DatasetExpansionResponse:
+            $ref: '#/components/schemas/Column'
+    DatasetItemFilter:
       type: object
       properties:
-        generated_samples:
-          type: array
-          description: List of generated synthetic dataset items
-          items:
-            $ref: '#/components/schemas/DatasetItem'
-        model:
+        field:
           type: string
-          description: Model used for generation
-          example: gpt-4
-        total_generated:
-          type: integer
-          description: Total number of samples generated
-          format: int32
-          example: 10
-        generation_time:
-          type: string
-          description: Generation timestamp
-          format: date-time
-          readOnly: true
-    DatasetItemBatch_Write:
-      required:
-      - items
-      type: object
-      properties:
-        dataset_name:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-          description: If null, dataset_id must be provided
-        dataset_id:
-          type: string
-          description: If null, dataset_name must be provided
-          format: uuid
-        project_name:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
-          type: string
-          description: Optional. Associates the batch with a project by name. Ignored if project_id is provided.
-        project_id:
-          type: string
-          description: Optional. Associates the batch with a project by ID. Takes precedence over project_name.
-          format: uuid
-        items:
-          maxItems: 1000
-          minItems: 1
-          type: array
-          items:
-            $ref: '#/components/schemas/DatasetItem_Write'
-        batch_group_id:
-          type: string
-          description: Optional batch group ID to group multiple batches into a single dataset version. If null, mutates the latest version instead of creating a new one.
-          format: uuid
-        copy_from_dataset_id:
-          type: string
-          description: Optional. Dataset to read carry-forward rows from when materializing the new version. Required together with copy_from_version_id. When null, carry-forward rows are read from the destination dataset's prior version.
-          format: uuid
-        copy_from_version_id:
-          type: string
-          description: Optional. Version within copy_from_dataset_id to read carry-forward rows from. Required together with copy_from_dataset_id.
-          format: uuid
-    EvaluatorItem_Write:
-      required:
-      - config
-      - name
-      - type
-      type: object
-      properties:
-        name:
-          minLength: 1
-          type: string
-        type:
+        operator:
           type: string
           enum:
-          - llm_judge
-          - code_metric
-        config:
-          $ref: '#/components/schemas/JsonNode_Write'
+          - contains
+          - not_contains
+          - starts_with
+          - ends_with
+          - '='
+          - '!='
+          - '>'
+          - '>='
+          - <
+          - <=
+          - is_empty
+          - is_not_empty
+          - in
+          - not_in
+        key:
+          type: string
+        value:
+          type: string
+      description: Filters to select dataset items to delete within the specified dataset. Must be used with 'dataset_id'. Mutually exclusive with 'item_ids'. Empty array means 'delete all items in the dataset'.
     ExperimentItem_Compare:
       required:
       - dataset_item_id
@@ -2751,6 +1705,191 @@ components:
           - passed
           - failed
       readOnly: true
+    Column_Compare:
+      type: object
+      properties:
+        name:
+          type: string
+        types:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            enum:
+            - string
+            - number
+            - object
+            - boolean
+            - array
+            - 'null'
+        filter_field_prefix:
+          type: string
+        filterField:
+          type: string
+          description: The field to use for filtering
+          readOnly: true
+    JsonNode_Write:
+      type: object
+    DatasetVersionRestore_Public:
+      required:
+      - version_ref
+      type: object
+      properties:
+        version_ref:
+          minLength: 1
+          type: string
+          description: Version hash or tag to restore from
+    ProjectStatItemObject_Public:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - COUNT
+          - PERCENTAGE
+          - AVG
+      discriminator:
+        propertyName: type
+        mapping:
+          PERCENTAGE: '#/components/schemas/PercentageValueStat_Public'
+          COUNT: '#/components/schemas/CountValueStat_Public'
+          AVG: '#/components/schemas/AvgValueStat_Public'
+    DatasetVersionDiffStats:
+      type: object
+      properties:
+        itemsAdded:
+          type: integer
+          format: int32
+        itemsModified:
+          type: integer
+          format: int32
+        itemsDeleted:
+          type: integer
+          format: int32
+        itemsUnchanged:
+          type: integer
+          format: int32
+    ExperimentRunSummary_Public:
+      type: object
+      properties:
+        passed_runs:
+          type: integer
+          format: int32
+        total_runs:
+          type: integer
+          format: int32
+        status:
+          type: string
+          enum:
+          - passed
+          - failed
+      readOnly: true
+    ExecutionPolicy_Write:
+      type: object
+      properties:
+        runs_per_item:
+          maximum: 100
+          minimum: 1
+          type: integer
+          format: int32
+        pass_threshold:
+          maximum: 100
+          minimum: 1
+          type: integer
+          format: int32
+    DatasetItemsDelete:
+      type: object
+      properties:
+        item_ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          description: List of dataset item IDs to delete (max 1000). Use this to delete specific items by their IDs. Mutually exclusive with 'dataset_id' and 'filters'.
+          items:
+            type: string
+            description: List of dataset item IDs to delete (max 1000). Use this to delete specific items by their IDs. Mutually exclusive with 'dataset_id' and 'filters'.
+            format: uuid
+        dataset_id:
+          type: string
+          description: Dataset ID to scope the deletion. Required when using 'filters'. Mutually exclusive with 'item_ids'.
+          format: uuid
+        filters:
+          type: array
+          description: Filters to select dataset items to delete within the specified dataset. Must be used with 'dataset_id'. Mutually exclusive with 'item_ids'. Empty array means 'delete all items in the dataset'.
+          items:
+            $ref: '#/components/schemas/DatasetItemFilter'
+        batch_group_id:
+          type: string
+          description: Optional batch group ID to group multiple delete operations into a single dataset version. If null, mutates the latest version instead of creating a new one.
+          format: uuid
+      description: Request to delete multiple dataset items
+    ValueEntry_Compare:
+      type: object
+      properties:
+        value:
+          type: number
+        reason:
+          type: string
+        category_name:
+          type: string
+        source:
+          type: string
+          enum:
+          - ui
+          - sdk
+          - online_scoring
+        last_updated_at:
+          type: string
+          format: date-time
+        span_type:
+          type: string
+        span_id:
+          type: string
+      readOnly: true
+    ExecutionPolicy_Compare:
+      type: object
+      properties:
+        runs_per_item:
+          maximum: 100
+          minimum: 1
+          type: integer
+          format: int32
+        pass_threshold:
+          maximum: 100
+          minimum: 1
+          type: integer
+          format: int32
+      readOnly: true
+    DatasetItemChanges_Public:
+      type: object
+    DatasetItemPage_Public:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetItem_Public'
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        columns:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/Column_Public'
+        sortableBy:
+          type: array
+          items:
+            type: string
     EvaluatorItem_Public:
       required:
       - config
@@ -2770,71 +1909,184 @@ components:
           $ref: '#/components/schemas/JsonNode_Public'
       description: Default evaluators for items in this version
       readOnly: true
-    JsonNode_Compare:
-      type: object
-    DatasetItemUpdate:
+    DatasetUpdate:
+      required:
+      - name
       type: object
       properties:
-        input:
+        name:
+          minLength: 1
+          type: string
+        description:
+          maxLength: 255
+          minLength: 0
           pattern: (?s)^\s*(\S.*\S|\S)\s*$
           type: string
-          description: Dataset item input
-        expected_output:
-          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+        visibility:
           type: string
-          description: Dataset item expected output
-        metadata:
-          $ref: '#/components/schemas/JsonNode'
+          enum:
+          - private
+          - public
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    JsonNode_Compare:
+      type: object
+    SpanEnrichmentOptions:
+      type: object
+      properties:
+        includeTags:
+          type: boolean
+        includeFeedbackScores:
+          type: boolean
+        includeComments:
+          type: boolean
+        includeUsage:
+          type: boolean
+        includeMetadata:
+          type: boolean
+      description: Options for enriching span data
+    DatasetItem_Compare:
+      required:
+      - data
+      - source
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'Stable item identifier.
+
+            On write, used as the upsert key.
+
+            If omitted, a new ID is generated.
+
+            Remains the same across dataset versions
+
+            '
+          format: uuid
+        dataset_item_id:
+          type: string
+          description: 'Deprecated.
+
+            Always equals ''id''.
+
+            Retained for backward compatibility and will be removed in a future version
+
+            '
+          format: uuid
+          readOnly: true
+        trace_id:
+          type: string
+          format: uuid
+        span_id:
+          type: string
+          format: uuid
+        source:
+          type: string
+          enum:
+          - manual
+          - trace
+          - span
+          - sdk
         data:
           $ref: '#/components/schemas/JsonNode'
         description:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
           type: string
-          description: Dataset item description
         tags:
-          maxItems: 50
-          minItems: 0
           uniqueItems: true
           type: array
-          description: Tags
           items:
-            maxLength: 100
-            minLength: 0
             type: string
-            description: Tags
-        tags_to_add:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          description: Tags to add
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-            description: Tags to add
-        tags_to_remove:
-          maxItems: 50
-          minItems: 0
-          uniqueItems: true
-          type: array
-          description: Tags to remove
-          items:
-            maxLength: 100
-            minLength: 0
-            type: string
-            description: Tags to remove
         evaluators:
           type: array
-          description: Evaluators
           items:
-            $ref: '#/components/schemas/EvaluatorItem'
+            $ref: '#/components/schemas/EvaluatorItem_Compare'
         execution_policy:
-          $ref: '#/components/schemas/ExecutionPolicy'
-        clear_execution_policy:
+          $ref: '#/components/schemas/ExecutionPolicy_Compare'
+        experiment_items:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/ExperimentItem_Compare'
+        run_summaries_by_experiment:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ExperimentRunSummary_Compare'
+          readOnly: true
+        dataset_id:
+          type: string
+          format: uuid
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+    EvaluatorItem:
+      required:
+      - config
+      - name
+      - type
+      type: object
+      properties:
+        name:
+          minLength: 1
+          type: string
+        type:
+          type: string
+          enum:
+          - llm_judge
+          - code_metric
+        config:
+          $ref: '#/components/schemas/JsonNode'
+    AssertionResult:
+      type: object
+      properties:
+        value:
+          type: string
+        passed:
           type: boolean
-          description: When true, clears the item-level execution policy (falls back to dataset-level)
-      description: Dataset item update request
-    ErrorMessage:
+        reason:
+          type: string
+      readOnly: true
+    DatasetItemPage_Compare:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetItem_Compare'
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+        columns:
+          uniqueItems: true
+          type: array
+          items:
+            $ref: '#/components/schemas/Column_Compare'
+        sortableBy:
+          type: array
+          items:
+            type: string
+    ErrorMessage_Public:
       type: object
       properties:
         code:
@@ -2844,6 +2096,119 @@ components:
           type: string
         details:
           type: string
+    DatasetItemStreamRequest:
+      required:
+      - dataset_name
+      type: object
+      properties:
+        dataset_name:
+          minLength: 1
+          type: string
+        last_retrieved_id:
+          type: string
+          format: uuid
+        steam_limit:
+          maximum: 2000
+          minimum: 1
+          type: integer
+          format: int32
+        dataset_version:
+          type: string
+        project_name:
+          type: string
+        filters:
+          type: string
+    EvaluatorItem_Write:
+      required:
+      - config
+      - name
+      - type
+      type: object
+      properties:
+        name:
+          minLength: 1
+          type: string
+        type:
+          type: string
+          enum:
+          - llm_judge
+          - code_metric
+        config:
+          $ref: '#/components/schemas/JsonNode_Write'
+    DatasetVersionSummary_Public:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the version
+          format: uuid
+        version_hash:
+          type: string
+          description: Hash of the version content
+        version_name:
+          type: string
+          description: Sequential version name formatted as 'v1', 'v2', etc.
+        change_description:
+          type: string
+          description: Description of changes in this version
+        tags:
+          uniqueItems: true
+          type: array
+          description: Tags associated with this version
+          items:
+            type: string
+            description: Tags associated with this version
+      description: Summary of the latest dataset version
+      readOnly: true
+    CreateDatasetItemsFromSpansRequest:
+      required:
+      - enrichment_options
+      - span_ids
+      type: object
+      properties:
+        span_ids:
+          minItems: 1
+          uniqueItems: true
+          type: array
+          description: Set of span IDs to add to the dataset
+          items:
+            type: string
+            description: Set of span IDs to add to the dataset
+            format: uuid
+        enrichment_options:
+          $ref: '#/components/schemas/SpanEnrichmentOptions'
+        evaluators:
+          type: array
+          description: Optional evaluators to apply to the created items
+          items:
+            $ref: '#/components/schemas/EvaluatorItem'
+        execution_policy:
+          $ref: '#/components/schemas/ExecutionPolicy'
+    DatasetIdentifier:
+      required:
+      - dataset_name
+      type: object
+      properties:
+        dataset_name:
+          minLength: 1
+          type: string
+        project_name:
+          type: string
+    ExperimentRunSummary:
+      type: object
+      properties:
+        passed_runs:
+          type: integer
+          format: int32
+        total_runs:
+          type: integer
+          format: int32
+        status:
+          type: string
+          enum:
+          - passed
+          - failed
+      readOnly: true
     DatasetVersion_Public:
       type: object
       properties:
@@ -2924,21 +2289,642 @@ components:
         last_updated_by:
           type: string
           readOnly: true
-    ExperimentRunSummary_Compare:
+    JsonNode_Public:
+      type: object
+    ExecutionPolicy_Public:
       type: object
       properties:
-        passed_runs:
+        runs_per_item:
+          maximum: 100
+          minimum: 1
           type: integer
           format: int32
-        total_runs:
+        pass_threshold:
+          maximum: 100
+          minimum: 1
           type: integer
           format: int32
-        status:
+      description: Default execution policy for items in this version
+      readOnly: true
+    DatasetIdentifier_Public:
+      required:
+      - dataset_name
+      type: object
+      properties:
+        dataset_name:
+          minLength: 1
+          type: string
+        project_name:
+          type: string
+    Column_Public:
+      type: object
+      properties:
+        name:
+          type: string
+        types:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            enum:
+            - string
+            - number
+            - object
+            - boolean
+            - array
+            - 'null'
+        filter_field_prefix:
+          type: string
+        filterField:
+          type: string
+          description: The field to use for filtering
+          readOnly: true
+    DatasetItemUpdate:
+      type: object
+      properties:
+        input:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: Dataset item input
+        expected_output:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: Dataset item expected output
+        metadata:
+          $ref: '#/components/schemas/JsonNode'
+        data:
+          $ref: '#/components/schemas/JsonNode'
+        description:
+          type: string
+          description: Dataset item description
+        tags:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          description: Tags
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Tags
+        tags_to_add:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          description: Tags to add
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Tags to add
+        tags_to_remove:
+          maxItems: 50
+          minItems: 0
+          uniqueItems: true
+          type: array
+          description: Tags to remove
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Tags to remove
+        evaluators:
+          type: array
+          description: Evaluators
+          items:
+            $ref: '#/components/schemas/EvaluatorItem'
+        execution_policy:
+          $ref: '#/components/schemas/ExecutionPolicy'
+        clear_execution_policy:
+          type: boolean
+          description: When true, clears the item-level execution policy (falls back to dataset-level)
+      description: Dataset item update request
+    TraceEnrichmentOptions:
+      type: object
+      properties:
+        includeSpans:
+          type: boolean
+        includeTags:
+          type: boolean
+        includeFeedbackScores:
+          type: boolean
+        includeComments:
+          type: boolean
+        includeUsage:
+          type: boolean
+        includeMetadata:
+          type: boolean
+      description: Options for enriching trace data
+    Dataset_Public:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          minLength: 1
+          type: string
+        project_id:
+          type: string
+          description: Project ID. Takes precedence over project_name when both are provided.
+          format: uuid
+        type:
           type: string
           enum:
-          - passed
+          - dataset
+          - evaluation_suite
+        visibility:
+          type: string
+          enum:
+          - private
+          - public
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        description:
+          maxLength: 255
+          minLength: 0
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+        experiment_count:
+          type: integer
+          format: int64
+          readOnly: true
+        dataset_items_count:
+          type: integer
+          format: int64
+          readOnly: true
+        optimization_count:
+          type: integer
+          format: int64
+          readOnly: true
+        most_recent_experiment_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_created_experiment_at:
+          type: string
+          format: date-time
+          readOnly: true
+        most_recent_optimization_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_created_optimization_at:
+          type: string
+          format: date-time
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+          enum:
+          - unknown
+          - processing
+          - completed
           - failed
+        latest_version:
+          $ref: '#/components/schemas/DatasetVersionSummary_Public'
+    ValueEntry:
+      type: object
+      properties:
+        value:
+          type: number
+        reason:
+          type: string
+        category_name:
+          type: string
+        source:
+          type: string
+          enum:
+          - ui
+          - sdk
+          - online_scoring
+        last_updated_at:
+          type: string
+          format: date-time
+        span_type:
+          type: string
+        span_id:
+          type: string
       readOnly: true
+    Column:
+      type: object
+      properties:
+        name:
+          type: string
+        types:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            enum:
+            - string
+            - number
+            - object
+            - boolean
+            - array
+            - 'null'
+        filter_field_prefix:
+          type: string
+        filterField:
+          type: string
+          description: The field to use for filtering
+          readOnly: true
+    JsonNode:
+      type: object
+    DatasetExportJob_Public:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        dataset_id:
+          type: string
+          format: uuid
+          readOnly: true
+        dataset_name:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+          enum:
+          - PENDING
+          - PROCESSING
+          - COMPLETED
+          - FAILED
+        file_path:
+          type: string
+          readOnly: true
+        error_message:
+          type: string
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        expires_at:
+          type: string
+          format: date-time
+          readOnly: true
+        viewed_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+    DatasetVersionUpdate_Public:
+      type: object
+      properties:
+        change_description:
+          type: string
+          description: Optional description of changes in this version
+          example: Updated baseline version
+        tags_to_add:
+          maxItems: 100
+          minItems: 0
+          type: array
+          description: Optional list of tags to add to this version
+          example:
+          - production
+          - reviewed
+          items:
+            maxLength: 100
+            minLength: 0
+            type: string
+            description: Optional list of tags to add to this version
+            example: '["production","reviewed"]'
+    DatasetExpansionResponse:
+      type: object
+      properties:
+        generated_samples:
+          type: array
+          description: List of generated synthetic dataset items
+          items:
+            $ref: '#/components/schemas/DatasetItem'
+        model:
+          type: string
+          description: Model used for generation
+          example: gpt-4
+        total_generated:
+          type: integer
+          description: Total number of samples generated
+          format: int32
+          example: 10
+        generation_time:
+          type: string
+          description: Generation timestamp
+          format: date-time
+          readOnly: true
+    DatasetVersionPage_Public:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetVersion_Public'
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int64
+    Comment_Compare:
+      required:
+      - text
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        text:
+          minLength: 1
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+      readOnly: true
+    Comment:
+      required:
+      - text
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        text:
+          minLength: 1
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+    EvaluatorItem_Compare:
+      required:
+      - config
+      - name
+      - type
+      type: object
+      properties:
+        name:
+          minLength: 1
+          type: string
+        type:
+          type: string
+          enum:
+          - llm_judge
+          - code_metric
+        config:
+          $ref: '#/components/schemas/JsonNode_Compare'
+    DatasetVersionDiff:
+      type: object
+      properties:
+        from_version:
+          type: string
+        to_version:
+          type: string
+        statistics:
+          $ref: '#/components/schemas/DatasetVersionDiffStats'
+    DatasetItem_Write:
+      required:
+      - data
+      - source
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'Stable item identifier.
+
+            On write, used as the upsert key.
+
+            If omitted, a new ID is generated.
+
+            Remains the same across dataset versions
+
+            '
+          format: uuid
+        trace_id:
+          type: string
+          format: uuid
+        span_id:
+          type: string
+          format: uuid
+        source:
+          type: string
+          enum:
+          - manual
+          - trace
+          - span
+          - sdk
+        data:
+          $ref: '#/components/schemas/JsonNode'
+        description:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        evaluators:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluatorItem_Write'
+        execution_policy:
+          $ref: '#/components/schemas/ExecutionPolicy_Write'
+    DatasetItem:
+      required:
+      - data
+      - source
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'Stable item identifier.
+
+            On write, used as the upsert key.
+
+            If omitted, a new ID is generated.
+
+            Remains the same across dataset versions
+
+            '
+          format: uuid
+        dataset_item_id:
+          type: string
+          description: 'Deprecated.
+
+            Always equals ''id''.
+
+            Retained for backward compatibility and will be removed in a future version
+
+            '
+          format: uuid
+          readOnly: true
+        trace_id:
+          type: string
+          format: uuid
+        span_id:
+          type: string
+          format: uuid
+        source:
+          type: string
+          enum:
+          - manual
+          - trace
+          - span
+          - sdk
+        data:
+          $ref: '#/components/schemas/JsonNode'
+        description:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        evaluators:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvaluatorItem'
+        execution_policy:
+          $ref: '#/components/schemas/ExecutionPolicy'
+        experiment_items:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/ExperimentItem'
+        run_summaries_by_experiment:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ExperimentRunSummary'
+          readOnly: true
+        dataset_id:
+          type: string
+          format: uuid
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        last_updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: string
+          readOnly: true
+        last_updated_by:
+          type: string
+          readOnly: true
+    BatchDelete:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          maxItems: 1000
+          minItems: 1
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+            format: uuid
+    Dataset_Write:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          minLength: 1
+          type: string
+        project_id:
+          type: string
+          description: Project ID. Takes precedence over project_name when both are provided.
+          format: uuid
+        project_name:
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
+          description: For project scope, specify either project_id or project_name. If project_name is provided and the project does not exist, it will be created. Ignored when project_id is provided. If neither is provided, the dataset is created at workspace level.
+        type:
+          type: string
+          enum:
+          - dataset
+          - evaluation_suite
+        visibility:
+          type: string
+          enum:
+          - private
+          - public
+        tags:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        description:
+          maxLength: 255
+          minLength: 0
+          pattern: (?s)^\s*(\S.*\S|\S)\s*$
+          type: string
     DatasetExpansion_Write:
       required:
       - model
@@ -2978,3 +2964,17 @@ components:
           type: integer
           description: Maximum number of tokens for the LLM response. Required by Anthropic, used as maxOutputTokens for Gemini. If not provided, defaults to 4000 for Anthropic models only.
           format: int32
+    ExecutionPolicy:
+      type: object
+      properties:
+        runs_per_item:
+          maximum: 100
+          minimum: 1
+          type: integer
+          format: int32
+        pass_threshold:
+          maximum: 100
+          minimum: 1
+          type: integer
+          format: int32
+      readOnly: true
