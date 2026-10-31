@@ -1,4 +1,4 @@
-# Opik (opik)
+# Opik
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,80 +64,213 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Opik is an open-source LLM evaluation, testing, and tracing platform developed by Comet ML that enables developers to debug, evaluate, and monitor LLM applications, RAG systems, and agentic workflows. The platform provides a REST API for logging traces and spans, running automated evaluations with LLM-as-a-judge metrics, managing datasets and experiments, and tracking production performance. Opik supports over 40 framework integrations including LangChain, LlamaIndex, and OpenAI, and is available as a self-hosted open-source deployment (Apache 2.0) or as a managed cloud service on Comet's platform.
+Opik is an open-source LLM evaluation, testing, and tracing platform developed by Comet ML that enables developers to debug, evaluate, and monitor LLM applications, RAG systems, and agentic workflows. The platform provides a REST API for logging traces and spans, running automated evaluations with LLM-as-a-judge metrics, managing datasets and experiments, and tracking production performance. Opik supports over 40 framework integrations including LangChain, LlamaIndex, and OpenAI, and is available as a self-hosted open-source deployment or as a managed cloud service on Comet's platform.
 
-APIs.json: https://raw.githubusercontent.com/api-evangelist/opik/refs/heads/main/apis.yml
+**Areas:** LLM · Evaluation · Observability · Tracing · Open Source · LLMOps · RAG · Artificial Intelligence · Machine Learning · Monitoring
 
-Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=opik-api-evangelist&utm_content=repo
+## Opik on APIs.io
 
-## Tags
+Everything profiled for Opik is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/opik/](https://apis.io/providers/opik/)** — or go straight to one of the APIs or properties below.
 
-- LLM
-- Evaluation
-- Observability
-- Tracing
-- Open Source
-- LLMOps
-- RAG
-- AI
-- Machine Learning
-- Monitoring
+### APIs (39)
 
-## APIs
+- [Opik Agent Configs API](https://apis.io/apis/opik/opik-agent-configs-api/) — Agent configuration management
+- [Opik AI Spend API](https://apis.io/apis/opik/opik-ai-spend-api/) — Coding-agent spend analytics
+- [Opik Alerts API](https://apis.io/apis/opik/opik-alerts-api/) — Alert resources
+- [Opik Annotation Queues API](https://apis.io/apis/opik/opik-annotation-queues-api/) — Private annotation queue operations
+- [Opik Assertion Results API](https://apis.io/apis/opik/opik-assertion-results-api/) — Assertion result related resources
+- [Opik Attachments API](https://apis.io/apis/opik/opik-attachments-api/) — Attachments related resources
+- [Opik Automation rule evaluators API](https://apis.io/apis/opik/opik-automation-rule-evaluators-api/) — Automation rule evaluators resource
+- [Opik Chat Completions API](https://apis.io/apis/opik/opik-chat-completions-api/) — Chat Completions related resources
+- [Opik Check API](https://apis.io/apis/opik/opik-check-api/) — Access check resources
+- [Opik Dashboards API](https://apis.io/apis/opik/opik-dashboards-api/) — Workspace Dashboard resources
+- [Opik Datasets API](https://apis.io/apis/opik/opik-datasets-api/) — Dataset resources
+- [Opik Environments API](https://apis.io/apis/opik/opik-environments-api/) — Environment related resources
+- [Opik Experiments API](https://apis.io/apis/opik/opik-experiments-api/) — Experiment resources
+- [Opik Feedback-definitions API](https://apis.io/apis/opik/opik-feedback-definitions-api/) — Feedback definitions related resources
+- [Opik Guardrails API](https://apis.io/apis/opik/opik-guardrails-api/) — Guardrails related resources
+- [Opik Insights Views API](https://apis.io/apis/opik/opik-insights-views-api/) — Insights View resources
+- [Opik Is Alive API](https://apis.io/apis/opik/opik-is-alive-api/) — The Is Alive API from Opik — 2 operation(s) for is alive.
+- [Opik LLM Models API](https://apis.io/apis/opik/opik-llm-models-api/) — LLM model registry resources
+- [Opik LlmProviderKey API](https://apis.io/apis/opik/opik-llmproviderkey-api/) — LLM Provider Key
+- [Opik Manual Evaluation API](https://apis.io/apis/opik/opik-manual-evaluation-api/) — Manual evaluation resources for traces, threads, and spans
+- [Opik MCP OAuth API](https://apis.io/apis/opik/opik-mcp-oauth-api/) — MCP OAuth 2.1 Authorization Server resources
+- [Opik Ollama API](https://apis.io/apis/opik/opik-ollama-api/) — Ollama provider configuration endpoints with OpenAI-compatible API support.
+- [Opik Ollie State API](https://apis.io/apis/opik/opik-ollie-state-api/) — Ollie pod state persistence
+- [Opik OpenTelemetry Ingestion API](https://apis.io/apis/opik/opik-opentelemetry-ingestion-api/) — Resource to ingest Traces and Spans via OpenTelemetry
+- [Opik Optimizations API](https://apis.io/apis/opik/opik-optimizations-api/) — Optimization resources
+- [Opik Pairing API](https://apis.io/apis/opik/opik-pairing-api/) — Pairing sessions for the `opik connect` and `opik endpoint` CLI commands
+- [Opik Projects API](https://apis.io/apis/opik/opik-projects-api/) — Project related resources
+- [Opik Prompts API](https://apis.io/apis/opik/opik-prompts-api/) — Prompt resources
+- [Opik Redirect API](https://apis.io/apis/opik/opik-redirect-api/) — Redirects for SDK generated links
+- [Opik Reports API](https://apis.io/apis/opik/opik-reports-api/) — Ollie daily report management
+- [Opik Retention Rules API](https://apis.io/apis/opik/opik-retention-rules-api/) — Data retention rule management
+- [Opik Runners API](https://apis.io/apis/opik/opik-runners-api/) — Local runner management endpoints
+- [Opik Service Toggles API](https://apis.io/apis/opik/opik-service-toggles-api/) — Service Toggles resources
+- [Opik Spans API](https://apis.io/apis/opik/opik-spans-api/) — Span related resources
+- [Opik System usage API](https://apis.io/apis/opik/opik-system-usage-api/) — System usage related resource
+- [Opik Traces API](https://apis.io/apis/opik/opik-traces-api/) — Trace related resources
+- [Opik Welcome Wizard API](https://apis.io/apis/opik/opik-welcome-wizard-api/) — Welcome wizard tracking resources
+- [Opik Workspace permissions API](https://apis.io/apis/opik/opik-workspace-permissions-api/) — Workspace permissions related resources
+- [Opik Workspaces API](https://apis.io/apis/opik/opik-workspaces-api/) — Workspace related resources
 
-### Opik REST API
+### Published properties
 
-The Opik REST API provides programmatic access to all platform capabilities including logging traces and spans from LLM applications, managing datasets and experiment items, running evaluations, storing feedback scores, and accessing project data.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Base URL:** https://www.comet.com/opik/api/v1
-- **Documentation:** https://www.comet.com/docs/opik/reference/rest-api/overview
+#### JSON Schema (3)
 
-**Authentication:**
-- Opik Cloud: `Comet-Workspace` header (workspace name) + `authorization` header (API key, no Bearer prefix)
-- Open-Source/Self-Hosted: No authentication required
+The data models the API reads and writes.
 
-## Plans / Rate Limits / FinOps
+- [Experiment](https://apis.io/schemas/opik/opik-experiment/)
+- [Span](https://apis.io/schemas/opik/opik-span/)
+- [Trace](https://apis.io/schemas/opik/opik-trace/)
 
-| Resource | Location |
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Opik Context](https://apis.io/jsonld/opik/opik-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Opik API Vocabulary](https://apis.io/vocabularies/opik/opik-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Opik Experiment Example](https://apis.io/examples/opik/opik-experiment-example/)
+- [Opik Span Example](https://apis.io/examples/opik/opik-span-example/)
+- [Opik Trace Example](https://apis.io/examples/opik/opik-trace-example/)
+
+#### Collections (39)
+
+Postman and Open Collection request collections.
+
+- [Opik REST Agent Configs API](https://apis.io/collections/opik/open-opik-agent-configs-api/)
+- [Opik REST AI Spend API](https://apis.io/collections/opik/open-opik-ai-spend-api/)
+- [Opik REST Alerts API](https://apis.io/collections/opik/open-opik-alerts-api/)
+- [Opik REST Annotation Queues API](https://apis.io/collections/opik/open-opik-annotation-queues-api/)
+- [Opik REST Assertion Results API](https://apis.io/collections/opik/open-opik-assertion-results-api/)
+- [Opik REST Attachments API](https://apis.io/collections/opik/open-opik-attachments-api/)
+- [Opik REST Automation rule evaluators API](https://apis.io/collections/opik/open-opik-automation-rule-evaluators-api/)
+- [Opik REST Chat Completions API](https://apis.io/collections/opik/open-opik-chat-completions-api/)
+- [Opik REST Check API](https://apis.io/collections/opik/open-opik-check-api/)
+- [Opik REST Dashboards API](https://apis.io/collections/opik/open-opik-dashboards-api/)
+- [Opik REST Datasets API](https://apis.io/collections/opik/open-opik-datasets-api/)
+- [Opik REST Environments API](https://apis.io/collections/opik/open-opik-environments-api/)
+- [Opik REST Experiments API](https://apis.io/collections/opik/open-opik-experiments-api/)
+- [Opik REST Feedback-definitions API](https://apis.io/collections/opik/open-opik-feedback-definitions-api/)
+- [Opik REST Guardrails API](https://apis.io/collections/opik/open-opik-guardrails-api/)
+- [Opik REST Insights Views API](https://apis.io/collections/opik/open-opik-insights-views-api/)
+- [Opik REST Is Alive API](https://apis.io/collections/opik/open-opik-is-alive-api/)
+- [Opik REST LLM Models API](https://apis.io/collections/opik/open-opik-llm-models-api/)
+- [Opik REST LlmProviderKey API](https://apis.io/collections/opik/open-opik-llmproviderkey-api/)
+- [Opik REST Manual Evaluation API](https://apis.io/collections/opik/open-opik-manual-evaluation-api/)
+- [Opik REST MCP OAuth API](https://apis.io/collections/opik/open-opik-mcp-oauth-api/)
+- [Opik REST Ollama API](https://apis.io/collections/opik/open-opik-ollama-api/)
+- [Opik REST Ollie State API](https://apis.io/collections/opik/open-opik-ollie-state-api/)
+- [Opik REST OpenTelemetry Ingestion API](https://apis.io/collections/opik/open-opik-opentelemetry-ingestion-api/)
+- [Opik REST Optimizations API](https://apis.io/collections/opik/open-opik-optimizations-api/)
+- …and 14 more published on APIs.io
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Opik — jsonschema rules](https://apis.io/rules/opik/opik-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Opik Domain Security](https://apis.io/security/opik/opik-domain-security/)
+- [Opik Trust Center](https://apis.io/security/opik/opik-trust-center/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Opik Plans Pricing](https://apis.io/plans/opik/opik-plans-pricing/)
+- [Opik Price Estimates](https://apis.io/plans/opik/opik-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Opik Rate Limits](https://apis.io/rate-limits/opik/opik-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Opik Finops](https://apis.io/finops/opik/opik-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.comet.com/site/products/opik/)
+- [Documentation](https://www.comet.com/docs/opik/)
+- [Pricing](https://www.comet.com/site/pricing/)
+- [Changelog](https://www.comet.com/docs/opik/changelog)
+- [Blog](https://www.comet.com/site/blog/)
+- [Status](https://status.comet.com/)
+
+## API Evangelist rating
+
+**Kin Score 47.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
 |---|---|
-| Plans & Pricing | [plans/opik-plans-pricing.yml](plans/opik-plans-pricing.yml) |
-| Rate Limits | [rate-limits/opik-rate-limits.yml](rate-limits/opik-rate-limits.yml) |
-| FinOps | [finops/opik-finops.yml](finops/opik-finops.yml) |
+| Discoverability | 66.1 |
+| Contract quality | 49.3 |
+| Contract governance | 23.5 |
+| Operational transparency | 68.4 |
+| Developer ergonomics | 17.9 |
+| Access clarity | 50.0 |
 
-**Pricing summary:**
-- Open Source: Free (self-hosted, Apache 2.0)
-- Free Cloud: $0/month — 10 members, 25k spans/month, 60-day retention
-- Pro Cloud: $19/month — 50 members, 100k spans/month, customizable limits
-- Enterprise: Custom pricing — unlimited members, SSO, SOC 2, HIPAA, GDPR
+**Agent readiness 27.8** — agent-aware
 
-**Rate limits (Opik Cloud):**
-- Global: 2,000 requests/minute per user (+ 100 burst)
-- Data ingestion: 10,000 events/minute per user
-- Get Span by ID: 250 requests/minute per user
-- HTTP 429 returned when limits exceeded
-
-## Timestamps
-
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
-
-## Common
-
-| Type | URL |
+| Agent-readiness dimension | Result |
 |---|---|
-| Website | https://www.comet.com/site/products/opik/ |
-| Documentation | https://www.comet.com/docs/opik/ |
-| GitHub Org | https://github.com/comet-ml |
-| GitHub Repository | https://github.com/comet-ml/opik |
-| LinkedIn | https://www.linkedin.com/company/comet-ml |
-| Blog | https://www.comet.com/site/blog/ |
-| Pricing | https://www.comet.com/site/pricing/ |
-| Status Page | https://status.comet.com/ |
-| X (Twitter) | https://x.com/cometml |
-| Changelog | https://www.comet.com/docs/opik/changelog |
-| SDK Documentation | https://www.comet.com/docs/opik/python-sdk-reference/ |
-| Slack Community | https://chat.comet.com |
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
 
-## Maintainers
+**Regulatory alignment 14.5** — Horizontal (data, software, accessibility, platform)
 
-- **Kin Lane** — kin@apievangelist.com
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/opik/](https://apis.io/providers/opik/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Opik: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/opik/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
